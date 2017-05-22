@@ -1,1 +1,135 @@
-<h1>Hello World </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body class="landing">
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <div id="header" class="container clear">
+    <a class="primary-color"> SING IN </a>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div id="company_info" class="col-lg-7 vcenter">
+          <img src="/img/company_name.png" alt="FoodyCall - Cook Together, Happy Together">
+      </div>
+
+      <div id="sign_up_container" class="col-lg-3 vcenter clear">
+        <div class="">
+          <button id="sign_up" type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modal-fullscreen">SING UP NOW</button>
+        </div>
+        <div class="">
+          <a class="primary-color">Browse as guest >></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Modal fullscreen -->
+  <div class="modal modal-fullscreen fade" id="modal-fullscreen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+
+        <div class="modal-header no-line">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h2 class="modal-title" id="myModalLabel">FoodyCall</h2>
+        </div>
+
+        <div class="modal-body su-modal-form">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-offset-2 col-md-4">
+                <h3>Sign Up</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-offset-2 col-lg-7">
+                <hr/>
+              </div>
+            </div>
+            <div class="row mt-1">
+              <div class="col-lg-offset-3 col-lg-2 small"> Account </div>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" id="account" />
+              </div>
+            </div>
+            <div class="row mt-1">
+              <div class="col-lg-offset-3 col-lg-2 small"> Password </div>
+              <div class="col-lg-3">
+                <input type="password" class="form-control" id="pass" />
+              </div>
+            </div>
+            <div class="row mt-1">
+              <div class="col-lg-offset-3 col-md-2 small"> Password Again</div>
+              <div class="col-lg-3">
+                <input type="password" class="form-control" id="pass2" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-offset-3 col-md-2 small"> Name/User ID</div>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" id="usr" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-offset-3 col-md-2 small"> Birthday</div>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" id="bd" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-offset-3 col-md-2 small"> Nacionality</div>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" id="nationality" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-offset-3 col-md-2 small"> City</div>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" id="city" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-offset-2 col-md-8">
+                <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">Submit</button>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div id="company_video">
+  </div>
+
+  <script>
+  $(".modal-fullscreen").on('show.bs.modal', function () {
+    setTimeout( function() {
+      $(".modal-backdrop").addClass("modal-backdrop-fullscreen");
+    }, 0);
+  });
+  $(".modal-fullscreen").on('hidden.bs.modal', function () {
+    $(".modal-backdrop").addClass("modal-backdrop-fullscreen");
+  });
+
+  </script>
+</body>
+</html>
