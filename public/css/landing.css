@@ -1,0 +1,29 @@
+.landing #header{
+  /*width: 100%;
+  height: 100px;
+  text-align: right;*/
+  padding-top: 20px;
+}
+/*.landing #header a{
+  margin-right: 50px;
+  margin-top: 30px;
+}*/
+.landing #company_info,.landing #sign_up_container{
+  display: inline-block;
+}
+#sign_up_container{
+  padding-top: 110px;
+  padding-left: 90px;
+}
+.landing #company_info{
+  width: 50%;
+  height: 60%;
+}
+.landing #company_info img{
+  width: 100%;
+}
+.vcenter{
+  display: inline-block;
+  vertical-align: middle;
+  float:none !important;
+}

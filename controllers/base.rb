@@ -25,4 +25,8 @@ class FoodyCallApp < Sinatra::Base
   get '/' do
     erb :landing
   end
+
+  get '/homepage' do
+    erb :homepage
+  end
 end
