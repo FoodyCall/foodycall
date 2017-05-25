@@ -6,7 +6,7 @@ gem 'sinatra'
 gem 'thin'
 gem 'json'
 gem 'sqlite3'
-gem 'activerecord'
+gem "sinatra-activerecord"
 
 group :test do
   gem 'rack'
