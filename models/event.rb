@@ -1,3 +1,3 @@
 require "sinatra/activerecord"
-class User < ActiveRecord::Base
+class Event < ActiveRecord::Base
 end
