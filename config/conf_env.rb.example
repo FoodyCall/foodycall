@@ -1,0 +1,10 @@
+# Copy this file to [app]/config/config_env.rb
+
+config_env :development, :test do
+end
+
+config_env :test do
+end
+
+config_env :production do
+end
