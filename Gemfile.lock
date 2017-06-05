@@ -29,6 +29,7 @@ GEM
       watir (~> 6.0)
     page_navigation (0.10)
       data_magic (>= 0.22)
+    pg (0.20.0)
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
@@ -80,6 +81,7 @@ DEPENDENCIES
   json
   minitest
   page-object
+  pg
   rack
   rack-test
   rake
