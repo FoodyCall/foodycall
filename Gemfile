@@ -5,8 +5,6 @@ gem 'rake'
 gem 'sinatra'
 gem 'thin'
 gem 'json'
-gem 'activerecord'
-gem 'sinatra-activerecord'
 gem 'hirb'
 gem 'sequel'
 
@@ -25,5 +23,5 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg'
+  #gem 'pg'
 end

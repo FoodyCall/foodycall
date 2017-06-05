@@ -22,14 +22,14 @@ describe 'Creating new users' do
     it 'HAPPY: should create a new unique user' do
       req_header = { 'CONTENT_TYPE' => 'application/json' }
       req_body = {
-        t.string "Paul"
-        t.string "Rivera"
-        t.string "privera"
-        t.date "1991/04/12"
-        t.string "Honduras"
-        t.string "Tegucigalpa"
-        t.string "12345"
-        t.string ""
+        first_name: "Paul",
+        last_name: "Rivera",
+        username: "privera",
+        birthday: "1991/04/12",
+        country: "Honduras",
+        city: "Tegucigalpa",
+        password: "12345",
+        img_path: ""
       }.to_json
       post '/api/users/', req_body, req_header
       _(last_response.status).must_equal 201

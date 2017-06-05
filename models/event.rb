@@ -1,3 +1,3 @@
-require "sinatra/activerecord"
-class Event < ActiveRecord::Base
+require "sequel"
+class Event < Sequel::Model
 end

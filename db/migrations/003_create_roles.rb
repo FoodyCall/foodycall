@@ -1,4 +1,6 @@
-class CreateRoles < ActiveRecord::Migration[5.1]
+require 'sequel'
+
+Sequel.migration do
   def change
     create_table :roles do |t|
       t.string :role_id

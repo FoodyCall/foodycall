@@ -3,7 +3,6 @@ require 'sinatra'
 
 # Base class for ConfigShare Web Application
 class FoodyCallApp < Sinatra::Base
-  register Sinatra::ActiveRecordExtension
   set :views, File.expand_path('../../views', __FILE__)
   set :public_folder, File.dirname(__FILE__) + '/../public'
 

@@ -1,3 +1,3 @@
-require "sinatra/activerecord"
-class Role < ActiveRecord::Base
+require "sequel"
+class Role < Sequel::Model
 end

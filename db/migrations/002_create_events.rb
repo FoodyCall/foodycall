@@ -1,4 +1,6 @@
-class CreateEvents < ActiveRecord::Migration[5.1]
+require 'sequel'
+
+Sequel.migration do
   def change
     create_table :events do |t|
       t.string :event_id
