@@ -32,8 +32,8 @@ namespace :db do
 
   desc 'Perform migration reset (full rollback and migration)'
   task :reset do
-    Sequel::Migrator.run(DB, 'db/migrate', target: 0)
-    Sequel::Migrator.run(DB, 'db/migrate')
+    Sequel::Migrator.run(DB, 'db/migrations', target: 0)
+    Sequel::Migrator.run(DB, 'db/migrations')
   end
 
   desc 'Populate the database with test values'

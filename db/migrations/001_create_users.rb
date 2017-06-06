@@ -1,16 +1,18 @@
 require 'sequel'
 
 Sequel.migration do
-  def change
-    create_table :users do |t|
-      t.string :first_name
-      t.string :last_name
-      t.string :username
-      t.date :birthday
-      t.string :country
-      t.string :city
-      t.string :password
-      t.string :img_path
+  change do
+    create_table(:users) do
+      primary_key :id
+      String :first_name
+      String :last_name, null: false
+      Date :birthday, null: false
+      String :email, null: false, unique: true
+      String :country, null: false, unique: true
+      String :city, null: false, unique: true
+      String :password
+      DateTime :created_at
+      DateTime :updated_at
     end
   end
 end
