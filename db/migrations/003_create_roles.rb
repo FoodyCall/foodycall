@@ -1,10 +1,12 @@
 require 'sequel'
 
 Sequel.migration do
-  def change
-    create_table :roles do |t|
-      t.string :role_id
-      t.string :name
+  change do
+    create_table(:roles) do
+      primary_key :id
+      String :name
+      DateTime :created_at
+      DateTime :updated_at
     end
   end
 end

@@ -1,27 +1,29 @@
 require 'sequel'
 
 Sequel.migration do
-  def change
-    create_table :events do |t|
-      t.string :event_id
-      t.string :name
-      t.string :location
-      t.string :host
-      t.date :date
-      t.string :img_path
+  change do
+    create_table(:events) do
+      primary_key :id
+      String :name
+      String :location
+      String :host
+      DateTime :date
+      String :img_path
+      DateTime :created_at
+      DateTime :updated_at
     end
 
-    create_table :event_participants do |t|
-      t.string :event_id
-      t.string :user_id
-      t.string :role_id
+    create_table(:event_participants) do
+      String :event_id
+      String :user_id
+      String :role_id
     end
 
-    create_table :event_menus do |t|
-      t.string :event_id
-      t.string :name
-      t.string :type_id
-      t.string :recipe
+    create_table(:event_menus) do
+      String :event_id
+      String :name
+      String :type_id
+      String :recipe
     end
   end
 end

@@ -14,25 +14,46 @@ end
 #   end
 # end
 
-describe 'Creating new users' do
-    before do
-      User.dataset.delete
-    end
+# describe 'Creating new users' do
+#     before do
+#       User.dataset.delete
+#     end
+#
+#     it 'HAPPY: should create a new unique user' do
+#       req_header = { 'CONTENT_TYPE' => 'application/json' }
+#       req_body = {
+#         first_name: "Paul",
+#         last_name: "Rivera",
+#         username: "privera",
+#         birthday: "1991/04/12",
+#         country: "Honduras",
+#         city: "Tegucigalpa",
+#         password: "12345",
+#         img_path: ""
+#       }.to_json
+#       post '/api/users/', req_body, req_header
+#       _(last_response.status).must_equal 201
+#       _(JSON.parse(last_response.body)['id']).wont_be_nil
+#     end
+#   end
 
-    it 'HAPPY: should create a new unique user' do
-      req_header = { 'CONTENT_TYPE' => 'application/json' }
-      req_body = {
-        first_name: "Paul",
-        last_name: "Rivera",
-        username: "privera",
-        birthday: "1991/04/12",
-        country: "Honduras",
-        city: "Tegucigalpa",
-        password: "12345",
-        img_path: ""
-      }.to_json
-      post '/api/users/', req_body, req_header
-      _(last_response.status).must_equal 201
-      _(JSON.parse(last_response.body)['id']).wont_be_nil
-    end
+describe 'Test User services' do
+  before do
+    User.dataset.delete
   end
+
+  it 'should create a new user' do
+    new_user = {
+      firstName: "Paul",
+      lastName: "Rivera",
+      email: 'test@test.com',
+      birthday: "1991/04/12",
+      country: "Honduras",
+      city: "Tegucigalpa",
+      password: "12345",
+      img_path: ""
+    }
+    user = CreateUser.call(new_user)
+    user.id.wont_be_nil
+  end
+end

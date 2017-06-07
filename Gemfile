@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.3.4'
 
 gem 'minitest'
 gem 'rake'
@@ -7,6 +8,7 @@ gem 'thin'
 gem 'json'
 gem 'hirb'
 gem 'sequel'
+gem 'virtus'
 
 group :test do
   gem 'rack'

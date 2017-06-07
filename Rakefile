@@ -1,6 +1,6 @@
 require 'rake/testtask'
 
-Dir.glob('./{config,controllers,forms,lib,views,models}/init.rb').each do |file|
+Dir.glob('./{config,controllers,forms,lib,views,models,services}/init.rb').each do |file|
   require file
 end
 
@@ -32,13 +32,13 @@ namespace :db do
 
   desc 'Perform migration reset (full rollback and migration)'
   task :reset do
-    Sequel::Migrator.run(DB, 'db/migrate', target: 0)
-    Sequel::Migrator.run(DB, 'db/migrate')
+    Sequel::Migrator.run(DB, 'db/migrations', target: 0)
+    Sequel::Migrator.run(DB, 'db/migrations')
   end
 
   desc 'Populate the database with test values'
   task :seed do
-    load './db/seeds/user_secret_sharing.rb'
+    load './db/seed/seed_data.rb'
   end
 
   desc 'Reset and repopulate database'
