@@ -8,6 +8,7 @@ gem 'thin'
 gem 'json'
 gem 'hirb'
 gem 'sequel'
+gem 'virtus'
 
 group :test do
   gem 'rack'

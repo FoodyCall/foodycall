@@ -46,7 +46,7 @@ describe 'Test User services' do
     new_user = {
       firstName: "Paul",
       lastName: "Rivera",
-      username: "privera",
+      email: 'test@test.com',
       birthday: "1991/04/12",
       country: "Honduras",
       city: "Tegucigalpa",

@@ -9,6 +9,8 @@ Sequel.migration do
       String :host
       DateTime :date
       String :img_path
+      DateTime :created_at
+      DateTime :updated_at
     end
 
     create_table(:event_participants) do

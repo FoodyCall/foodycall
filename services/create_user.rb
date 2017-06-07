@@ -8,15 +8,15 @@ class CreateUser
   private_class_method
 
   def self.create_new_user(user)
-    user = User.new(
-      firstName: user['last'],
-      lastName: user['email'],
-      birthday: user['birthday'],
-      email: user['email'],
-      city: user['city'],
-      country: user['country']
+    new_user = User.new(
+      first_name: user[:firstName],
+      last_name: user[:lastName],
+      birthday: user[:birthday],
+      email: user[:email],
+      city: user[:city],
+      country: user[:country]
     )
-    user.password = user['password']
-    user.save
+    new_user.password = user[:password]
+    new_user.save
   end
 end
