@@ -108,3 +108,42 @@ a:hover { color: #c53d13 !important; }
      width: 1170px;
   }
 }
+
+/* HEADER */
+.navbar {
+  height: 75px;
+  min-height: 75px;
+}
+.container {
+  height: 75px;
+}
+
+.foody-logo {
+  height: 50px;
+}
+.navbar-form {
+  margin: 20px auto 20px auto;
+  padding-left: 40px;
+}
+.header-text {
+  font-size: 10px;
+}
+.navbar-buttons li a {
+  color: #ef785e !important;
+}
+.navbar-buttons li a:hover {
+  
+}
+ .btn-search {
+  background-color: #ef785e;
+}
+.btn-search {
+  color: #fff;
+}
+
+.form-search {
+  border-color: #ef785e;
+}
+.nav-user-img img{
+  height: 27px;
+}
