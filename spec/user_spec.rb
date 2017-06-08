@@ -42,7 +42,7 @@ describe 'Test User services' do
     User.dataset.delete
   end
 
-  it 'should create a new user' do
+  it 'should create a new user using service class' do
     new_user = {
       firstName: "Paul",
       lastName: "Rivera",
@@ -55,5 +55,21 @@ describe 'Test User services' do
     }
     user = CreateUser.call(new_user)
     user.id.wont_be_nil
+  end
+end
+
+describe 'Test User API' do
+  it 'should create a new User using post request' do
+    new_user = {
+      firstName: "Paul",
+      lastName: "Rivera",
+      email: "test@test.com",
+      birthday: "1992/04/12",
+      country: "Nicaragua",
+      city: "Managua",
+      password: "12345",
+      img_path: ""
+    }
+    post '/api/v1/user', new_user
   end
 end

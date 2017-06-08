@@ -30,4 +30,10 @@ class FoodyCallApp < Sinatra::Base
   get '/homepage' do
     erb :homepage
   end
+
+
+  #API Calls
+  post '/api/v1/user' do
+  end
+
 end
