@@ -1,0 +1,9 @@
+.filters {
+  padding-top: 80px;
+}
+
+.filters button {
+  width: 150px;
+  color: #ef785e;
+  border-color: #ef785e;
+}
