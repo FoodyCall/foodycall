@@ -17,4 +17,7 @@ describe 'Test events services class' do
 end
 
 describe 'Test events api calls' do
+  it 'shoudl create and event using the api call' do
+    post '/api/v1/event', new_event
+  end
 end
