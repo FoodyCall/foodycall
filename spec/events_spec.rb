@@ -26,6 +26,11 @@ describe 'Test events services class' do
     user.add_event(new_event)
     user.events.wont_be_nil
   end
+
+  it 'should retrieve a list of events' do
+    events = RetrieveEvents.call()
+    events.size > 0
+  end
 end
 
 describe 'Test events api calls' do

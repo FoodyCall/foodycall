@@ -17,14 +17,16 @@ class CreateSeedData
     )
 
     user_paul = CreateUser.call(
-      {firstName: "Paul",
-      lastName: "Rivera",
-      email: 'test@test.com',
-      birthday: "1991/04/12",
-      country: "Honduras",
-      city: "Tegucigalpa",
-      password: "12345",
-      img_path: ""}
+      {
+        firstName: "Paul",
+        lastName: "Rivera",
+        email: 'test@test.com',
+        birthday: "1991/04/12",
+        country: "Honduras",
+        city: "Tegucigalpa",
+        password: "12345",
+        img_path: ""
+      }
     )
 
     # user_edu = CreateUser.call(
