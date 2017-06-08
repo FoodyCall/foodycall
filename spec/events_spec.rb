@@ -16,6 +16,7 @@ describe 'Test events services class' do
       country: "Thailand",
       city: "Bangcook",
       password: "123456",
+      rating: 3,
       img_path: ""
     }
     new_event = {
@@ -60,7 +61,7 @@ describe 'Test events services class' do
     }
 
     user = CreateUser.call(new_user)
-    user.add_event(new_event)
+    event = CreateEvent.call(host_id:user.id,event:new_event)
 
     events = RetrieveEvents.call(location: "Hsinchu",rating: nil, roles: ["Chef","helper"])
     puts events
@@ -73,8 +74,40 @@ describe 'Test events api calls' do
     User.dataset.delete
     Event.dataset.delete
   end
-  it 'should create and event using the api call' do
-    post '/api/v1/event', new_event
+  it 'should create a user and create an event using the api call' do
+    req_header = { 'CONTENT_TYPE' => 'application/json' }
+    req_body = {
+      firstName: "Paul",
+      lastName: "Rivera",
+      email: "test@test.com",
+      birthday: "1992/04/12",
+      country: "Nicaragua",
+      city: "Managua",
+      password: "12345",
+      rating: 3,
+      img_path: ""
+    }.to_json
+    post '/api/v1/users/', req_body, req_header
+    id = _(JSON.parse(last_response.body))['target']['id']
+    puts "User created"
+    puts id
+
+    req_body_event = {
+      name: "Thai Thai food",
+      location: "Hsinchu",
+      date: "2017/07/31",
+      chef: 2,
+      helper: 1,
+      shopper: 0,
+      cleaner: 0,
+      guest: 0,
+      img_path: ""
+    }.to_json
+
+    post_uri = "/api/v1/users/#{id}/events"
+    post post_uri, req_body_event, req_header
+    
+    _(last_response.status).must_equal 201
   end
 
 end
