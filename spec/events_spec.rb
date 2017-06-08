@@ -5,6 +5,9 @@ describe 'Test events services class' do
   it 'should create an event' do
     # This should create a user and create a event for that user as a host
 
+    new_user = {
+
+    }
     new_event = {
       name: "Thai Thai food",
       location: "Hsinchu",
