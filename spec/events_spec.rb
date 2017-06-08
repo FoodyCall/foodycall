@@ -31,10 +31,20 @@ describe 'Test events services class' do
     events = RetrieveEvents.call()
     events.size > 0
   end
+
+  it 'shoudl retrieve a list of events by filter' do
+    events = RetrieveEvents.call(
+      location: "Hsinchu",
+      type: "Thai",
+      role: ["Chef", "Cleaner"]
+    )
+    events.size > 0
+  end
 end
 
 describe 'Test events api calls' do
-  it 'shoudl create and event using the api call' do
+  it 'should create and event using the api call' do
     post '/api/v1/event', new_event
   end
+
 end
