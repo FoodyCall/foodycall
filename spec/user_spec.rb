@@ -42,7 +42,7 @@ describe 'Test User services' do
     User.dataset.delete
   end
 
-  it 'should create a new user' do
+  it 'should create a new user using service class' do
     new_user = {
       firstName: "Paul",
       lastName: "Rivera",
@@ -51,9 +51,33 @@ describe 'Test User services' do
       country: "Honduras",
       city: "Tegucigalpa",
       password: "12345",
+      rating: 3,
       img_path: ""
     }
     user = CreateUser.call(new_user)
     user.id.wont_be_nil
+  end
+end
+
+describe 'Test User API' do
+  before do
+    User.dataset.delete
+  end
+  it 'should create a new User using post request' do
+    req_header = { 'CONTENT_TYPE' => 'application/json' }
+    req_body = {
+      firstName: "Paul",
+      lastName: "Rivera",
+      email: "test@test.com",
+      birthday: "1992/04/12",
+      country: "Nicaragua",
+      city: "Managua",
+      password: "12345",
+      rating: 3,
+      img_path: ""
+    }.to_json
+    post '/api/v1/users/', req_body, req_header
+    _(last_response.status).must_equal 201
+    _(JSON.parse(last_response.body)['id']).wont_be_nil
   end
 end

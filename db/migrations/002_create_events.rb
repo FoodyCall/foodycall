@@ -6,9 +6,14 @@ Sequel.migration do
       primary_key :id
       String :name
       String :location
-      String :host
+      String :host_id
       DateTime :date
       String :img_path
+      Integer :chef
+      Integer :helper
+      Integer :shopper
+      Integer :cleaner
+      Integer :guest
       DateTime :created_at
       DateTime :updated_at
     end

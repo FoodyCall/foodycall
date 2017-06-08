@@ -1,3 +1,4 @@
+require 'json'
 # Service object to create user with all attributes
 class CreateUser
   def self.call(user)
@@ -14,7 +15,8 @@ class CreateUser
       birthday: user[:birthday],
       email: user[:email],
       city: user[:city],
-      country: user[:country]
+      country: user[:country],
+      rating: user[:rating]
     )
     new_user.password = user[:password]
     new_user.save
