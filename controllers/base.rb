@@ -31,13 +31,6 @@ class FoodyCallApp < Sinatra::Base
     erb :homepage
   end
 
-
-  #API Calls
-  post '/api/v1/user' do
-    user = _get_body_of_request
-    CreateUser.call(user)
-  end
-  
   # post '/api/v1/user/:id/event' do
   #   event = _get_body_of_request
   #   participants =

@@ -51,6 +51,7 @@ describe 'Test User services' do
       country: "Honduras",
       city: "Tegucigalpa",
       password: "12345",
+      rating: 3,
       img_path: ""
     }
     user = CreateUser.call(new_user)
@@ -59,8 +60,12 @@ describe 'Test User services' do
 end
 
 describe 'Test User API' do
+  before do
+    User.dataset.delete
+  end
   it 'should create a new User using post request' do
-    new_user = {
+    req_header = { 'CONTENT_TYPE' => 'application/json' }
+    req_body = {
       firstName: "Paul",
       lastName: "Rivera",
       email: "test@test.com",
@@ -68,8 +73,11 @@ describe 'Test User API' do
       country: "Nicaragua",
       city: "Managua",
       password: "12345",
+      rating: 3,
       img_path: ""
-    }
-    post '/api/v1/user', new_user
+    }.to_json
+    post '/api/v1/users/', req_body, req_header
+    _(last_response.status).must_equal 201
+    _(JSON.parse(last_response.body)['id']).wont_be_nil
   end
 end

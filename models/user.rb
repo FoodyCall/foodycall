@@ -12,4 +12,18 @@ class User < Sequel::Model
     #SecureDB.decrypt(password_encrypted)
     self.password_encrypted
   end
+
+  def to_json(options = {})
+    JSON({
+            id: id,
+            firstName: first_name,
+            lastName: last_name,
+            email: email,
+            country: country,
+            city: city,
+            rating: rating,
+            img: img_path
+          },
+         options)
+  end
 end
