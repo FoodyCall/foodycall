@@ -6,7 +6,7 @@ Sequel.migration do
       primary_key :id
       String :name
       String :location
-      String :host_id
+      Integer :host_id
       DateTime :date
       String :img_path
       Integer :chef
@@ -19,9 +19,10 @@ Sequel.migration do
     end
 
     create_table(:event_participants) do
-      String :event_id
-      String :user_id
-      String :role_id
+      Integer :event_id
+      Integer :user_id
+      Integer :role_id
+      String :status
     end
 
     create_table(:event_menus) do
