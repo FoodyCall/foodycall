@@ -9,13 +9,13 @@ class Event < Sequel::Model
         name: name,
         location: location,
         date: date,
-        host:{},
-        chef:
-        helper:
-        shopper:
-        cleaner:
-        guest:
-        participants: []
+        host: host_id,
+        chef: chef,
+        helper: helper,
+        shopper: shopper,
+        cleaner: cleaner,
+        guest: guest,
+        participants: [],
         menu:[]
       },options)
   end
