@@ -57,6 +57,26 @@ describe 'Test User services' do
     user = CreateUser.call(new_user)
     user.id.wont_be_nil
   end
+
+  it 'should try to authenticate user service class' do
+    new_user = {
+      firstName: "Paul",
+      lastName: "Rivera",
+      email: 'test1@test1.com',
+      birthday: "1991/04/12",
+      country: "Honduras",
+      city: "Tegucigalpa",
+      password: "12345",
+      rating: 3,
+      img_path: ""
+    }
+    user = CreateUser.call(new_user)
+    auth_user = AuthenticateUser.call({
+      email: 'test1@test1.com',
+      password: '12345'
+      })
+    user.id.wont_be_nil
+  end
 end
 
 describe 'Test User API' do

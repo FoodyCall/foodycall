@@ -18,18 +18,24 @@ Sequel.migration do
       DateTime :updated_at
     end
 
-    create_table(:event_participants) do
-      Integer :event_id
-      Integer :user_id
-      Integer :role_id
-      String :status
-    end
-
     create_table(:event_menus) do
       String :event_id
       String :name
       String :type_id
       String :recipe
     end
+
+    create_table(:event_participants) do
+      Integer :event_id
+      Integer :user_id
+      FalseClass :chef
+      FalseClass :helper
+      FalseClass :shopper
+      FalseClass :cleaner
+      FalseClass :guest
+      FalseClass :approved
+    end
+
+
   end
 end

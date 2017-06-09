@@ -9,6 +9,11 @@ class User < Sequel::Model
     self.password_encrypted = pw_plaintext
   end
 
+  def password?(try_password)
+    #try_hashed = SecureDB.hash_password(salt, try_password)
+    try_hashed == password
+  end
+
   def password
     #SecureDB.decrypt(password_encrypted)
     self.password_encrypted
