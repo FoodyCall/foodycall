@@ -1,19 +1,22 @@
 require 'sinatra'
+require 'rack-flash'
 
 
 # Base class for ConfigShare Web Application
 class FoodyCallApp < Sinatra::Base
+  enable :sessions
+  use Rack::Flash
   set :views, File.expand_path('../../views', __FILE__)
   set :public_folder, File.dirname(__FILE__) + '/../public'
 
   before do
     # Validation of authenticated user
-    # if session[:current_user]
-    #   @current_user = SecureMessage.decrypt(session[:current_user])
+    if session[:current_user]
+    #  @current_user = SecureMessage.decrypt(session[:current_user])
     #   @auth_token = session[:auth_token]
     #   puts @current_user
     #   puts session[:auth_token]
-    # end
+    end
   end
 
   def login_account(authorized_account)
@@ -24,12 +27,13 @@ class FoodyCallApp < Sinatra::Base
   end
 
   get '/' do
-    erb :landing
+    erb :homepage
   end
 
   get '/homepage' do
     erb :homepage
   end
+
 
   # post '/api/v1/user/:id/event' do
   #   event = _get_body_of_request

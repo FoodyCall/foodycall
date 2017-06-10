@@ -9,6 +9,27 @@ class CreateEvent
 
   def self.create_new_event(host_id:,event:)
     user = User.where(:id => host_id).first
-    user.add_event(event)
+    saved_event = user.add_event(
+      name: event[:name],
+      location: event[:location],
+      date: event[:date],
+      chef: event[:chef],
+      helper: event[:helper],
+      shopper: event[:shopper],
+      cleaner: event[:cleaner],
+      guest: event[:guest],
+      img_path: event[:img_path]
+    )
+    if event[:menus]!=nil
+      event[:menus].each do |menu|
+        saved_menu = saved_event.add_event_menu(
+          name: menu[:name],
+          type: menu[:type],
+          tags: menu[:tags].join(','),
+          recipe: menu[:recipe]
+        )
+      end
+    end
+    saved_event
   end
 end

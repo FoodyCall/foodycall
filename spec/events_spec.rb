@@ -23,7 +23,12 @@ describe 'Test events services class' do
       name: "Thai Thai food",
       location: "Hsinchu",
       date: "2017/07/31",
-      img_path: ""
+      img_path: "",
+      chef: 2,
+      helper: 1,
+      shopper: 0,
+      cleaner: 0,
+      guest: 0,
     }
 
     user = CreateUser.call(new_user)
@@ -51,12 +56,18 @@ describe 'Test events services class' do
     new_event = {
       name: "Thai Thai food",
       location: "Hsinchu",
-      date: "2017/07/31",
+      date: "2017/07/31 04:00 PM",
       chef: 2,
       helper: 1,
       shopper: 0,
       cleaner: 0,
       guest: 0,
+      menus: [{
+          name: "Tom Tom",
+          tags: ["thai","spicy"],
+          type: "Halal",
+          recipe: "Buy things and <h1>COOK</h1>"
+        }],
       img_path: ""
     }
 
@@ -64,7 +75,6 @@ describe 'Test events services class' do
     event = CreateEvent.call(host_id:user.id,event:new_event)
 
     events = RetrieveEvents.call(location: "Hsinchu",rating: nil, roles: ["Chef","helper"])
-    puts events
     events.size > 0
   end
 end
@@ -89,24 +99,28 @@ describe 'Test events api calls' do
     }.to_json
     post '/api/v1/users/', req_body, req_header
     id = _(JSON.parse(last_response.body))['target']['id']
-    puts "User created"
-    puts id
 
     req_body_event = {
       name: "Thai Thai food",
       location: "Hsinchu",
-      date: "2017/07/31",
+      date: "2017/07/31 04:00 PM",
       chef: 2,
       helper: 1,
       shopper: 0,
       cleaner: 0,
       guest: 0,
+      menus: [{
+          name: "Tom Tom",
+          tags: ["thai","spicy"],
+          type: "Halal",
+          recipe: "Buy things and <h1>COOK</h1>"
+        }],
       img_path: ""
     }.to_json
 
     post_uri = "/api/v1/users/#{id}/events"
     post post_uri, req_body_event, req_header
-    
+
     _(last_response.status).must_equal 201
   end
 

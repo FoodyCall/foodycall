@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/homepage.css">
+  <link rel="stylesheet" href="/css/signup.css">
+
+  <!-- Autocomplete CSS file -->
+  <link rel="stylesheet" href="/css/easy-autocomplete.min.css">
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyClm167i9c0k94OCKYemclsBJxuYqhV2gQ" type="text/javascript"></script>
+  <!-- Autocompelte JS file -->
+  <script src="/js/jquery.easy-autocomplete.min.js"></script>
+  <script type="text/javascript" src="/js/signup.js"></script>
+
+</head>
+<body>
+  <%= erb :nav %>
+<div class="container sigup">
+  <div class="container">
+    <div class="col-lg-12">
+    <div id="logbox">
+      <form id="signup" method="post" action="/signup">
+        <h2>Create FoodyCall Account</h2>
+        <div class="row">
+          <input name="user[firstName]" type="text" placeholder="First Name" autofocus="autofocus" required="required" class="input pass col-lg-5"/>
+          <input name="user[lastName]" type="text" placeholder="Last Name" autofocus="autofocus" required="required" class="input pass col-lg-5 col-lg-push-2"/>
+        </div>
+
+        <div class="row">
+          <input name="user[email]" type="email" placeholder="Email " class="input pass col-lg-12"/>
+        </div>
+
+        <div class="row">
+          <input name="user[birthday]" type="text"  placeholder="Birthday (YYYY/MM/DD)" class="input pass col-lg-12"/>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-5 no-padding" >
+            <input id="autocomplete-countries" name="user[country]" type="text" placeholder="Country" class="input pass"/>
+          </div>
+          <div class="col-lg-5 col-lg-push-2 no-padding">
+            <input id="autocomplete-cities" name="user[city]" type="text" placeholder="City" class="input pass"/>
+          </div>
+        </div>
+
+
+
+        <div class="row">
+          <input name="user[password]" type="password" placeholder="Password" required="required" class="input pass col-lg-12"/>
+        </div>
+
+        <div class="row">
+            <input name="user[password2]" type="password" placeholder="Confirm Password" required="required" class="input pass col-lg-12"/>
+        </div>
+
+        <input type="submit" value="Sign up" class="inputButton"/>
+        <div class="container">
+          <% [:notice, :warning, :error].each do |key| %>
+            <% if flash.include?(key) %>
+            <h2 class="alert <%= key %>"><%= flash[key] %></h2>
+            <% end %>
+          <% end %>
+        </div>
+      </form>
+    </div>
+   </div>
+ </div>
+
+</div>
+<script type="text/javascript">
+var options = {
+  url: "assets/countries.json",
+
+  getValue: "name",
+
+  list: {
+    match: {
+      enabled: true
+    },
+    onChooseEvent: function() {
+			var code = $("#autocomplete-countries").getSelectedItemData().code;
+      console.log(code);
+      var cities_options = {
+        types: ['(cities)'],
+        componentRestrictions: {country: 'ni'}
+       };
+
+      var input = document.getElementById('autocomplete-cities');
+      var autocomplete = new google.maps.places.Autocomplete(input, cities_options);
+      console.log(autocomplete);
+		},
+    showAnimation: {
+			type: "fade", //normal|slide|fade
+			time: 400,
+			callback: function() {}
+		},
+		hideAnimation: {
+			type: "slide", //normal|slide|fade
+			time: 400,
+			callback: function() {}
+		}
+  }
+};
+
+$("#autocomplete-countries").easyAutocomplete(options);
+var cities_options = {
+  types: ['(cities)'],
+  componentRestrictions: {country: 'ni'}
+ };
+
+var input = document.getElementById('autocomplete-cities');
+var autocomplete = new google.maps.places.Autocomplete(input, cities_options);
+</script>
+</body>
+</html>

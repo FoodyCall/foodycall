@@ -11,6 +11,7 @@ Sequel.migration do
       String :country, null: false
       String :city, null: false
       String :password_encrypted, null: false
+      String :salt
       Integer :rating,null: true
       String :img_path
       DateTime :created_at
