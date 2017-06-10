@@ -7,7 +7,6 @@ class FoodyCallApp < Sinatra::Base
       id = params[:id]
       event_data = request.body.read
       event_data = ActiveSupport::HashWithIndifferentAccess.new(JSON(event_data))
-      puts event_data
       saved_event = CreateEvent.call(host_id:id,event:event_data)
     rescue => e
       puts "Error"

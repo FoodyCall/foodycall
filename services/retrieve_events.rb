@@ -20,8 +20,6 @@ class RetrieveEvents
     if roles != nil
       #Convert to sql
       query_roles = roles.map{|rol| "(#{rol.downcase}>0)"}.join('|')
-      puts "query of roles"
-      puts query_roles
       Event.where(filter){Sequel.lit(query_roles)}.all
     else
       Event.where(filter).all

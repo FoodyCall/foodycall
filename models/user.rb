@@ -2,7 +2,6 @@ require "sequel"
 class User < Sequel::Model
   plugin :timestamps, update_on_create: true
   one_to_many :events, :key=>:host_id
-  one_to_many :event_participants
 
   def password=(pw_plaintext)
     #self.password_encrypted = SecureDB.encrypt(pw_plaintext) if pw_plaintext

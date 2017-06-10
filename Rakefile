@@ -9,6 +9,7 @@ task :default => [:spec]
 desc 'Run specs'
 Rake::TestTask.new(name=:spec) do |t|
   t.pattern = 'spec/*_spec.rb'
+  t.warning = false
 end
 
 namespace :deploy do
