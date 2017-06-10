@@ -20,10 +20,7 @@ class CreateEvent
       guest: event[:guest],
       img_path: event[:img_path]
     )
-    puts "Event created"
-    puts event[:menus]
     if event[:menus]!=nil
-      puts "it has menu----------------------------------------"
       event[:menus].each do |menu|
         saved_menu = saved_event.add_event_menu(
           name: menu[:name],
@@ -31,11 +28,7 @@ class CreateEvent
           tags: menu[:tags].join(','),
           recipe: menu[:recipe]
         )
-        puts "Saved Menu"
-        puts saved_menu.to_json
       end
-
-
     end
     saved_event
   end

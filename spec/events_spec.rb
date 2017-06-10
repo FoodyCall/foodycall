@@ -109,6 +109,12 @@ describe 'Test events api calls' do
       shopper: 0,
       cleaner: 0,
       guest: 0,
+      menus: [{
+          name: "Tom Tom",
+          tags: ["thai","spicy"],
+          type: "Halal",
+          recipe: "Buy things and <h1>COOK</h1>"
+        }],
       img_path: ""
     }.to_json
 
