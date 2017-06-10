@@ -13,6 +13,7 @@ gem 'virtus'
 gem 'activesupport'
 gem 'rack-flash3'
 gem 'rbnacl-libsodium'
+gem 'tux'
 
 group :test do
   gem 'rack'
@@ -20,7 +21,7 @@ group :test do
   gem 'watir'
   gem 'headless'
   gem 'page-object'
-  gem 'tux'
+
 end
 
 group :development, :test do
