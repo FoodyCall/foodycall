@@ -12,6 +12,10 @@ class User < Sequel::Model
 
   def password?(try_password)
     try_hashed = SecureMSG.hash_password(salt, try_password)
+    puts "Trying password"
+    puts try_password
+    puts "#{try_hashed}==#{password_encrypted}"
+    puts try_hashed==password_encrypted
     try_hashed == password_encrypted
   end
 

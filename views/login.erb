@@ -23,14 +23,29 @@
       <%= erb :flash_bar %>
       <form id="signup" method="post" action="/login">
         <h2>Log In to FoodyCall</h2>
+        <br />
+        <br />
+        <br />
 
-        <div class="row">
+        <br />
+        <div class="row col-lg-10 col-lg-push-1">
           <input name="user[email]" type="email" placeholder="Email " class="input pass col-lg-12"/>
         </div>
 
-        <div class="row">
+        <div class="row col-lg-10 col-lg-push-1">
           <input name="user[password]" type="password" placeholder="Password" required="required" class="input pass col-lg-12"/>
         </div>
+        <div class="row col-lg-6 col-lg-push-6">
+          <a class="forget-password">Forget Password</a>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
 
         <input type="submit" value="Log In" class="inputButton"/>
 

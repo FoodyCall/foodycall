@@ -98,3 +98,7 @@ h1, input {
   width: 100%;
   box-shadow: none !important;
 }
+.forget-password{
+  color: #87B5FF !important;
+  font-size: 20px;
+}

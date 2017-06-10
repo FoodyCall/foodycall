@@ -3,7 +3,6 @@ class AuthenticateUser
   def self.call(user_credentials)
     user = User.first(email: user_credentials['email'])
     passwords_match(user, user_credentials)
-    user
   end
 
   private_class_method
