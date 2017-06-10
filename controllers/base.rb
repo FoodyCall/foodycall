@@ -12,12 +12,12 @@ class FoodyCallApp < Sinatra::Base
   use Rack::Session::Cookie, secret: ENV['MSG_KEY'],
                              expire_after: 60 * 60 * 24 * 7
   use Rack::Flash
-  configure :production do
-    use Rack::SslEnforcer
-    use SecureHeaders::Middleware
-    # Against CSRF (requires `disable :protection` before `use Rack::Session::...`)
-    use Rack::Protection, reaction: :drop_session
-  end
+  # configure :production do
+  #   use Rack::SslEnforcer
+  #   use SecureHeaders::Middleware
+  #   # Against CSRF (requires `disable :protection` before `use Rack::Session::...`)
+  #   use Rack::Protection, reaction: :drop_session
+  # end
   before do
     # Validation of authenticated user
     if session[:current_user]
