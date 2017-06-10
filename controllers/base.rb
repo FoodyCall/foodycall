@@ -11,12 +11,12 @@ class FoodyCallApp < Sinatra::Base
 
   before do
     # Validation of authenticated user
-    # if session[:current_user]
-    #   @current_user = SecureMessage.decrypt(session[:current_user])
+    if session[:current_user]
+    #  @current_user = SecureMessage.decrypt(session[:current_user])
     #   @auth_token = session[:auth_token]
     #   puts @current_user
     #   puts session[:auth_token]
-    # end
+    end
   end
 
   def login_account(authorized_account)

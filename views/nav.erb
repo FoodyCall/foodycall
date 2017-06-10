@@ -23,9 +23,6 @@
     <ul class="nav navbar-buttons navbar-nav navbar-right">
       <li class="text-center"><a href="#"><span class="glyphicon glyphicon-plus fa-5x"></span><br ><span class="header-text">Create Event</span></a></li>
       <% if @current_user %>
-        <li class="text-center"><a class="active" href="/signup"><br/>Sign Up</a></li>
-        <li class="text-center"><a href="/login"><br/>Log in</a></li>
-      <% else %>
         <li class="text-center"><a href="#"><span class="glyphicon glyphicon-calendar fa-5x"></span><br><span class="header-text">My Events</span></a></li>
         <li class="text-center nav-user-img">
           <a href="#">
@@ -34,6 +31,9 @@
             <span class="header-text">Hi, Eduardo</span>
           </a>
         </li>
+      <% else %>
+        <li class="text-center"><a class="active" href="/signup"><br/>Sign Up</a></li>
+        <li class="text-center"><a href="/login"><br/>Log in</a></li>
       <% end %>
     </ul>
 
