@@ -15,6 +15,7 @@
   </script>
 </head>
 <body>
+
   <!-- EVENT MODAL -->
   <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="event-modal">
     <div class="modal-dialog modal-lg" role="document">
@@ -198,42 +199,7 @@
 
 
 
-  <nav class="navbar navbar-default navbar-fixed-top ">
-  <div class="container container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        <img alt="Brand" class="foody-logo" src="img/logo.png">
-      </a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div>
-      <form class="navbar-form navbar-left">
-        <div class="input-group form-group">
-          <input type="text" class="form-control form-search" placeholder="">
-          <span class="input-group-btn">
-            <button class="btn btn-secondary btn-search" type="button">
-                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-            </button>
-          </span>
-        </div>
-      </form>
-      <ul class="nav navbar-buttons navbar-nav navbar-right">
-        <li class="text-center"><a href="#"><span class="glyphicon glyphicon-plus fa-5x"></span><br ><span class="header-text">Create Event</span></a></li>
-        <li class="text-center"><a href="#"><span class="glyphicon glyphicon-calendar fa-5x"></span><br><span class="header-text">My Events</span></a></li>
-        <li class="text-center nav-user-img">
-          <a href="#">
-            <span class="notify-badge">3</span>
-            <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56" alt=""><br>
-            <span class="header-text">Hi, Eduardo</span>
-          </a>
-        </li>
-      </ul>
-
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+  <%= erb :nav %>
 <div class="container filters">
     <div class="dropdown">
       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">

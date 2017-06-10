@@ -11,10 +11,13 @@ class FoodyCallApp < Sinatra::Base
     user_data = params[:user]
     user_data = ActiveSupport::HashWithIndifferentAccess.new(user_data)
     user = AuthenticateUser.call(user_data)
-    if user
-      session[:current_user] = user.to_json
+    if user[:isValid]
+      session[:current_user] = JSON.parse(user[:data])
+      @current_user = session[:current_user]
       erb :homepage
     else
+      session[:current_user] = nil
+      @current_user = session[:current_user]
       flash[:error] = 'Email or password is incorrect'
       erb :login
     end
