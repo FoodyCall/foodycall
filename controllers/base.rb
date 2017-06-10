@@ -24,12 +24,13 @@ class FoodyCallApp < Sinatra::Base
   end
 
   get '/' do
-    erb :landing
+    erb :homepage
   end
 
   get '/homepage' do
     erb :homepage
   end
+
 
   # post '/api/v1/user/:id/event' do
   #   event = _get_body_of_request
