@@ -9,6 +9,7 @@ gem 'json'
 gem 'hirb'
 gem 'sequel'
 gem 'virtus'
+gem 'activesupport'
 
 group :test do
   gem 'rack'
