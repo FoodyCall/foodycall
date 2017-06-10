@@ -1,6 +1,6 @@
 require 'rake/testtask'
 
-Dir.glob('./{config,controllers,forms,lib,views,models,services}/init.rb').each do |file|
+Dir.glob('./{config,lib,controllers,forms,views,models,services}/init.rb').each do |file|
   require file
 end
 
@@ -44,4 +44,16 @@ namespace :db do
 
   desc 'Reset and repopulate database'
   task :reseed => [:reset, :seed]
+end
+
+namespace :key do
+  require 'rbnacl/libsodium'
+  require 'base64'
+
+  desc 'Create rbnacl key'
+  task :generate do
+    key = RbNaCl::Random.random_bytes(RbNaCl::SecretBox.key_bytes)
+    puts "Please copy key into config/config_env.rb"
+    puts "MSG_KEY: #{Base64.strict_encode64 key}"
+  end
 end

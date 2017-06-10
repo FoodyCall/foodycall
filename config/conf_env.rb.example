@@ -1,10 +1,12 @@
 # Copy this file to [app]/config/config_env.rb
 
 config_env :development, :test do
+  set 'MSG_KEY',''
 end
 
 config_env :test do
 end
 
 config_env :production do
+  set 'MSG_KEY',''
 end

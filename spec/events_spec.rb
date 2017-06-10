@@ -78,50 +78,50 @@ describe 'Test events services class' do
     events.size > 0
   end
 end
-
-describe 'Test events api calls' do
-  before do
-    User.dataset.delete
-    Event.dataset.delete
-  end
-  it 'should create a user and create an event using the api call' do
-    req_header = { 'CONTENT_TYPE' => 'application/json' }
-    req_body = {
-      firstName: "Paul",
-      lastName: "Rivera",
-      email: "test@test.com",
-      birthday: "1992/04/12",
-      country: "Nicaragua",
-      city: "Managua",
-      password: "12345",
-      rating: 3,
-      img_path: ""
-    }.to_json
-    post '/api/v1/users/', req_body, req_header
-    id = _(JSON.parse(last_response.body))['target']['id']
-
-    req_body_event = {
-      name: "Thai Thai food",
-      location: "Hsinchu",
-      date: "2017/07/31 04:00 PM",
-      chef: 2,
-      helper: 1,
-      shopper: 0,
-      cleaner: 0,
-      guest: 0,
-      menus: [{
-          name: "Tom Tom",
-          tags: ["thai","spicy"],
-          type: "Halal",
-          recipe: "Buy things and <h1>COOK</h1>"
-        }],
-      img_path: ""
-    }.to_json
-
-    post_uri = "/api/v1/users/#{id}/events"
-    post post_uri, req_body_event, req_header
-
-    _(last_response.status).must_equal 201
-  end
-
-end
+#
+# describe 'Test events api calls' do
+#   before do
+#     User.dataset.delete
+#     Event.dataset.delete
+#   end
+#   it 'should create a user and create an event using the api call' do
+#     req_header = { 'CONTENT_TYPE' => 'application/json' }
+#     req_body = {
+#       firstName: "Paul",
+#       lastName: "Rivera",
+#       email: "test@test.com",
+#       birthday: "1992/04/12",
+#       country: "Nicaragua",
+#       city: "Managua",
+#       password: "12345",
+#       rating: 3,
+#       img_path: ""
+#     }.to_json
+#     post '/api/v1/users/', req_body, req_header
+#     id = _(JSON.parse(last_response.body))['target']['id']
+#
+#     req_body_event = {
+#       name: "Thai Thai food",
+#       location: "Hsinchu",
+#       date: "2017/07/31 04:00 PM",
+#       chef: 2,
+#       helper: 1,
+#       shopper: 0,
+#       cleaner: 0,
+#       guest: 0,
+#       menus: [{
+#           name: "Tom Tom",
+#           tags: ["thai","spicy"],
+#           type: "Halal",
+#           recipe: "Buy things and <h1>COOK</h1>"
+#         }],
+#       img_path: ""
+#     }.to_json
+#
+#     post_uri = "/api/v1/users/#{id}/events"
+#     post post_uri, req_body_event, req_header
+#
+#     _(last_response.status).must_equal 201
+#   end
+#
+# end
