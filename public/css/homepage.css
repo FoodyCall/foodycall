@@ -75,7 +75,9 @@ div.dropdown {
 .roles {
   margin-left: 10px;
 }
-
+.modal-sub-title {
+  display: inline-block;
+}
 .modal-sub-title span {
   font-size: 15px;
   color: #000;
@@ -272,4 +274,17 @@ div.dropdown {
 .event-availability p {
   display:inline-block;
   font-size:15px;
+}
+.modal-event-availability img {
+  height: 35px;
+}
+
+.modal-event-availability p {
+  display: inline-block;
+  font-size: 15px;
+}
+
+.modal-event-availability {
+  display: inline-block;
+  padding-left: 15px;
 }
