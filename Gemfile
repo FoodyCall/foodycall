@@ -3,6 +3,7 @@ ruby '2.3.4'
 
 gem 'minitest'
 gem 'rake'
+gem 'http'
 gem 'sinatra'
 gem 'thin'
 gem 'json'
@@ -11,6 +12,7 @@ gem 'sequel'
 gem 'virtus'
 gem 'activesupport'
 gem 'rack-flash3'
+gem 'rbnacl-libsodium'
 
 group :test do
   gem 'rack'
@@ -22,6 +24,7 @@ group :test do
 end
 
 group :development, :test do
+  gem 'rerun'
   gem 'sqlite3'
   gem 'config_env'
 end

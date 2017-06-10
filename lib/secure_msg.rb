@@ -1,10 +1,10 @@
 require 'base64'
 require 'rbnacl/libsodium'
 
-# Encrypt and Decrypt from Database
-class SecureDB
+# Encrypt and Decrypt
+class SecureMSG
   def self.key
-    Base64.strict_decode64(ENV['DB_KEY'])
+    Base64.strict_decode64(ENV['MSG_KEY'])
   end
 
   def self.encrypt(plaintext)

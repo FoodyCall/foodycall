@@ -27,8 +27,8 @@
         <li class="text-center nav-user-img">
           <a href="#">
             <span class="notify-badge">3</span>
-            <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56" alt=""><br>
-            <span class="header-text">Hi, Eduardo</span>
+            <img class="img-circle" src="<%= @current_user['img_path']%>" alt=""><br>
+            <span class="header-text">Hi, <%= @current_user['firstName'] %></span>
           </a>
         </li>
       <% else %>

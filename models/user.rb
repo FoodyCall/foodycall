@@ -4,18 +4,19 @@ class User < Sequel::Model
   one_to_many :events, :key=>:host_id
 
   def password=(pw_plaintext)
-    #self.password_encrypted = SecureDB.encrypt(pw_plaintext) if pw_plaintext
-    self.password_encrypted = pw_plaintext
+    new_salt = SecureMSG.new_salt
+    hashed = SecureMSG.hash_password(new_salt, pw_plaintext)
+    self.salt = new_salt
+    self.password_encrypted = hashed
   end
 
   def password?(try_password)
-    #try_hashed = SecureDB.hash_password(salt, try_password)
-    try_hashed == password
-  end
-
-  def password
-    #SecureDB.decrypt(password_encrypted)
-    self.password_encrypted
+    try_hashed = SecureMSG.hash_password(salt, try_password)
+    puts "Trying password"
+    puts try_password
+    puts "#{try_hashed}==#{password_encrypted}"
+    puts try_hashed==password_encrypted
+    try_hashed == password_encrypted
   end
 
   def to_json(options = {})
