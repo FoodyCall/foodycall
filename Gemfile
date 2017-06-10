@@ -10,6 +10,7 @@ gem 'hirb'
 gem 'sequel'
 gem 'virtus'
 gem 'activesupport'
+gem 'rack-flash3'
 
 group :test do
   gem 'rack'

@@ -169,3 +169,7 @@ a:hover { color: #c53d13 !important; }
     padding:0px 6px;
     font-size:11px;
 }
+
+.no-padding{
+  padding:0;
+}
