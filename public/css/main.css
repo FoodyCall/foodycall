@@ -65,7 +65,9 @@ html,body{
     border-color: #ff6e40 !important;
 }
 
-a:hover { color: #c53d13 !important; }
+.modal-role a:hover {
+  text-decoration: none;
+}
 
 /* .modal-fullscreen */
 

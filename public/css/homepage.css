@@ -11,6 +11,10 @@
 div.dropdown {
   display: inline-block;
 }
+
+#eventModal .modal-dialog{
+  width:1100px;
+}
 .events {
   padding-top: 50px;
 }
@@ -70,4 +74,195 @@ div.dropdown {
 }
 .roles {
   margin-left: 10px;
+}
+
+.modal-sub-title span {
+  font-size: 15px;
+  color: #000;
+}
+.modal-location-icon {
+  margin-left: 25px;
+  padding-right: 8px;
+}
+
+.modal-location {
+  color: #ff6e40;
+  text-decoration: underline;
+  font-size: 15px;
+}
+
+.modal-header {
+  padding-bottom: 0px;
+}
+
+.modal-body p {
+  font-weight: 500;
+  color: #6c6c6c;
+  font-size:22px;
+  padding-bottom:13px;
+}
+.modal-roles img {
+  height: 33px;
+
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+          transition:         transform .8s ease-in-out;
+}
+.modal-roles img:hover {
+-webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+}
+
+.modal-role  {
+  margin-left:35px;
+}
+
+.shopper-role {
+  border: 3px solid #f7c389;
+  border-radius: 60%;
+  padding: 13px 11px 13px 11px;
+}
+.chef-role {
+  border: 3px solid #e39c8d;
+  border-radius: 60%;
+  padding: 14px 8px 14px 8px;
+}
+.chef-role img {
+  height: 29px;
+}
+
+.helper-role {
+  border: 3px solid #dfa284;
+  border-radius: 60%;
+  padding: 12px 8px 16px 8px;
+}
+.guest-role {
+  border: 3px solid #d0d59d;
+  border-radius: 60%;
+  padding: 12px 14px 16px 14px;
+}
+.cleaner-role {
+  border: 3px solid #9fb9cf;
+  border-radius: 60%;
+  padding: 12px 12px 18px 11px;
+}
+.cleaner-role img {
+  height: 40px;
+}
+
+.modal-body {
+  padding: 0px 15px 15px 15px;
+}
+
+.close span {
+  font-size: 70px;
+}
+
+.host-tag {
+  text-align: center;
+  padding-top: 19px;
+  padding-bottom: 0px;
+}
+
+.modal-host-img {
+  border-radius: 70%;
+  height: 150px;
+}
+
+.subtitle-tag {
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.modal-host-name{
+  text-align: center;
+  font-size: 18px !important;
+  padding-top: 10px;
+  padding-bottom: 0px !important;
+  margin-bottom: 2px;
+}
+.modal-host-username {
+  text-align:center;
+  font-style: italic;
+  font-size: 16px !important;
+  padding-bottom: 0px !important;
+  margin-bottom: 2px;
+  color: darkgray !important;
+}
+
+.modal-host-location {
+  text-align:center;
+  padding-bottom: 0px !important;
+  font-size: 16px !important;
+  margin-bottom: 2px;
+}
+
+.modal-host-stars {
+  text-align: center;
+  color: #ff6e40 !important;
+}
+.modal-role {
+  display: inline-block;
+}
+
+.modal-role p {
+  font-size: 14px;
+  text-align: center;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.role-name {
+  padding-top: 14px;
+}
+
+.popover-roles .popover {
+  position: relative;
+  display: block;
+  margin: 20px;
+  max-width: 100%
+}
+.popover-content {
+  overflow-y: scroll;
+  height: 110px;
+}
+.popover-content img {
+  height: 70px;
+  border-radius: 60%;
+}
+
+
+.popover-content p {
+  font-size: 13px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+.popover-content .participant-username {
+  color: darkgray !important;
+  font-size: 10px;
+}
+
+.participant-rating span {
+  color: #ff6e40;
+}
+.participant {
+  margin:11px;
+  display: inline-block;
+}
+.participant > div {
+  display: inline-block;
+  vertical-align: bottom;
+  padding-left: 10px;
+}
+
+.popover .arrow {
+  left: 5.5%;
+}
+
+.dish {
+  display: inline-block;
+  margin: 0 20px 20px 20px;
+}
+.dish p {
+  text-align: center;
+  padding-top: 10px;
 }
