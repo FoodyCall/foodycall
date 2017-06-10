@@ -266,3 +266,10 @@ div.dropdown {
   text-align: center;
   padding-top: 10px;
 }
+.event-availability img {
+  height: 45px;
+}
+.event-availability p {
+  display:inline-block;
+  font-size:15px;
+}
