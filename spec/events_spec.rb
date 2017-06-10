@@ -56,7 +56,7 @@ describe 'Test events services class' do
     new_event = {
       name: "Thai Thai food",
       location: "Hsinchu",
-      date: "2017/07/31",
+      date: "2017/07/31 04:00 PM",
       chef: 2,
       helper: 1,
       shopper: 0,
@@ -103,7 +103,7 @@ describe 'Test events api calls' do
     req_body_event = {
       name: "Thai Thai food",
       location: "Hsinchu",
-      date: "2017/07/31",
+      date: "2017/07/31 04:00 PM",
       chef: 2,
       helper: 1,
       shopper: 0,
