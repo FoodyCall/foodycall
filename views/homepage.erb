@@ -11,8 +11,194 @@
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/js/homepage.js">
+  </script>
 </head>
 <body>
+
+  <!-- EVENT MODAL -->
+  <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="event-modal">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <div class="col-lg-2">
+            <p class="host-tag">Host</p>
+            <img class="modal-host-img" src="" alt="">
+            <p class="modal-host-name"> <span class="modal-host-age"> (23)</span></p>
+            <p class="modal-host-username">@alliekrchang</p>
+            <p class="modal-host-location">Taipei, Taiwan</p>
+            <p class="modal-host-stars"></p>
+          </div>
+          <div class="col-lg-10">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 class="modal-title" id="event-modal">Title</h3>
+              <p class="modal-sub-title">
+                <span class="modal-date"></span>
+                <span class="modal-time"></span>
+                <span class="glyphicon glyphicon-map-marker modal-location-icon location-icon"></span>
+                <a target="_blank" href="https://www.google.com.tw/maps/search/Taipei%20city?hl=en&source=opensearch" class="modal-location"></a>
+
+              </p>
+              <div class="modal-event-availability">
+                <img src="img/par-1-4.png" alt="">
+                <p><span>2</span>/<span>3</span></p>
+              </div>
+            </div>
+            <p class="subtitle-tag">Participants</p>
+            <span class="modal-roles">
+              <div class="modal-role">
+                <a href="">
+                <span class="shopper-role">
+                  <img class="role" src="img/role-1.png">
+                </span>
+                <p class="role-name">Shopper</p>
+                <p class="role-quantity" >(1/3)</p>
+                </a>
+              </div>
+              <div class="modal-role">
+                <a class="" href="">
+                <span class="chef-role">
+                  <img class="role" src="img/role-2.png">
+                </span>
+                <p class="role-name">Chef</p>
+                <p class="role-quantity" >(0/2)</p>
+                </a>
+              </div>
+              <div class="modal-role">
+                <a class="" href="">
+                <span class="helper-role">
+                  <img class="role" src="img/role-3.png">
+                </span>
+                <p class="role-name">Helper</p>
+                <p class="role-quantity" >(0/1)</p>
+                </a>
+              </div>
+              <div class="modal-role">
+                <a class="" href="">
+                <span class="guest-role">
+                  <img class="role" src="img/role-4.png">
+                </span>
+                <p class="role-name">Guest</p>
+                <p class="role-quantity" >(0/1)</p>
+                </a>
+              </div>
+              <div class="modal-role">
+                <a class="" href="">
+                <span class="cleaner-role">
+                  <img class="role" src="img/role-5.png">
+                </span>
+                <p class="role-name">Cleaner</p>
+                <p class="role-quantity" >(0/1)</p>
+                </a>
+              </div>
+            </span>
+            <div class="popover-roles">
+              <div class="popover bottom">
+                <div class="arrow" style="left: 5.5%"></div>
+                <div class="popover-content">
+                  <div class="participant">
+                    <img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56">
+                    <div class="">
+                      <p>Eduardo Salazar <span class="participant-age">(22)</span></p>
+                      <p class="participant-username">@garynil</p>
+                      <p class="participant-location">Taipei, Taiwan</p>
+                      <p class="participant-rating">
+                        <span class="star glyphicon glyphicon-star"></span>
+                        <span class="star glyphicon glyphicon-star"></span>
+                        <span class="star glyphicon glyphicon-star"></span>
+                        <span class="star glyphicon glyphicon-star-empty"></span>
+                        <span class="star glyphicon glyphicon-star-empty"></span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="participant">
+                    <img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56">
+                    <div class="">
+                      <p>Eduardo Salazar <span class="participant-age">(22)</span></p>
+                      <p class="participant-username">@garynil</p>
+                      <p class="participant-location">Taipei, Taiwan</p>
+                      <p class="participant-rating">
+                        <span class="star glyphicon glyphicon-star"></span>
+                        <span class="star glyphicon glyphicon-star"></span>
+                        <span class="star glyphicon glyphicon-star"></span>
+                        <span class="star glyphicon glyphicon-star-empty"></span>
+                        <span class="star glyphicon glyphicon-star-empty"></span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="participant">
+                    <img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56">
+                    <div class="">
+                      <p>Eduardo Salazar <span class="participant-age">(22)</span></p>
+                      <p class="participant-username">@garynil</p>
+                      <p class="participant-location">Taipei, Taiwan</p>
+                      <p class="participant-rating">
+                        <span class="star glyphicon glyphicon-star"></span>
+                        <span class="star glyphicon glyphicon-star"></span>
+                        <span class="star glyphicon glyphicon-star"></span>
+                        <span class="star glyphicon glyphicon-star-empty"></span>
+                        <span class="star glyphicon glyphicon-star-empty"></span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="participant">
+                    <img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56">
+                    <div class="">
+                      <p>Eduardo Salazar <span class="participant-age">(22)</span></p>
+                      <p class="participant-username">@garynil</p>
+                      <p class="participant-location">Taipei, Taiwan</p>
+                      <p class="participant-rating">
+                        <span class="star glyphicon glyphicon-star"></span>
+                        <span class="star glyphicon glyphicon-star"></span>
+                        <span class="star glyphicon glyphicon-star"></span>
+                        <span class="star glyphicon glyphicon-star-empty"></span>
+                        <span class="star glyphicon glyphicon-star-empty"></span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="subtitle-tag">Menu</p>
+            <div class="dishes">
+              <div class="dish">
+                <img src="https://www.rhodesbread.com/images/recipes/MediterraneanPizzaLarge.jpg" class="dish-img center-cropped" alt="">
+                <p class="dish-name">Meat Pizza</p>
+              </div>
+              <div class="dish">
+                <img src="https://www.rhodesbread.com/images/recipes/MediterraneanPizzaLarge.jpg" class="dish-img center-cropped" alt="">
+                <p class="dish-name">Cheese Pizza</p>
+              </div>
+              <div class="dish">
+                <img src="https://www.rhodesbread.com/images/recipes/MediterraneanPizzaLarge.jpg" class="dish-img center-cropped" alt="">
+                <p class="dish-name">Peperonni Pizza</p>
+              </div>
+              <div class="dish">
+                <img src="https://www.rhodesbread.com/images/recipes/MediterraneanPizzaLarge.jpg" class="dish-img center-cropped" alt="">
+                <p class="dish-name">Hawaian Pizza</p>
+              </div>
+              <div class="dish">
+                <img src="https://www.rhodesbread.com/images/recipes/MediterraneanPizzaLarge.jpg" class="dish-img center-cropped" alt="">
+                <p class="dish-name">Costco Pizza</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Join the event</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<!-- END OF MODAL-->
+
+
+
+
+
   <%= erb :nav %>
 <div class="container filters">
     <div class="dropdown">
@@ -49,7 +235,7 @@
 <div class="container events">
   <div class="row"> <!--class="row" -->
     <!--class="col-lg-6 col-md-6 col-sm-12 "-->
-      <div class="thumbnail right-caption">
+      <a data-event-id="1" class="event-card" href=""><div class="thumbnail right-caption">
         <img class="center-cropped " src="https://eatpizzafresca.com/images/pepperoni_pizza.jpg?crc=4023861219">
         <div class="caption">
           <h3>Friday night! Eat Pizzaaaa!</h3>
@@ -67,42 +253,118 @@
               <span class="star glyphicon glyphicon-star"></span>
               <span class="star glyphicon glyphicon-star"></span>
               <span class="star glyphicon glyphicon-star-empty"></span>
-            </span>
-            <br>
-            <span class="roles">
-              <img class="role" src="img/role-1.png">
-              <img class="role" src="img/role-2.png">
-              <img class="role" src="img/role-3.png">
-              <img class="role" src="img/role-4.png">
-              <img class="role" src="img/role-5.png">
-            </span>
+          </span>
+          <br>
+          <span class="roles">
+            <img class="role" src="img/role-1.png">
+            <img class="role" src="img/role-2.png">
+            <img class="role" src="img/role-3.png">
+            <img class="role" src="img/role-4.png">
+            <img class="role" src="img/role-5.png">
+          </span>
+          <span class="event-availability pull-right">
+            <img src="img/par-1-4.png" alt="">
+            <p><span>2</span>/<span>3</span></p>
+          </span>
 
         </div>
-      </div>
-      <div class="thumbnail right-caption">
+      </div></a>
+      <a data-event-id="2" class="event-card" href=""><div class="thumbnail right-caption">
         <img class="center-cropped " src="http://cdn2.tmbi.com/TOH/Images/Photos/37/1200x1200/Crispy-Fried-Chicken_exps6445_PSG143429D03_05_5b_RMS.jpg">
         <div class="caption">
           <h3>Fried chicken & Beer Night</h3>
-          <p>...</p>
-          <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+          <span class="date">2017.05.28</span> <span class="time">18:00</span>
+          <span class="glyphicon glyphicon-map-marker location-icon"></span><span class="location">Taipei City</span>
+          <br>
+          <span class="host_by">Hosted by</span>
+          <span class="host-img">
+            <img class="" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t31.0-8/18738886_1380613998699044_7654257757760782746_o.jpg?oh=81e1f71b34d5368e9dad5f0ba1879cd3&oe=59E0A574" alt="">
+          </span>
+          <span class="host-name">Allie Chang</span>
+          <span class="stars">
+              <span class="star glyphicon glyphicon-star"></span>
+              <span class="star glyphicon glyphicon-star"></span>
+              <span class="star glyphicon glyphicon-star"></span>
+              <span class="star glyphicon glyphicon-star"></span>
+              <span class="star glyphicon glyphicon-star-empty"></span>
+          </span>
+          <br>
+          <span class="roles">
+            <img class="role" src="img/role-1.png">
+            <img class="role" src="img/role-2.png">
+            <img class="role" src="img/role-3.png">
+            <img class="role" src="img/role-4.png">
+            <img class="role" src="img/role-5.png">
+          </span>
+          <span class="event-availability pull-right">
+            <img src="img/par-1-4.png" alt="">
+            <p><span>2</span>/<span>3</span></p>
+          </span>
         </div>
-      </div>
-      <div class="thumbnail right-caption">
+      </div></a>
+      <a data-event-id="3" class="event-card" href=""><div class="thumbnail right-caption">
         <img class="center-cropped " src="http://www.cheatsheet.com/wp-content/uploads/2015/09/tuna-steak.jpg">
         <div class="caption">
           <h3>Fish 'n Herb Steak</h3>
-          <p>...</p>
-          <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+          <span class="date">2017.05.28</span> <span class="time">18:00</span>
+          <span class="glyphicon glyphicon-map-marker location-icon"></span><span class="location">Taipei City</span>
+          <br>
+          <span class="host_by">Hosted by</span>
+          <span class="host-img">
+            <img class="" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t31.0-8/18738886_1380613998699044_7654257757760782746_o.jpg?oh=81e1f71b34d5368e9dad5f0ba1879cd3&oe=59E0A574" alt="">
+          </span>
+          <span class="host-name">Luis Robles</span>
+          <span class="stars">
+              <span class="star glyphicon glyphicon-star"></span>
+              <span class="star glyphicon glyphicon-star"></span>
+              <span class="star glyphicon glyphicon-star"></span>
+              <span class="star glyphicon glyphicon-star"></span>
+              <span class="star glyphicon glyphicon-star"></span>
+          </span>
+          <br>
+          <span class="roles">
+            <img class="role" src="img/role-1.png">
+            <img class="role" src="img/role-4.png">
+            <img class="role" src="img/role-5.png">
+          </span>
+          <span class="event-availability pull-right">
+            <img src="img/par-1-4.png" alt="">
+            <p><span>2</span>/<span>3</span></p>
+          </span>
         </div>
-      </div>
-      <div class="thumbnail right-caption">
+      </div></a>
+      <a data-event-id="4" class="event-card" href=""><div class="thumbnail right-caption">
         <img class="center-cropped " src="https://www.rhodesbread.com/images/recipes/MediterraneanPizzaLarge.jpg">
         <div class="caption">
           <h3>Mediterranean Pizza</h3>
-          <p>...</p>
-          <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+          <span class="date">2017.05.28</span> <span class="time">18:00</span>
+          <span class="glyphicon glyphicon-map-marker location-icon"></span><span class="location">Taipei City</span>
+          <br>
+          <span class="host_by">Hosted by</span>
+          <span class="host-img">
+            <img class="" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t31.0-8/18738886_1380613998699044_7654257757760782746_o.jpg?oh=81e1f71b34d5368e9dad5f0ba1879cd3&oe=59E0A574" alt="">
+          </span>
+          <span class="host-name">Allie Chang</span>
+          <span class="stars">
+              <span class="star glyphicon glyphicon-star"></span>
+              <span class="star glyphicon glyphicon-star"></span>
+              <span class="star glyphicon glyphicon-star"></span>
+              <span class="star glyphicon glyphicon-star-empty"></span>
+              <span class="star glyphicon glyphicon-star-empty"></span>
+          </span>
+          <br>
+          <span class="roles">
+            <img class="role" src="img/role-1.png">
+            <img class="role" src="img/role-2.png">
+            <img class="role" src="img/role-3.png">
+            <img class="role" src="img/role-5.png">
+          </span>
+          <span class="event-availability pull-right">
+            <img src="img/par-1-4.png" alt="">
+            <p><span>2</span>/<span>3</span></p>
+          </span>
         </div>
-      </div>
+      </div></a>
   </div>
 
 </div>
