@@ -1,0 +1,73 @@
+.filters {
+  padding-top: 80px;
+}
+
+.filters button {
+  width: 150px;
+  color: #ef785e;
+  border-color: #ef785e;
+}
+
+div.dropdown {
+  display: inline-block;
+}
+.events {
+  padding-top: 50px;
+}
+.events .row {
+  display: inline-block;
+}
+.center-cropped {
+  object-fit: cover; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  height: 170px !important;
+  width: 170px;
+}
+.thumbnail {
+   margin-right: 50px;
+   width: 45%;
+}
+.thumbnail.right-caption > img {
+    float: left;
+    margin-right: 9px;
+}
+
+.thumbnail.right-caption {
+    float: left;
+}
+
+.thumbnail.right-caption > .caption {
+    padding: 4px;
+}
+.caption h3 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.caption > span {
+  font-size: 13px;
+}
+
+.caption span.location-icon {
+  padding-right: 4px;
+  margin-left: 60px;
+}
+.caption .host-img {
+  margin-left: 10px;
+  padding-right: 5px;
+}
+.caption .host-img img {
+  width: 25px;
+  padding-bottom: 4px;
+  border-radius: 60%;
+}
+.stars .star{
+  color: #ef785e;
+  font-size: 15px;
+}
+.roles .role {
+  height: 30px;
+}
+.roles {
+  margin-left: 10px;
+}
