@@ -14,7 +14,7 @@ class FoodyCallApp < Sinatra::Base
     if user[:isValid]
       session[:current_user] = JSON.parse(user[:data])
       @current_user = session[:current_user]
-      erb :homepage
+      redirect '/'
     else
       session[:current_user] = nil
       @current_user = session[:current_user]

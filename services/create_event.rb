@@ -27,7 +27,8 @@ class CreateEvent
           name: menu[:name],
           type: menu[:type],
           tags: menu[:tags].join(','),
-          recipe: menu[:recipe]
+          recipe: menu[:recipe],
+          img_path: menu[:img_path]
         )
       end
     end

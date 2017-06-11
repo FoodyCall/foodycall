@@ -26,7 +26,7 @@
             <p class="host-tag">Host</p>
             <img class="modal-host-img" src="" alt="">
             <p class="modal-host-name"> <span class="modal-host-age"> (23)</span></p>
-            <p class="modal-host-username">@alliekrchang</p>
+            <!-- <p class="modal-host-username">@alliekrchang</p> -->
             <p class="modal-host-location">Taipei, Taiwan</p>
             <p class="modal-host-stars"></p>
           </div>
@@ -43,7 +43,7 @@
               </p>
               <div class="modal-event-availability">
                 <img src="img/par-1-4.png" alt="">
-                <p><span>2</span>/<span>3</span></p>
+                <p><span class="modal-joined">2</span>/<span class="modal-total">3</span></p>
               </div>
             </div>
             <p class="subtitle-tag">Participants</p>
@@ -54,7 +54,7 @@
                   <img class="role" src="img/role-1.png">
                 </span>
                 <p class="role-name">Shopper</p>
-                <p class="role-quantity" >(1/3)</p>
+                <p class="role-quantity shopper" >(0/3)</p>
                 </a>
               </div>
               <div class="modal-role">
@@ -62,8 +62,8 @@
                 <span class="chef-role">
                   <img class="role" src="img/role-2.png">
                 </span>
-                <p class="role-name">Chef</p>
-                <p class="role-quantity" >(0/2)</p>
+                <p class="role-name ">Chef</p>
+                <p class="role-quantity chef" >(0/2)</p>
                 </a>
               </div>
               <div class="modal-role">
@@ -72,7 +72,7 @@
                   <img class="role" src="img/role-3.png">
                 </span>
                 <p class="role-name">Helper</p>
-                <p class="role-quantity" >(0/1)</p>
+                <p class="role-quantity helper" >(0/1)</p>
                 </a>
               </div>
               <div class="modal-role">
@@ -81,7 +81,7 @@
                   <img class="role" src="img/role-4.png">
                 </span>
                 <p class="role-name">Guest</p>
-                <p class="role-quantity" >(0/1)</p>
+                <p class="role-quantity guest" >(0/1)</p>
                 </a>
               </div>
               <div class="modal-role">
@@ -90,7 +90,7 @@
                   <img class="role" src="img/role-5.png">
                 </span>
                 <p class="role-name">Cleaner</p>
-                <p class="role-quantity" >(0/1)</p>
+                <p class="role-quantity cleaner" >(0/1)</p>
                 </a>
               </div>
             </span>
@@ -167,22 +167,6 @@
                 <img src="https://www.rhodesbread.com/images/recipes/MediterraneanPizzaLarge.jpg" class="dish-img center-cropped" alt="">
                 <p class="dish-name">Meat Pizza</p>
               </div>
-              <div class="dish">
-                <img src="https://www.rhodesbread.com/images/recipes/MediterraneanPizzaLarge.jpg" class="dish-img center-cropped" alt="">
-                <p class="dish-name">Cheese Pizza</p>
-              </div>
-              <div class="dish">
-                <img src="https://www.rhodesbread.com/images/recipes/MediterraneanPizzaLarge.jpg" class="dish-img center-cropped" alt="">
-                <p class="dish-name">Peperonni Pizza</p>
-              </div>
-              <div class="dish">
-                <img src="https://www.rhodesbread.com/images/recipes/MediterraneanPizzaLarge.jpg" class="dish-img center-cropped" alt="">
-                <p class="dish-name">Hawaian Pizza</p>
-              </div>
-              <div class="dish">
-                <img src="https://www.rhodesbread.com/images/recipes/MediterraneanPizzaLarge.jpg" class="dish-img center-cropped" alt="">
-                <p class="dish-name">Costco Pizza</p>
-              </div>
             </div>
           </div>
           <div class="modal-footer">
@@ -235,136 +219,100 @@
 <div class="container events">
   <div class="row"> <!--class="row" -->
     <!--class="col-lg-6 col-md-6 col-sm-12 "-->
-      <a data-event-id="1" class="event-card" href=""><div class="thumbnail right-caption">
-        <img class="center-cropped " src="https://eatpizzafresca.com/images/pepperoni_pizza.jpg?crc=4023861219">
-        <div class="caption">
-          <h3>Friday night! Eat Pizzaaaa!</h3>
-          <span class="date">2017.05.28</span> <span class="time">18:00</span>
-          <span class="glyphicon glyphicon-map-marker location-icon"></span><span class="location">Taipei City</span>
-          <br>
-          <span class="host_by">Hosted by</span>
-          <span class="host-img">
-            <img class="" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t31.0-8/18738886_1380613998699044_7654257757760782746_o.jpg?oh=81e1f71b34d5368e9dad5f0ba1879cd3&oe=59E0A574" alt="">
-          </span>
-          <span class="host-name">Allie Chang</span>
-          <span class="stars">
-              <span class="star glyphicon glyphicon-star"></span>
-              <span class="star glyphicon glyphicon-star"></span>
-              <span class="star glyphicon glyphicon-star"></span>
-              <span class="star glyphicon glyphicon-star"></span>
-              <span class="star glyphicon glyphicon-star-empty"></span>
-          </span>
-          <br>
-          <span class="roles">
-            <img class="role" src="img/role-1.png">
-            <img class="role" src="img/role-2.png">
-            <img class="role" src="img/role-3.png">
-            <img class="role" src="img/role-4.png">
-            <img class="role" src="img/role-5.png">
-          </span>
-          <span class="event-availability pull-right">
-            <img src="img/par-1-4.png" alt="">
-            <p><span>2</span>/<span>3</span></p>
-          </span>
+    <% if @events %>
+    <% @events.each_with_index do |event,index| %>
+      <a data-event-id="<%=index%>" class="event-card" href=""><div class="thumbnail right-caption">
 
-        </div>
-      </div></a>
-      <a data-event-id="2" class="event-card" href=""><div class="thumbnail right-caption">
-        <img class="center-cropped " src="http://cdn2.tmbi.com/TOH/Images/Photos/37/1200x1200/Crispy-Fried-Chicken_exps6445_PSG143429D03_05_5b_RMS.jpg">
+        <img class="center-cropped " src="<%= event.img_path%>">
         <div class="caption">
-          <h3>Fried chicken & Beer Night</h3>
-          <span class="date">2017.05.28</span> <span class="time">18:00</span>
-          <span class="glyphicon glyphicon-map-marker location-icon"></span><span class="location">Taipei City</span>
+          <div id="hidden-info" class="hidden">
+            <span class="event-joined"><%= event.joined%></span>
+            <span class="event-total"><%= event.totalParticipants%></span>
+            <span class="event-shopper"><%= event.shopper%></span>
+            <span class="event-chef"><%= event.chef%></span>
+            <span class="event-helper"><%= event.helper%></span>
+            <span class="event-guest"><%= event.guest%></span>
+            <span class="event-cleaner"><%= event.cleaner%></span>
+            <span class="event-shopper-joined"><%= event.shopper_joined%></span>
+            <span class="event-chef-joined"><%= event.chef_joined%></span>
+            <span class="event-helper-joined"><%= event.helper_joined%></span>
+            <span class="event-guest-joined"><%= event.guest_joined%></span>
+            <span class="event-cleaner-joined"><%= event.cleaner_joined%></span>
+            <span class="event-menu">Hola hola </span>
+
+            <div class="event-menus">
+              <% event.menus.each_with_index do |menu,index| %>
+                <div id="dish-<%= index%>" class="dish">
+                  <img src="<%= menu.img_path %>" class="dish-img center-cropped" alt="">
+                  <p class="dish-name"><%= menu.name %></p>
+                </div>
+              <% end %>
+            </div>
+
+            <div>
+            </div>
+          </div>
+          <h3><%= event.name.gsub(/^(.{60,}?).*$/m,'\1...') %></h3>
+          <h3 class="event-title hidden"><%= event.name %></h3>
+          <span class="date"><%=event.date.strftime("%Y-%m-%d")%></span> <span class="time"><%=event.date.strftime("%l:%M %p")%></span>
+          <span class="glyphicon glyphicon-map-marker location-icon"></span><span class="location"><%= event.location.split(',').last %></span>
           <br>
           <span class="host_by">Hosted by</span>
           <span class="host-img">
-            <img class="" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t31.0-8/18738886_1380613998699044_7654257757760782746_o.jpg?oh=81e1f71b34d5368e9dad5f0ba1879cd3&oe=59E0A574" alt="">
+            <img class="" src="<%= event.host.img %>" alt="">
           </span>
-          <span class="host-name">Allie Chang</span>
+          <span class="host-name"><%= event.host.fullName.gsub(/^(.{20,}?).*$/m,'\1...')%></span>
+          <span class="host-name-full hidden"><%= event.host.fullName%></span>
+          <span class="host-age hidden"><%= event.host.age%></span>
           <span class="stars">
-              <span class="star glyphicon glyphicon-star"></span>
-              <span class="star glyphicon glyphicon-star"></span>
-              <span class="star glyphicon glyphicon-star"></span>
-              <span class="star glyphicon glyphicon-star"></span>
-              <span class="star glyphicon glyphicon-star-empty"></span>
+              <% event.host.rate.times do |i| %>
+                <span class="star glyphicon glyphicon-star"></span>
+              <% end %>
+              <% (5 - event.host.rate).times do |i| %>
+                <span class="star glyphicon glyphicon-star-empty"></span>
+              <% end %>
+
           </span>
           <br>
           <span class="roles">
-            <img class="role" src="img/role-1.png">
-            <img class="role" src="img/role-2.png">
-            <img class="role" src="img/role-3.png">
-            <img class="role" src="img/role-4.png">
-            <img class="role" src="img/role-5.png">
+            <% if event.shopper > 0 %>
+              <img class="role" src="img/role-1.png">
+            <% end %>
+            <% if event.chef > 0 %>
+              <img class="role" src="img/role-2.png">
+            <% end %>
+            <% if event.helper > 0 %>
+              <img class="role" src="img/role-3.png">
+            <% end %>
+            <% if event.guest > 0 %>
+              <img class="role" src="img/role-4.png">
+            <% end %>
+            <% if event.cleaner > 0 %>
+              <img class="role" src="img/role-5.png">
+            <% end %>
           </span>
           <span class="event-availability pull-right">
-            <img src="img/par-1-4.png" alt="">
-            <p><span>2</span>/<span>3</span></p>
+            <% value = event.totalParticipants.size / 4 %>
+            <% if event.joined >= value * 4 %>
+              <img src="img/par-4-4.png" alt="">
+            <% elsif event.joined >= value * 3%>
+              <img src="img/par-3-4.png" alt="">
+            <% elsif event.joined >= value * 2%>
+              <img src="img/par-2-4.png" alt="">
+            <% elsif event.joined >= value * 1%>
+              <img src="img/par-1-4.png" alt="">
+            <% else %>
+              <img src="img/par-0-4.png" alt="">
+            <% end %>
+
+            <p><span><%= event.participants.size %></span>/<span><%= event.totalParticipants %></span></p>
           </span>
         </div>
-      </div></a>
-      <a data-event-id="3" class="event-card" href=""><div class="thumbnail right-caption">
-        <img class="center-cropped " src="http://www.cheatsheet.com/wp-content/uploads/2015/09/tuna-steak.jpg">
-        <div class="caption">
-          <h3>Fish 'n Herb Steak</h3>
-          <span class="date">2017.05.28</span> <span class="time">18:00</span>
-          <span class="glyphicon glyphicon-map-marker location-icon"></span><span class="location">Taipei City</span>
-          <br>
-          <span class="host_by">Hosted by</span>
-          <span class="host-img">
-            <img class="" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t31.0-8/18738886_1380613998699044_7654257757760782746_o.jpg?oh=81e1f71b34d5368e9dad5f0ba1879cd3&oe=59E0A574" alt="">
-          </span>
-          <span class="host-name">Luis Robles</span>
-          <span class="stars">
-              <span class="star glyphicon glyphicon-star"></span>
-              <span class="star glyphicon glyphicon-star"></span>
-              <span class="star glyphicon glyphicon-star"></span>
-              <span class="star glyphicon glyphicon-star"></span>
-              <span class="star glyphicon glyphicon-star"></span>
-          </span>
-          <br>
-          <span class="roles">
-            <img class="role" src="img/role-1.png">
-            <img class="role" src="img/role-4.png">
-            <img class="role" src="img/role-5.png">
-          </span>
-          <span class="event-availability pull-right">
-            <img src="img/par-1-4.png" alt="">
-            <p><span>2</span>/<span>3</span></p>
-          </span>
-        </div>
-      </div></a>
-      <a data-event-id="4" class="event-card" href=""><div class="thumbnail right-caption">
-        <img class="center-cropped " src="https://www.rhodesbread.com/images/recipes/MediterraneanPizzaLarge.jpg">
-        <div class="caption">
-          <h3>Mediterranean Pizza</h3>
-          <span class="date">2017.05.28</span> <span class="time">18:00</span>
-          <span class="glyphicon glyphicon-map-marker location-icon"></span><span class="location">Taipei City</span>
-          <br>
-          <span class="host_by">Hosted by</span>
-          <span class="host-img">
-            <img class="" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t31.0-8/18738886_1380613998699044_7654257757760782746_o.jpg?oh=81e1f71b34d5368e9dad5f0ba1879cd3&oe=59E0A574" alt="">
-          </span>
-          <span class="host-name">Allie Chang</span>
-          <span class="stars">
-              <span class="star glyphicon glyphicon-star"></span>
-              <span class="star glyphicon glyphicon-star"></span>
-              <span class="star glyphicon glyphicon-star"></span>
-              <span class="star glyphicon glyphicon-star-empty"></span>
-              <span class="star glyphicon glyphicon-star-empty"></span>
-          </span>
-          <br>
-          <span class="roles">
-            <img class="role" src="img/role-1.png">
-            <img class="role" src="img/role-2.png">
-            <img class="role" src="img/role-3.png">
-            <img class="role" src="img/role-5.png">
-          </span>
-          <span class="event-availability pull-right">
-            <img src="img/par-1-4.png" alt="">
-            <p><span>2</span>/<span>3</span></p>
-          </span>
-        </div>
-      </div></a>
+      </div>
+    </a>
+    <% end %>
+    <% end %>
+
   </div>
 
 </div>

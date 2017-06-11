@@ -3,6 +3,32 @@ class User < Sequel::Model
   plugin :timestamps, update_on_create: true
   one_to_many :events, :key=>:host_id
 
+  def firstName
+    first_name
+  end
+
+  def lastName
+    last_name
+  end
+
+  def fullName
+    firstName + ' ' + lastName
+  end
+
+  def rate
+    rating ? rating : 0
+  end
+
+
+  def age
+    now = Time.now.utc.to_date
+    now.year - birthday.year - ((now.month > birthday.month || (now.month == birthday.month && now.day >= birthday.day)) ? 0 : 1)
+  end
+
+  def img
+    img_path
+  end
+
   def password=(pw_plaintext)
     new_salt = SecureMSG.new_salt
     hashed = SecureMSG.hash_password(new_salt, pw_plaintext)
