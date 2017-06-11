@@ -21,7 +21,6 @@ group :test do
   gem 'watir'
   gem 'headless'
   gem 'page-object'
-
 end
 
 group :development, :test do

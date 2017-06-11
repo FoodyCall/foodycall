@@ -18,6 +18,8 @@ end
 configure :production do
   # ENV['DATABASE_URL'] should be set by Heroku
   # Configuration settings should be directly set on Heroku
+  require 'hirb'
+  Hirb.enable
 end
 
 configure do

@@ -7,7 +7,8 @@ class EventMenu < Sequel::Model
         name: name,
         type: type,
         tags: tags,
-        recipe: recipe
+        recipe: recipe,
+        img_path: img_path
       },options)
   end
 end

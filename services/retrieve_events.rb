@@ -22,7 +22,7 @@ class RetrieveEvents
       query_roles = roles.map{|rol| "(#{rol.downcase}>0)"}.join('|')
       Event.where(filter){Sequel.lit(query_roles)}.all
     else
-      Event.where(filter).all
+      Event.where(filter).eager(:user).all
     end
   end
 end

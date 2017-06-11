@@ -38,13 +38,8 @@ class FoodyCallApp < Sinatra::Base
     # flash[:notice] = "Welcome back #{@current_user['username']}"
   end
 
-  get '/' do
-    erb :homepage
-  end
 
-  get '/homepage' do
-    erb :homepage
-  end
+
 
 
   # post '/api/v1/user/:id/event' do
