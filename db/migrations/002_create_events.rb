@@ -19,7 +19,7 @@ Sequel.migration do
     end
 
     create_table(:event_menus) do
-      String :event_id
+      Integer :event_id
       String :name
       String :type
       String :recipe
