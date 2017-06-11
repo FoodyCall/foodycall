@@ -1,0 +1,304 @@
+{
+  "events": [{
+        "name": "Let's taste the authentic Thai Green curry!",
+        "location": " Guangfu Rd, East District, Hsinchu City",
+        "date": "2017/07/31 06:00 PM",
+        "chef": 2,
+        "helper": 1,
+        "shopper": 1,
+        "cleaner": 1,
+        "guest": 0,
+        "menus": [{
+            "name": "Thai Green curry",
+            "tags": ["thai","spicy", "Green curry"],
+            "type": "soup",
+            "recipe": "
+            - 2 tablespoons oil
+            - 2 tablespoons green curry paste, Nam Jai brand preferred
+            - 8 oz chicken breast, cut into bite-sized pieces
+            - 1/2 cup coconut milk
+            - 1/2 cup water
+            - 5 kaffir lime leaves, lightly bruise
+            - 2 red chilies, cut into thick strips
+            - 1 tablespoon fish sauce
+            - 1 tablespoon sugar or palm sugar (preferred)
+            - 1/4 cup Thai basil leaves
+
+            Instructions:
+           1. Heat the oil in a wok over a high heat until smoking. Add the green curry paste and stir fry for 1-2 minutes, or until fragrant.
+
+           2. Add the chicken strips and stir until coated in the curry paste. Continue to stir-fry for 1-2 minutes, or until the chicken has browned on all sides.
+
+           3. Add the coconut milk, lime leaves, fish sauce and sugar and stir well. Bring the mixture to the boil, then reduce the heat until the mixture is simmering. Continue to simmer for 8-10 minutes, or until the sauce has thickened.
+
+           4. Add the green beans and asparagus and continue to simmer for 2-3 minutes, stirring regularly, until just tender. Season with salt and pepper.
+
+           5. To serve, spoon the rice into four serving bowls, then ladle over the Thai green chicken curry. Sprinkle over the coriander leaves.
+           ",
+           "img_path":"https://static1.squarespace.com/static/50106d5684aed4702b7242ed/t/530a60e0e4b0dbc78d16cbdf/1432352707452/ThaiGreenCurry.jpg"
+          },
+          {
+          "name": "Thai Style Pork Omelette",
+          "tags": ["thai","egg", "pork"],
+          "type": "Side dish",
+          "recipe": "
+            - 2 eggs, beaten
+            - 250 grams ground pork
+            - 1/2 onion, finely chopped
+            - 1 tablespoon fish sauce
+            - 1 tablespoon soy sauce
+            - 1/2 cup oil
+            - dipping sauce (chopped chili in fish sauce, chili sauce or tomato sauce)
+            - coriander leaves (for garnishing)
+
+            Instructions :
+            1. Beat the eggs, fish sauce, oyster sauce and white pepper until well combined. Add ground pork and beat until there are no more big clumps of pork. Stir in green onions.
+
+            2. Heat a small 8-inch non-stick saute pan or a wok over medium heat and add enough vegetable oil to generously coat the bottom. Wait for the oil to be quite hot, you can test by dropping a little bit of egg into the oil and it should puff and sizzle immediately.
+
+            3. Pour in the eggs all at once (it should sizzle), then quickly stir the egg for a few seconds to distribute the first bit of cooked egg.
+
+            4. As the bottom starts to firm up, lift one side of the omelette and tilt the pan to allow the liquid egg on top to flow to the bottom; repeat a couple of times.
+
+            5. Let the omelette cook until the bottom is golden brown and the top is set enough to flip. Keep checking the colour, if the omelette is browning too fast, turn the heat down a bit.
+
+            6. Once the top is set enough to flip, flip the omelette and continue cooking the other side just for 15-20 seconds just to cook it through.
+
+            7. Serve with hot jasmine rice and sriracha hot sauce!
+            ",
+          "img_path": "http://data.whicdn.com/images/24887278/large.jpg"
+          }],
+        "img_path": "https://static1.squarespace.com/static/50106d5684aed4702b7242ed/t/530a60e0e4b0dbc78d16cbdf/1432352707452/ThaiGreenCurry.jpg"
+      },
+      {
+        "name": "Prepare yourself for spicy Thai papaya salad with sticky rice!",
+        "location": "Xitun Rd, Central District, Taichung City",
+        "date": "2017/07/31 11.00 AM",
+        "chef": 1,
+        "helper": 2,
+        "shopper": 2,
+        "cleaner": 1,
+        "guest": 0,
+        "menus": [{
+            "name": "Papaya salad",
+            "tags": ["thai","spicy", "papaya","salad"],
+            "type": "vegetarian",
+            "recipe": "
+            - 200 g of of slivered green papaya
+            - 100 g of small tomatoes
+            - 100 g of Long-beans
+            - 2 cloves of garlic
+            - 5 Thai chillies (up to you how many depending on how spicy you want it)
+            - 1 tablespoon of dried shrimp (optional)
+            - 2 tablespoons shelled roasted peanuts
+            - 1 tablespoon fish sauce
+            - ½ - 1 tablespoon palm sugar (can also substitute brown sugar)
+            - 1 - 2 limes (I used about 2, but I like things pretty sour)
+
+            Instructions :
+            1. After washing the green papaya, peel off the skin using a carrot peeler (or a knife will do as well). You can then either use a cheese grater to shave the papaya, or you can do it the traditional way and hack at the papaya with your knife until there are numerous vertical cuts, then shave off the top layer into thin slivers, and repeat. I like the traditional method as you get bigger, un-even, pieces of green papaya. Cut enough green papaya to have a big handful worth for this recipe.
+
+            2. Add 2 cloves of peeled garlic and 5 chillies (or however many you like) to the mortar (krok). Pound them for a few seconds until the garlic is crushed and chilies are reduced to small bits.
+
+            3. Add ½ tablespoon of palm sugar, 1 tablespoon of fish sauce, and then squeeze the juice from 1 - 2 limes into the mortar. You can always start with less seasoning and add more to your liking.
+
+            4.Mix and pound the dressing, making sure the palm sugar gets fully dissolved into the liquid (so no one bites into a chunk of pure palm sugar).
+
+            5. Add about 1 tablespoon of roasted peanuts (no need to measure, just grab some with your hand), 1 tablespoon of dried shrimp, and then roughly slice in the tomatoes into the mortar
+
+            6. Pound the mixture for about 30 seconds, lightly breaking up the tomatoes, shrimp, and peanuts. No need to pound too hard.
+
+            7. Last step is to toss in a big handful of the green papaya shavings. Mix it all together, doing a combination of using just a spoon and pounding lightly, but no need to pound hard. Make sure the dressing is coating all the green papaya and that the salad is evenly mixed through and through
+
+            ",
+            "img_path": "https://www.maangchi.com/wp-content/uploads/2011/12/plate.jpg"
+          },
+          {
+            "name": "Sticky rice",
+            "tags": ["thai","rice"],
+            "type": "vegetarian",
+            "recipe": "
+            - water to soak rice
+            - 1 kg. sticky rice
+
+            Instructions
+            1. The night before you want to cook sticky rice, take your raw sticky rice, place it into a bowl or plastic tub, submerge in water, and allow to soak room temperature overnight. Alternatively, you can soak for at least 4 - 5 hours, but overnight is best.
+
+            2. Take the sticky rice out of the water (and the grains should be softer and a little swollen), and place into a bamboo steamer, or any type of steamer. Cover the steamer with either a lid, or you can do what I did and cover the basket with a cloth, then a metal lid - just to keep all the steam within the rice.
+
+            3. Add water to a pot with the steamer over the pot (just make sure the water doesn’t touch the sticky rice), and once the water comes to a boil, steam for 15 - 20 minutes (usually 15 minutes for me is perfect) on a medium heat.
+
+            4. After 15 minutes take off the lid carefully, because it will be very hot, and just grab a taste test of the sticky rice to make sure it’s soft and fluffy. If it’s still a little crunchy, steam for a few more minutes, but if it’s good to go, turn off the heat and either eat immediately, or transfer to some sort of airtight container or basket to hold until you’re ready to eat.
+
+            5. Enjoy Thai sticky rice while it's hot and fresh.
+            ",
+            "img_path": "http://www.wikihow.com/images/f/f6/Make-Sticky-Rice-Using-Regular-Rice-Intro.jpg"
+          }]
+          ,
+        "img_path": "https://media-cdn.tripadvisor.com/media/photo-s/02/f8/96/11/joe-louis-thai-restaurant.jpg"
+      },
+
+      {
+        "name": "Japanese grilled salmon",
+        "location": "Huaxiu Rd, Changhua city",
+        "date": "2017/07/25 5:00 PM",
+        "chef": 2,
+        "helper": 1,
+        "shopper": 1,
+        "cleaner": 0,
+        "guest": 0,
+        "menus": [{
+            "name": "Japanese grilled salmon",
+            "tags": ["japanese", "grill", "salmon"],
+            "type": "seafood",
+            "recipe": "
+            INGREDIENTS
+            1. 2 salmon fillets (5oz/150g each)
+            2. 1 tbsp soy sauce
+            3. 3 tbsp mirin
+            4. 1 tbsp sake
+            5. ½ tbsp oil
+
+
+            INSTRUCTIONS
+            1. Combine all ingredients except the oil in a ziplock bag, remove as much air as possible and marinade overnight (or minimum 3 hours).
+
+            2. Heat ½ tbsp oil in a non stick pan over medium heat.
+
+            3. Add salmon skin side down, cook for 2 to 3 minutes until crispy. Check the skin to ensure it isn't cooking too quickly - if it is, then turn down the heat and/or remove the pan from the stove briefly to allow the temperature to decrease.
+
+            4. Drizzle over remaining marinade in the ziplock bag over the flesh side. Flip and cook the flesh side for 2 minutes, or to your liking. I like salmon medium rare so the inside is very moist and just cooked.
+
+            5. Rest for a couple of minutes, remembering that the salmon will continue to cook while resting, then serve.
+            ",
+            "img_path": "http://www.recipetineats.com/wp-content/uploads/2014/07/Salmon-Soy-Mirin.jpg"
+          }],
+        "img_path": "http://www.recipetineats.com/wp-content/uploads/2014/07/Salmon-Soy-Mirin.jpg"
+      },
+
+      {
+        "name": "Cooking Japanese Ramen with Japanese friends",
+        "location": "Dongmin rd, Dali district, Taichung City",
+        "date": "2017/07/15 10:00 PM",
+        "chef": 3,
+        "helper": 2,
+        "shopper": 1,
+        "cleaner": 1,
+        "guest": 0,
+        "menus": [{
+            "name": "Japanese Ramen",
+            "tags": ["Japanese","ramen", "noodle"],
+            "type": "noodle",
+            "recipe": "
+            1. 1 lb pork
+            2. 1 table spoon of salt
+            3. 6 cups water (1.5L)
+            4. 50g ginger root, sliced
+            5. 3 cloves garlic, skinned
+            6. 1 bunch green onions
+            7. 4 Tbsp soy sauce
+            8. 2 Tbsp sake
+            9. 1 tsp salt
+            10. 1 tsp sesame oil
+            11. 9 oz fresh angel hair pasta (225g)
+            12. 8 cups water (2L)
+            13. 2 Tbsp baking soda
+            14. boiled egg halves
+            15. bean sprouts, blanched briefly
+            16. green onions, cut finely
+
+            Instructions :
+
+            1. Rub salt on pork and let it sit overnight in the fridge.
+
+            2. In a pot, put water, ginger root, garlic, green onions and salted pork, and boil at high heat. Skim fat and other floating scums. Then cover, reduce to low heat, and simmer for 1 1/2 to 2 hours. Let the broth and pork cool completely in pot. Strain and save pork. Slice pork and set aside for a topping.
+
+            3. Prepare the rest of the toppings now as well (boiled eggs, blanched bean sprouts, cut green onions), before making the soup and noodles. Once the noodles are cooked, you will need to add the soup and toppings right away or the noodles will get soft, so you won't have time to prepare the toppings at the end.
+
+            4. Boil the broth and add soy sauce, sake, salt and sesame oil. Let it simmer at very low heat until noodles are ready.
+
+            5. In boiling water in a pot, add baking soda (be careful, it may boil over), then add the fresh angel hair pasta. Cook the pasta for 30 seconds, and strain. Immediately divide noodles into bowls and add soup onto noodles. Top with boiled eggs, bean sprouts, green onions and sliced pork.
+            ",
+            "img_path": "https://japancentre-images.freetls.fastly.net/recipes/pics/233/main/photo_Japanese-Ramen-Noodles.jpg?1469572973"
+          }],
+        "img_path": "https://japancentre-images.freetls.fastly.net/recipes/pics/233/main/photo_Japanese-Ramen-Noodles.jpg?1469572973"
+      },
+
+      {
+        "name": "Practice English with foreigner friends while eating Brussels Sprouts Pizza",
+        "location": "Minsheng Rd, West Central District, Tainan",
+        "date": "2017/08/5 04:00 PM",
+        "chef": 2,
+        "helper": 1,
+        "shopper": 1,
+        "cleaner": 1,
+        "guest": 1,
+        "menus": [{
+            "name": "Brussels Sprouts Pizza",
+            "tags": ["Italian","pizza"],
+            "type": "Ve",
+            "recipe": "
+            Ingredients :
+            1. 1 teaspoon extra-virgin olive oil
+            2. 9 slices pancetta
+            3. 5 teaspoons extra-virgin olive oil
+            4. 2 cloves garlic, minced
+            5. 6 Brussels sprouts, trimmed and thinly sliced
+            6. 1 (8 ounce) package shredded mozzarella cheese
+            7. 1/2 teaspoon fennel seed
+            8. 12-inch pizza crust
+
+
+            Intruction :
+            1. Preheat oven to 475 degrees F (245 degrees C).
+
+            2. Heat 1 teaspoon olive oil in a skillet over medium heat; cook and stir pancetta until fat has been released, 3 to 5 minutes. Transfer pancetta to a paper towel-lined plate.
+
+            3. Pour remaining 5 teaspoons olive oil into the same skillet; cook and stir garlic until fragrant, about 20 seconds. Add Brussels sprouts to garlic; cook, stirring constantly, until sprouts begin to brown, 5 to 10 minutes. Transfer sprouts and garlic to a bowl and crumble cooled pancetta over the mixture. Add mozzarella cheese and fennel seed; toss to coat. Place pizza crust onto a baking sheet and spread Brussels sprouts mixture atop pizza crust.
+
+            4. Bake in the preheated oven until cheese is melted and bubbling, about 10 minutes.
+            ",
+            "img_path": "https://foodandstyle.com/wp-content/uploads/2014/01/IMG_0605-Shaved-Brussels-sprout-pizza-with-burrata-and-dried-lemon-zest-750.jpg"
+          }],
+        "img_path": "https://foodandstyle.com/wp-content/uploads/2014/01/IMG_0605-Shaved-Brussels-sprout-pizza-with-burrata-and-dried-lemon-zest-750.jpg"
+      },
+      {
+        "name": "It's time for Lasagna !",
+        "location": "Datong road, Xinxing district, Gaoxiong City",
+        "date": "2017/06/20 06:00 PM",
+        "chef": 1,
+        "helper": 1,
+        "shopper": 1,
+        "cleaner": 0,
+        "guest": 0,
+        "menus": [{
+            "name": "Lasagna",
+            "tags": ["Italian","Cheese"],
+            "type": "Main dish",
+            "recipe": "
+            1. 1 pound lean ground beef
+            2. 1 (32 ounce) jar spaghetti sauce
+            3. 32 ounces cottage cheese
+            4. 3 cups shredded mozzarella cheese
+            5. 2 eggs
+            6. 1/2 cup grated Parmesan cheese
+            7. 2 teaspoons dried parsley
+            8. salt to taste
+            9. ground black pepper to taste
+            10. 9 lasagna noodles
+            11. 1/2 cup water
+
+            Ingredient :
+            1. In a large skillet over medium heat brown the ground beef. Drain the grease. Add spaghetti sauce and simmer for 5 minutes.
+
+            2. In a large bowl, mix together the cottage cheese, 2 cups of the mozzarella cheese, eggs, half of the grated Parmesan cheese, dried parsley, salt and ground black pepper.
+
+            3. To assemble, in the bottom of a 9x13 inch baking dish evenly spread 3/4 cup of the sauce mixture. Cover with 3 uncooked lasagna noodles, 1 3/4 cup of the cheese mixture, and 1/4 cup sauce. Repeat layers twice. Top with 3 noodles, remaining sauce, remaining mozzarella and Parmesan cheese. Add 1/2 cup water to the edges of the pan. Cover with aluminum foil.
+
+            4. Bake in a preheated 350 degree F(175 degrees C) oven for 45 minutes. Uncover and bake an additional 10 minutes. Let stand 10 minutes before serving.
+            ",
+            "img_path": "https://static01.nyt.com/images/2015/10/15/dining/15RECIPE20DIN/15RECIPE20DIN-superJumbo.jpg"
+          }],
+        "img_path": "https://static01.nyt.com/images/2015/10/15/dining/15RECIPE20DIN/15RECIPE20DIN-superJumbo.jpg"
+      }]
+}
