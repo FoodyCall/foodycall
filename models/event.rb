@@ -3,6 +3,7 @@ class Event < Sequel::Model
   plugin :timestamps, update_on_create: true
   many_to_one :user, :key=>:host_id
   one_to_many :event_menus
+  one_to_many :event_participants
 
   def host
     user
@@ -12,32 +13,132 @@ class Event < Sequel::Model
     chef + helper + shopper + cleaner + guest
   end
 
+
   def participants
-    []
+    result = []
+    event_participants.each do |member|
+      result.push(member)
+    end
+    result
   end
 
-  def joined
-    0
+  def approved
+    result = []
+    event_participants.each do |member|
+      if member.isApproved?
+        result.push(member)
+      end
+    end
+    result
   end
 
-  def shopper_joined
-    0
+  def approved_shopper
+    result = []
+    event_participants.each do |member|
+      if member.isApproved? && member.isShopper?
+        result.push(member)
+      end
+    end
+    result
   end
 
-  def helper_joined
-    0
+  def approved_chef
+    result = []
+    event_participants.each do |member|
+      if member.isApproved? && member.isChef?
+        result.push(member)
+      end
+    end
+    result
   end
 
-  def chef_joined
-    0
+  def approved_helper
+    result = []
+    event_participants.each do |member|
+      if member.isApproved? && member.isHelper?
+        result.push(member)
+      end
+    end
+    result
+  end
+  def approved_guest
+    result = []
+    event_participants.each do |member|
+      if member.isApproved? && member.isGuest?
+        result.push(member)
+      end
+    end
+    result
+  end
+  def approved_cleaner
+    result = []
+    event_participants.each do |member|
+      if member.isApproved? && member.isCleaner?
+        result.push(member)
+      end
+    end
+    result
   end
 
-  def guest_joined
-    0
+
+  def approved_count
+    count = 0
+    event_participants.each do |member|
+      if member.isApproved?
+        count+=1
+      end
+    end
+    count
   end
 
-  def cleaner_joined
-    0
+  def shopper_approved_count
+    count = 0
+    event_participants.each do |member|
+      if member.isApproved? && member.isShopper?
+        count+=1
+      end
+    end
+    count
+  end
+
+  def helper_approved_count
+    count = 0
+    event_participants.each do |member|
+      if member.isApproved? && member.isHelper?
+        count+=1
+      end
+    end
+    count
+  end
+
+  def chef_approved_count
+    count = 0
+    event_participants.each do |member|
+      if member.isApproved? && member.isChef?
+        count+=1
+      end
+    end
+    count
+  end
+
+  def guest_approved_count
+    count = 0
+    event_participants.each do |member|
+      if member.isApproved? && member.isGuest?
+        count+=1
+      end
+    end
+    count
+  end
+
+  def cleaner_approved_count
+    count = 0
+    event_participants.each do |member|
+      if member.isApproved? && member.isCleaner?
+        count+=1
+      end
+    end
+    count
   end
 
   def menus
