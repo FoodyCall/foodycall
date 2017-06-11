@@ -8,6 +8,7 @@ class CreateEvent
   private_class_method
 
   def self.create_new_event(host_id:,event:)
+    event = ActiveSupport::HashWithIndifferentAccess.new(event)
     user = User.where(:id => host_id).first
     saved_event = user.add_event(
       name: event[:name],
