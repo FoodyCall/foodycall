@@ -26,5 +26,9 @@ $(function() {
     $('#newDish').modal('show');
   });
 
-  
+  $(".upload-btn").on("click",function() {
+    $("#dishImg").click();
+  });
+
+
 });

@@ -138,6 +138,11 @@ div.datetime {
   color: #fff;
   background-color: #ff6e40;
 }
+.create-event-btn:hover {
+  background-color: #fff;
+    color: #ff6e40;
+    border-color:#ff6e40;
+}
 
 .buttons button {
   margin: 20px 120px 50px 40px;
@@ -153,7 +158,35 @@ div.datetime {
   color: #655f5f;
 }
 
+.upload-btn {
+  width: 170px;
+  height: 75px;
+}
 
+.upload-btn span.glyphicon {
+  font-size: 37px;
+  color: #655f5f;
+  display:block;
+}
+
+.upload-tag {
+  font-size: 19px;
+    color: #655f5f;
+}
+
+.add-dish {
+  border-color: #ff6e40;
+  color: #fff;
+  background-color: #ff6e40;
+
+  width: 143px;
+}
+
+.add-dish:hover {
+    background-color: #fff;
+    color: #ff6e40;
+    border-color:#ff6e40;
+}
 
 /******************* SPINNER ***************************************/
 .spinner {

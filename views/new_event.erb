@@ -224,9 +224,18 @@
           </div>
           <div class="images form-group">
             <label for="dishImg">Dish Image</label>
-             <input type="file" id="dishImg">
+             <input style="display:none;" type="file" id="dishImg" >
           </div>
+          <button type="button" class="btn btn-default upload-btn" name="button">
+            <span class="glyphicon glyphicon-picture"></span>
+            <span class="upload-tag">Upload my photo</span>
+          </button>
 
+          <div class="recipe form-group">
+            <label for="dishImg">Recipe</label>
+            <textarea class="form-control" rows="5"></textarea>
+          </div>
+          <button type="button" class="btn btn-default col-lg-offset-9 add-dish" name="button">Add</button>
         </div>
       </div>
     </div>
