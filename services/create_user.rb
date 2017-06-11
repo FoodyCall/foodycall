@@ -16,7 +16,8 @@ class CreateUser
       email: user[:email],
       city: user[:city],
       country: user[:country],
-      rating: user[:rating]
+      rating: user[:rating],
+      img_path: user[:img_path]
     )
     new_user.password = user[:password]
     new_user.save

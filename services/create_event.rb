@@ -8,6 +8,7 @@ class CreateEvent
   private_class_method
 
   def self.create_new_event(host_id:,event:)
+    event = ActiveSupport::HashWithIndifferentAccess.new(event)
     user = User.where(:id => host_id).first
     saved_event = user.add_event(
       name: event[:name],
@@ -26,7 +27,8 @@ class CreateEvent
           name: menu[:name],
           type: menu[:type],
           tags: menu[:tags].join(','),
-          recipe: menu[:recipe]
+          recipe: menu[:recipe],
+          img_path: menu[:img_path]
         )
       end
     end
