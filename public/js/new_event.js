@@ -30,5 +30,16 @@ $(function() {
     $("#dishImg").click();
   });
 
+  $(".delete-dish").on("click",function(event){
+    event.preventDefault();
+    $(this).closest(".col-lg-2").remove();
+  });
+
+  $(".edit-dish").on("click",function(event){
+    event.preventDefault();
+    //$("#newDish #dishName").val($(this).closest(".thumbnail").find(".dish-name").text());
+    $("#newDish").modal("show");
+  });
+
 
 });
