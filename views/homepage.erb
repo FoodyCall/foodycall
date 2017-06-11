@@ -34,6 +34,7 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <h3 class="modal-title" id="event-modal">Title</h3>
+              <span class="hidden" id="event-modal-id">Title</h3>
               <p class="modal-sub-title">
                 <span class="modal-date"></span>
                 <span class="modal-time"></span>
@@ -43,7 +44,7 @@
               </p>
               <div class="modal-event-availability">
                 <img src="img/par-1-4.png" alt="">
-                <p><span class="modal-joined">2</span>/<span class="modal-total">3</span></p>
+                <p><span class="modal-approved">2</span>/<span class="modal-total">3</span></p>
               </div>
             </div>
             <p class="subtitle-tag">Participants</p>
@@ -98,66 +99,7 @@
               <div class="popover bottom">
                 <div class="arrow" style="left: 5.5%"></div>
                 <div class="popover-content">
-                  <div class="participant">
-                    <img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56">
-                    <div class="">
-                      <p>Eduardo Salazar <span class="participant-age">(22)</span></p>
-                      <p class="participant-username">@garynil</p>
-                      <p class="participant-location">Taipei, Taiwan</p>
-                      <p class="participant-rating">
-                        <span class="star glyphicon glyphicon-star"></span>
-                        <span class="star glyphicon glyphicon-star"></span>
-                        <span class="star glyphicon glyphicon-star"></span>
-                        <span class="star glyphicon glyphicon-star-empty"></span>
-                        <span class="star glyphicon glyphicon-star-empty"></span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="participant">
-                    <img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56">
-                    <div class="">
-                      <p>Eduardo Salazar <span class="participant-age">(22)</span></p>
-                      <p class="participant-username">@garynil</p>
-                      <p class="participant-location">Taipei, Taiwan</p>
-                      <p class="participant-rating">
-                        <span class="star glyphicon glyphicon-star"></span>
-                        <span class="star glyphicon glyphicon-star"></span>
-                        <span class="star glyphicon glyphicon-star"></span>
-                        <span class="star glyphicon glyphicon-star-empty"></span>
-                        <span class="star glyphicon glyphicon-star-empty"></span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="participant">
-                    <img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56">
-                    <div class="">
-                      <p>Eduardo Salazar <span class="participant-age">(22)</span></p>
-                      <p class="participant-username">@garynil</p>
-                      <p class="participant-location">Taipei, Taiwan</p>
-                      <p class="participant-rating">
-                        <span class="star glyphicon glyphicon-star"></span>
-                        <span class="star glyphicon glyphicon-star"></span>
-                        <span class="star glyphicon glyphicon-star"></span>
-                        <span class="star glyphicon glyphicon-star-empty"></span>
-                        <span class="star glyphicon glyphicon-star-empty"></span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="participant">
-                    <img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56">
-                    <div class="">
-                      <p>Eduardo Salazar <span class="participant-age">(22)</span></p>
-                      <p class="participant-username">@garynil</p>
-                      <p class="participant-location">Taipei, Taiwan</p>
-                      <p class="participant-rating">
-                        <span class="star glyphicon glyphicon-star"></span>
-                        <span class="star glyphicon glyphicon-star"></span>
-                        <span class="star glyphicon glyphicon-star"></span>
-                        <span class="star glyphicon glyphicon-star-empty"></span>
-                        <span class="star glyphicon glyphicon-star-empty"></span>
-                      </p>
-                    </div>
-                  </div>
+
                 </div>
               </div>
             </div>
@@ -226,19 +168,42 @@
         <img class="center-cropped " src="<%= event.img_path%>">
         <div class="caption">
           <div id="hidden-info" class="hidden">
-            <span class="event-joined"><%= event.joined%></span>
+            <span class="event-id"><%= event.id%></span>
             <span class="event-total"><%= event.totalParticipants%></span>
             <span class="event-shopper"><%= event.shopper%></span>
             <span class="event-chef"><%= event.chef%></span>
             <span class="event-helper"><%= event.helper%></span>
             <span class="event-guest"><%= event.guest%></span>
             <span class="event-cleaner"><%= event.cleaner%></span>
-            <span class="event-shopper-joined"><%= event.shopper_joined%></span>
-            <span class="event-chef-joined"><%= event.chef_joined%></span>
-            <span class="event-helper-joined"><%= event.helper_joined%></span>
-            <span class="event-guest-joined"><%= event.guest_joined%></span>
-            <span class="event-cleaner-joined"><%= event.cleaner_joined%></span>
-            <span class="event-menu">Hola hola </span>
+            <span class="event-approved"><%= event.approved_count%></span>
+            <span class="event-shopper-approved"><%= event.shopper_approved_count%></span>
+            <span class="event-chef-approved"><%= event.chef_approved_count%></span>
+            <span class="event-helper-approved"><%= event.helper_approved_count%></span>
+            <span class="event-guest-approved"><%= event.guest_approved_count%></span>
+            <span class="event-cleaner-approved"><%= event.cleaner_approved_count%></span>
+
+            <% ["shopper","chef","helper","guest","cleaner"].each do |role| %>
+              <div data-event-id="<%=index%>" class="event-participants-<%=role%>-<%=event.id%>">
+                <% event.send("approved_#{role}").each_with_index do |participant,index| %>
+                  <div class="participant">
+                    <img src="<%= participant.user.img_path%>">
+                    <div class="">
+                      <p><%= participant.user.fullName%> <span class="participant-age">(<%= participant.user.age%>)</span></p>
+                      <!-- <p class="participant-username">@garynil</p> -->
+                      <p class="participant-location"><%= participant.user.city%>,<%= participant.user.country%></p>
+                      <p class="participant-rating">
+                        <% event.host.rate.times do |i| %>
+                          <span class="star glyphicon glyphicon-star"></span>
+                        <% end %>
+                        <% (5 - event.host.rate).times do |i| %>
+                          <span class="star glyphicon glyphicon-star-empty"></span>
+                        <% end %>
+                      </p>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
 
             <div class="event-menus">
               <% event.menus.each_with_index do |menu,index| %>
@@ -293,19 +258,19 @@
           </span>
           <span class="event-availability pull-right">
             <% value = event.totalParticipants.size / 4 %>
-            <% if event.joined >= value * 4 %>
+            <% if event.approved_count >= value * 4 %>
               <img src="img/par-4-4.png" alt="">
-            <% elsif event.joined >= value * 3%>
+            <% elsif event.approved_count >= value * 3%>
               <img src="img/par-3-4.png" alt="">
-            <% elsif event.joined >= value * 2%>
+            <% elsif event.approved_count >= value * 2%>
               <img src="img/par-2-4.png" alt="">
-            <% elsif event.joined >= value * 1%>
+            <% elsif event.approved_count >= value * 1%>
               <img src="img/par-1-4.png" alt="">
             <% else %>
               <img src="img/par-0-4.png" alt="">
             <% end %>
 
-            <p><span><%= event.participants.size %></span>/<span><%= event.totalParticipants %></span></p>
+            <p><span><%= event.approved.size %></span>/<span><%= event.totalParticipants %></span></p>
           </span>
         </div>
       </div>

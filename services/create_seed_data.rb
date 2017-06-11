@@ -57,36 +57,78 @@ class CreateSeedData
     file = File.read("#{__dir__}/../db/seed/events.json")
     events = JSON.parse(file)
 
-    CreateEvent.call(
+    event_allie = CreateEvent.call(
       host_id: user_beautiful_allie.id,
       event: events[0]
     )
 
-    CreateEvent.call(
+    event_allie2 = CreateEvent.call(
       host_id: user_beautiful_allie.id,
       event: events[1]
     )
 
-    CreateEvent.call(
+    event_pola = CreateEvent.call(
       host_id: user_pola.id,
       event: events[2]
     )
 
-    CreateEvent.call(
+    event_pola2 = CreateEvent.call(
       host_id: user_pola.id,
       event: events[3]
     )
 
-    CreateEvent.call(
+    event_eduardo =CreateEvent.call(
       host_id: user_eduardo.id,
       event: events[4]
     )
 
-    CreateEvent.call(
+    event_eduardo2 = CreateEvent.call(
       host_id: user_eduardo.id,
       event: events[5]
     )
 
+    #JoinEvent
+    JoinEvent.call(
+      user_id:user_beautiful_allie.id,
+      event_id: event_allie.id,
+      roles: ["Chef"]
+    )
+
+    JoinEvent.call(
+      user_id:user_eduardo.id,
+      event_id: event_allie.id,
+      roles: ["Chef"]
+    )
+
+    JoinEvent.call(
+      user_id:user_beautiful_allie.id,
+      event_id: event_allie2.id,
+      roles: ["Helper"]
+    )
+
+    JoinEvent.call(
+      user_id:user_pola.id,
+      event_id: event_pola.id,
+      roles: ["Chef"]
+    )
+
+    JoinEvent.call(
+      user_id:user_pola.id,
+      event_id: event_pola2.id,
+      roles: ["Shopper"]
+    )
+
+    JoinEvent.call(
+      user_id:user_eduardo.id,
+      event_id: event_eduardo.id,
+      roles: ["Guest"]
+    )
+
+    JoinEvent.call(
+      user_id:user_eduardo.id,
+      event_id: event_eduardo2.id,
+      roles: ["Cleaner"]
+    )
     # user_edu = CreateUser.call(
     #   {firstName: "Ed",
     #   lastName: "Sal",
