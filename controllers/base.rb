@@ -46,6 +46,10 @@ class FoodyCallApp < Sinatra::Base
     erb :homepage
   end
 
+  get '/new_event' do
+    erb :new_event
+  end
+
 
   # post '/api/v1/user/:id/event' do
   #   event = _get_body_of_request

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/new_event.css">
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript" src="/js/new_event.js">
+  </script>
+</head>
+<body>
+
+
+
+
+
+
+
+  <%= erb :nav %>
+  <div class="container">
+    <h3>Let's create a new event!</h3>
+    <form class="create-event-form">
+      <div class="form-group">
+        <label for="eventName">Event Name</label>
+        <input type="text" class="form-control" id="eventName" placeholder="">
+      </div>
+      <div class="form-group datetime">
+        <label for="eventDate">Event Date</label>
+        <input type="text" class="form-control" id="eventDate" placeholder="">
+      </div>
+      <div class="form-group datetime">
+        <label for="eventTime">Event Time</label>
+        <input type="text" class="form-control" id="eventTime" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="eventAddress">Address</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="eventAddress" placeholder="">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" name="button">
+              <span class="glyphicon glyphicon-map-marker"></span>
+            </button>
+          </span>
+        </div>
+
+      </div>
+      <div class="form-group">
+        <label class="event-privacy-label" for="eventPrivacy">Share the event with</label>
+        <div class="radio-inline">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            Everyone
+          </label>
+        </div>
+        <div class="radio-inline">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            Private link
+          </label>
+        </div>
+      </div>
+      <label for="">Participants and Roles</label>
+      <div class="row">
+        <div class="roles col-lg-10 col-lg-offset-2">
+          <div class="role">
+
+            <span class="shopper-role">
+              <img class="role-img" src="img/role-1.png">
+            </span>
+            <p class="role-name">Shopper</p>
+            <div class="input-group spinner">
+              <input type="text" class="form-control" value="1">
+              <div class="input-group-btn-vertical">
+                <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-up"></i></button>
+                <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-down"></i></button>
+              </div>
+            </div>
+
+          </div>
+          <div class="role">
+
+            <span class="chef-role">
+              <img class="role-img" src="img/role-2.png">
+            </span>
+            <p class="role-name">Chef</p>
+            <div class="input-group spinner">
+              <input type="text" class="form-control" value="1">
+              <div class="input-group-btn-vertical">
+                <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-up"></i></button>
+                <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-down"></i></button>
+              </div>
+            </div>
+
+          </div>
+          <div class="role">
+
+            <span class="helper-role">
+              <img class="role-img" src="img/role-3.png">
+            </span>
+            <p class="role-name">Helper</p>
+            <div class="input-group spinner">
+              <input type="text" class="form-control" value="1">
+              <div class="input-group-btn-vertical">
+                <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-up"></i></button>
+                <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-down"></i></button>
+              </div>
+            </div>
+
+          </div>
+          <div class="role">
+
+            <span class="guest-role">
+              <img class="role-img" src="img/role-4.png">
+            </span>
+            <p class="role-name">Guest</p>
+            <div class="input-group spinner">
+              <input type="text" class="form-control" value="1">
+              <div class="input-group-btn-vertical">
+                <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-up"></i></button>
+                <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-down"></i></button>
+              </div>
+            </div>
+
+          </div>
+          <div class="role">
+
+            <span class="cleaner-role">
+              <img class="role-img" src="img/role-5.png">
+            </span>
+            <p class="role-name">Cleaner</p>
+            <div class="input-group spinner">
+              <input type="text" class="form-control" value="1">
+              <div class="input-group-btn-vertical">
+                <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-up"></i></button>
+                <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-down"></i></button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="my-role col-lg-10 col-lg-offset-2">
+          <label class="my-role-tag">Choose your role</label>
+          <div class="dropdown my-role-tag">
+            <button class="btn btn-default dropdown-toggle" type="button" id="myRoleMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Chef <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="myRoleMenu">
+              <li><a href="">Shopper</a></li>
+              <li><a href="">Chef</a></li>
+              <li><a href="">Helper</a></li>
+              <li><a href="">Guest</a></li>
+              <li><a href="">Cleaner</a></li>
+            </ul>
+          </div>
+          <label class="my-role-tag" for="">Total</label>
+          <label class="total my-role-tag" for="total">5</label>
+        </div>
+      </div>
+      <label for="">Menu and Recipe</label>
+      <div class="recipes row">
+        <div class="col-lg-2">
+          <div class="thumbnail">
+            <img class="center-cropped" src="https://eatpizzafresca.com/images/pepperoni_pizza.jpg?crc=4023861219" alt="...">
+            <div class="caption">
+              <p>Pepperoni Pizza</p>
+              <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-edit"></span></a> <a href="#" class="btn btn-default" role="button"><span class="glyphicon glyphicon-trash"></span></a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 new-dish-btn">
+          <a href="">
+          <div class="thumbnail">
+            <p><span class="glyphicon glyphicon-plus "></span></p>
+            <p>Add new dish</p>
+          </div>
+          </a>
+        </div>
+      </div>
+      <div class="buttons col-lg-8 col-lg-offset-2">
+        <button type="button" class="cancel-event-btn btn btn-default" name="button">Cancel</button><button type="submit" class="btn create-event-btn btn-default">Create</button>
+
+      </div>
+      </form>
+  </div>
+  <!-- EVENT MODAL -->
+  <div class="modal fade" id="newDish" tabindex="-1" role="dialog" aria-labelledby="new-dish-modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3>Add new dish</h3>
+          <div class="form-group">
+            <label for="dishName">Dish Name</label>
+            <input type="text" class="form-control" id="dishName" placeholder="">
+          </div>
+          <div class="radios">
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> None
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Vegetarian
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Vegan
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option3"> Halal
+            </label>
+          </div>
+          <div class="checkboxes">
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox1" value="seafood"> Seafood
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox2" value="option2"> Spicy
+            </label>
+          </div>
+          <div class="images form-group">
+            <label for="dishImg">Dish Image</label>
+             <input type="file" id="dishImg">
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- END OF MODAL-->
+</body>
+</html>
