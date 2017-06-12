@@ -13,6 +13,8 @@ class CreateEvent
     saved_event = user.add_event(
       name: event[:name],
       location: event[:location],
+      country: event[:country],
+      city: event[:city],
       date: event[:date],
       chef: event[:chef],
       helper: event[:helper],

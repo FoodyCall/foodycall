@@ -337,7 +337,7 @@
           <h3><%= event.name.gsub(/^(.{60,}?).*$/m,'\1...') %></h3>
 
           <span class="date"><%=event.date.strftime("%Y-%m-%d")%></span> <span class="time"><%=event.date.strftime("%l:%M %p")%></span>
-          <span class="glyphicon glyphicon-map-marker location-icon"></span><span class=""><%= event.location.split(',').last %></span>
+          <span class="glyphicon glyphicon-map-marker location-icon"></span><span class=""><%= event.city + ',' + event.country%></span>
           <span class="location hidden"><%= event.location %></span>
           <br>
           <span class="host_by">Hosted by</span>

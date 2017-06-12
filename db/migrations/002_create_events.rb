@@ -6,6 +6,8 @@ Sequel.migration do
       primary_key :id
       String :name, null:false
       String :location, null:false
+      String :country, null:false
+      String :city, null:false
       Integer :host_id, null:false
       DateTime :date, null:false
       String :img_path

@@ -2,6 +2,8 @@
   {
     "name": "Let's taste the authentic Thai Green curry!",
     "location": " Guangfu Rd, East District, Hsinchu City",
+    "country": "Taiwan",
+    "city": "Hsinchu",
     "date": "2017/07/31 06:00 PM",
     "chef": 2,
     "helper": 1,
@@ -37,6 +39,8 @@
   {
     "name": "Prepare yourself for spicy Thai papaya salad with sticky rice!",
     "location": "Xitun Rd, Central District, Taichung City",
+    "country": "Taiwan",
+    "city": "Taichung",
     "date": "2017/07/31 11.00 AM",
     "chef": 1,
     "helper": 2,
@@ -72,6 +76,8 @@
   {
     "name": "Japanese grilled salmon",
     "location": "Huaxiu Rd, Changhua city",
+    "country": "Taiwan",
+    "city": "Changhua",
     "date": "2017/07/25 5:00 PM",
     "chef": 2,
     "helper": 1,
@@ -96,6 +102,8 @@
   {
     "name": "Cooking Japanese Ramen with Japanese friends",
     "location": "Dongmin rd, Dali district, Taichung City",
+    "country": "Taiwan",
+    "city": "Taichung",
     "date": "2017/07/15 10:00 PM",
     "chef": 3,
     "helper": 2,
@@ -120,6 +128,8 @@
   {
     "name": "Practice English with foreigner friends while eating Brussels Sprouts Pizza",
     "location": "Minsheng Rd, West Central District, Tainan",
+    "country": "Taiwan",
+    "city": "Tainan",
     "date": "2017/08/5 04:00 PM",
     "chef": 2,
     "helper": 1,
@@ -143,6 +153,8 @@
   {
     "name": "It's time for Lasagna !",
     "location": "Datong road, Xinxing district, Gaoxiong City",
+    "country": "Taiwan",
+    "city": "Gaoxiong",
     "date": "2017/06/20 06:00 PM",
     "chef": 1,
     "helper": 1,

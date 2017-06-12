@@ -226,3 +226,6 @@ div.datetime {
   left: 3px;
 }
 /********************************* SPINNER END ****************************************************/
+.no-margin-right{
+  margin-right: 0px;
+}
