@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/event_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/event_dashboard.js"></script>
+    </script>
+  </head>
+  <body>
+    <%= erb :nav %>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <h3>Participants</h3>
+          <div class="participants">
+            <div class="participant">
+              <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56">
+              <div>
+                <p>Eduardo Salazar <span class="participant-age">(22)</span></p>
+                <p class="participant-username">@garynil</p>
+                <p class="participant-location">Taipei, Taiwan</p>
+                <p class="participant-rating">
+                  <span class="star glyphicon glyphicon-star"></span>
+                  <span class="star glyphicon glyphicon-star"></span>
+                  <span class="star glyphicon glyphicon-star"></span>
+                  <span class="star glyphicon glyphicon-star-empty"></span>
+                  <span class="star glyphicon glyphicon-star-empty"></span>
+                </p>
+              </div>
+              <div class="participant-role">
+                <span class="shopper-role">
+                  <img class="role-img" src="/img/role-1.png">
+                </span>
+                <p class="role-name">Shopper</p>
+              </div>
+            </div>
+            <div class="participant">
+              <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56">
+              <div>
+                <p>Eduardo Salazar <span class="participant-age">(22)</span></p>
+                <p class="participant-username">@garynil</p>
+                <p class="participant-location">Taipei, Taiwan</p>
+                <p class="participant-rating">
+                  <span class="star glyphicon glyphicon-star"></span>
+                  <span class="star glyphicon glyphicon-star"></span>
+                  <span class="star glyphicon glyphicon-star"></span>
+                  <span class="star glyphicon glyphicon-star-empty"></span>
+                  <span class="star glyphicon glyphicon-star-empty"></span>
+                </p>
+              </div>
+              <div class="participant-role">
+                <span class="chef-role">
+                  <img class="role-img" src="/img/role-2.png">
+                </span>
+                <p class="role-name">Chef</p>
+              </div>
+            </div>
+            <div class="participant">
+              <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56">
+              <div>
+                <p>Eduardo Salazar <span class="participant-age">(22)</span></p>
+                <p class="participant-username">@garynil</p>
+                <p class="participant-location">Taipei, Taiwan</p>
+                <p class="participant-rating">
+                  <span class="star glyphicon glyphicon-star"></span>
+                  <span class="star glyphicon glyphicon-star"></span>
+                  <span class="star glyphicon glyphicon-star"></span>
+                  <span class="star glyphicon glyphicon-star-empty"></span>
+                  <span class="star glyphicon glyphicon-star-empty"></span>
+                </p>
+              </div>
+              <div class="participant-role">
+                <span class="helper-role">
+                  <img class="role-img" src="/img/role-3.png">
+                </span>
+                <p class="role-name">Helper</p>
+              </div>
+            </div>
+            <div class="participant">
+              <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56">
+              <div>
+                <p>Eduardo Salazar <span class="participant-age">(22)</span></p>
+                <p class="participant-username">@garynil</p>
+                <p class="participant-location">Taipei, Taiwan</p>
+                <p class="participant-rating">
+                  <span class="star glyphicon glyphicon-star"></span>
+                  <span class="star glyphicon glyphicon-star"></span>
+                  <span class="star glyphicon glyphicon-star"></span>
+                  <span class="star glyphicon glyphicon-star-empty"></span>
+                  <span class="star glyphicon glyphicon-star-empty"></span>
+                </p>
+              </div>
+              <div class="participant-role">
+                <span class="guest-role">
+                  <img class="role-img" src="/img/role-4.png">
+                </span>
+                <p class="role-name">Guest</p>
+              </div>
+            </div>
+            <div class="participant">
+              <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56">
+              <div>
+                <p>Eduardo Salazar <span class="participant-age">(22)</span></p>
+                <p class="participant-username">@garynil</p>
+                <p class="participant-location">Taipei, Taiwan</p>
+                <p class="participant-rating">
+                  <span class="star glyphicon glyphicon-star"></span>
+                  <span class="star glyphicon glyphicon-star"></span>
+                  <span class="star glyphicon glyphicon-star"></span>
+                  <span class="star glyphicon glyphicon-star-empty"></span>
+                  <span class="star glyphicon glyphicon-star-empty"></span>
+                </p>
+              </div>
+              <div class="participant-role">
+                <span class="cleaner-role">
+                  <img class="role-img" src="/img/role-5.png">
+                </span>
+                <p class="role-name">Cleaner</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <h2 class="event-title">Friday night! Eat pizzaaaaa!</h2>
+          <div>
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation dashboard" class="active"><a href="#discussion" aria-controls="discussion" role="tab" data-toggle="tab">Discussion</a></li>
+            <li role="presentation dashboard"><a href="#detail" aria-controls="detail" role="tab" data-toggle="tab">Event Detail</a></li>
+            <li role="presentation dashboard"><a href="#request" aria-controls="request" role="tab" data-toggle="tab">Request</a></li>
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="discussion">
+              <div class="input-post">
+                <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56" alt="">
+                <input type="text" placeholder="Write your post here..." >
+              </div>
+              <div class="discussion-board">
+                <div class="post">
+                  <div class="usr-post">
+                    <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56" class="usr-post-img" alt="">
+                    <span class="usr-post-name">Pornlada Ittipornpithak <span class="usr-post-age">(22)</span></span>
+                  </div>
+                  <p class="usr-post-text">When will we shop for ingredients? I'm Hungryyyyy!!!! :D :D :D :D :D</p>
+                </div>
+                <div class="post">
+                  <div class="usr-post">
+                    <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56" class="usr-post-img" alt="">
+                    <span class="usr-post-name">Pornlada Ittipornpithak <span class="usr-post-age">(22)</span></span>
+                  </div>
+                  <p class="usr-post-text">Lets go to Costco on Sunday!! Lorem
+                    ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                    elementum tortor urna, ac interdum augue rutrum ac.
+                     Pellentesque pretium lacinia metus, id pretium lorem aliquet
+                      id. Maecenas et neque quis diam pretium fermentum nec auctor
+                       tortor. Proin gravida, nunc at lacinia fermentum, leo ante
+                        fringilla augue, vehicula varius ligula nunc et ante.
+                         Nam placerat rutrum aliquet.</p>
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="detail">...</div>
+            <div role="tabpanel" class="tab-pane" id="request">...</div>
+          </div>
+
+        </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>

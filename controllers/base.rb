@@ -40,7 +40,9 @@ class FoodyCallApp < Sinatra::Base
   end
 
 
-
+  get '/event_dashboard' do
+    erb :event_dashboard
+  end
 
   get '/new_event' do
     erb :new_event
