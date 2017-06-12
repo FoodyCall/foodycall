@@ -8,23 +8,69 @@ class FoodyCallApp < Sinatra::Base
 
   post '/events/new' do
     #Add validation later
-    flash[:info] = params.to_json
-    # if params[:user]['password'] != params[:user]['password2']
-    #   flash[:error] = 'Password confirmation not matching'
-    #   erb :signup
-    # else
-    #   user_data = params[:user]
-    #   user_data = ActiveSupport::HashWithIndifferentAccess.new(user_data)
-    #   saved_user = CreateUser.call(user_data)
-    #   if saved_user
-    #     session[:current_user] = saved_user.to_json
-    #     flash[:info] = "User Created. Please log in"
-    #     erb :login
-    #   else
-    #     flash[:error] = 'Error Creating User. Please check information'
-    #     erb :signup
-    #   end
-    # end
+    dishes = params['dishes']
+    urls = []
+    menus = []
+    dishes.each do |dish|
+      dish = JSON.parse(dish)
+      string = dish["img"]["base64"]
+      type = dish["img"]["fileType"]
+      url=(AWS.save_image(data: string,fileType: type))
+      urls.push(url)
+      menus.push({
+                name: dish["name"],
+                type: dish["type"],
+                tags: [],
+                recipe: dish["recipe"],
+                img_path: url
+              })
+    end
+
+    # Add host role to count
+    case params['host-role']
+      when 'Chef'
+        params['chef-count'] = params['chef-count'].to_i + 1
+      when 'Shopper'
+        params['shopper-count'] = params['shopper-count'].to_i + 1
+      when 'Helper'
+        params['helper-count'] = params['helper-count'].to_i + 1
+      when 'Cleaner'
+        params['cleaner-count'] = params['cleaner-count'].to_i + 1
+      when 'Guest'
+        params['guest-count'] = params['guest-count'].to_i + 1
+    end
+
+    event = CreateEvent.call(
+      host_id: @current_user['id'],
+      event: {
+        name: params['name'],
+        location: params['address'],
+        country: params['country'],
+        city: params['city'],
+        date: "#{params['date']} #{params['time']}",
+        chef: params['chef-count'].to_i,
+        helper: params['helper-count'].to_i,
+        shopper: params['shopper-count'].to_i,
+        cleaner: params['cleaner-count'].to_i,
+        guest: params['guest-count'].to_i,
+        img_path: urls[0],
+        menus: menus
+      }
+    )
+    join = JoinEvent.call(
+      event_id: event.id,
+      user_id: @current_user['id'],
+      roles: [params['host-role']],
+      message: ''
+    )
+
+   if event && join
+    flash[:info] = "Event Created. Waiting for participants"
+  else
+    flash[:error] = "Error creating. Please check the fields and try again."
+   end
+
+    redirect '/'
 
   end
 

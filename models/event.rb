@@ -14,6 +14,7 @@ class Event < Sequel::Model
     isJoined
   end
 
+
   def totalParticipants
     chef + helper + shopper + cleaner + guest
   end

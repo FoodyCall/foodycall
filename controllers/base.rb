@@ -20,14 +20,15 @@ class FoodyCallApp < Sinatra::Base
   # end
   before do
     # Validation of authenticated user
-    if session[:current_user]
+    puts request.path_info
+    if session[:current_user] || request.path_info == '/login'
     #  @current_user = SecureMessage.decrypt(session[:current_user])
     #   @auth_token = session[:auth_token]
     #   puts @current_user
     #   puts session[:auth_token]
       @current_user = session[:current_user]
     else
-      @current_user = nil
+      redirect :login
     end
   end
 
