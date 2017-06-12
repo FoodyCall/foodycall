@@ -21,7 +21,7 @@
 
   <%= erb :nav %>
   <div class="container col-lg-8 col-lg-push-2">
-    <h2>Let's create a new event!</h2>
+    <h1>Let's create a new event!</h1>
     <form class="create-event-form"  method="post" action="/events/new">
       <%= erb :flash_bar %>
       <div class="form-group">
@@ -189,7 +189,6 @@
       </div>
       <div class="buttons col-lg-8 col-lg-offset-2">
         <button type="button" class="cancel-event-btn btn btn-default" name="button">Cancel</button><button type="submit" class="btn create-event-btn btn-default">Create</button>
-
       </div>
       </form>
   </div>
@@ -230,8 +229,10 @@
             <label for="dishImg">Dish Image</label>
              <input style="display:none;" type="file" name="file" id="dishImg" >
           </div>
+          <img id="preview" src="#" alt="your image" class="img-thumbnail" />
           <button type="button" class="btn btn-default upload-btn" name="button">
-            <span class="glyphicon glyphicon-picture"></span>
+            <span class="glyphicon glyphicon-picture">
+            </span>
             <span class="upload-tag">Upload my photo</span>
           </button>
 

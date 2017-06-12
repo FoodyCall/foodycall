@@ -41,5 +41,23 @@ $(function() {
     $("#newDish").modal("show");
   });
 
+  $('#preview').css('display','none');
+  function readURL(input) {
+      if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            $('#preview').css('display','');
+            $('#preview').attr('src', e.target.result);
+          }
+
+          reader.readAsDataURL(input.files[0]);
+      }
+  }
+
+  $("#dishImg").change(function(){
+      readURL(this);
+  });
+
 
 });

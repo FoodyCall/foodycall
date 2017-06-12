@@ -203,7 +203,7 @@ div.datetime {
   display: table-cell;
 }
 .input-group-btn-vertical > .btn {
-  display: block;
+  display: block;``
   float: none;
   width: 100%;
   max-width: 100%;
@@ -228,4 +228,10 @@ div.datetime {
 /********************************* SPINNER END ****************************************************/
 .no-margin-right{
   margin-right: 0px;
+}
+#create-event-form{
+  margin-top:10px;
+}
+#preview{
+  height: 75px;
 }
