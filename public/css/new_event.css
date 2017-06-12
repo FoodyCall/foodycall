@@ -113,18 +113,21 @@ div.datetime {
   color: #655f5f;
 }
 
-.new-dish-btn .thumbnail {
+.new-dish-btn .thumbnail,
+.event-img-btn .thumbnail {
   padding-bottom: 101px;
   background-color: #f8f8f8;
 }
 
-.new-dish-btn p {
+.new-dish-btn p,
+.event-img-btn p {
   text-align: center;
   color: #655f5f;
   margin-top: 40px;
 }
 
-.new-dish-btn .glyphicon-plus {
+.new-dish-btn .glyphicon-plus,
+.event-img-btn .glyphicon-plus {
   font-size: 40px;
 }
 
@@ -229,9 +232,15 @@ div.datetime {
 .no-margin-right{
   margin-right: 0px;
 }
+.card-padding{
+  padding:3px;
+}
 #create-event-form{
   margin-top:10px;
 }
 #preview{
   height: 75px;
+}
+#eventImgPreview{
+  display: none;
 }

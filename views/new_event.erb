@@ -168,24 +168,26 @@
           <label class="total my-role-tag" for="total">5</label>
         </div>
       </div>
-      <label for="">Menu and Recipe</label>
-      <div class="recipes row">
-        <div class="col-lg-2">
-          <div class="thumbnail">
-            <img class="center-cropped" src="https://eatpizzafresca.com/images/pepperoni_pizza.jpg?crc=4023861219" alt="...">
-            <div class="caption">
-              <p class"dish-name">Pepperoni Pizza</p>
-              <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-edit edit-dish"></span></a> <a href="#" class="btn btn-default delete-dish" role="button"><span class="glyphicon glyphicon-trash"></span></a></p>
+      <div class="">
+        <label for="">Menu and Recipe</label>
+        <div class="recipes row">
+          <!-- <div class="col-lg-2 card-padding">
+            <div class="thumbnail">
+              <img class="center-cropped" src="https://eatpizzafresca.com/images/pepperoni_pizza.jpg?crc=4023861219" alt="...">
+              <div class="caption">
+                <p class"dish-name">Pepperoni Pizza</p>
+                <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-edit edit-dish"></span></a> <a href="#" class="btn btn-default delete-dish" role="button"><span class="glyphicon glyphicon-trash"></span></a></p>
+              </div>
             </div>
+          </div> -->
+          <div id="btnOpenNewDishModal" class="col-lg-2 new-dish-btn card-padding">
+            <a href="">
+            <div class="thumbnail">
+              <p><span class="glyphicon glyphicon-plus "></span></p>
+              <p>Add new dish</p>
+            </div>
+            </a>
           </div>
-        </div>
-        <div class="col-lg-2 new-dish-btn">
-          <a href="">
-          <div class="thumbnail">
-            <p><span class="glyphicon glyphicon-plus "></span></p>
-            <p>Add new dish</p>
-          </div>
-          </a>
         </div>
       </div>
       <div class="buttons col-lg-10 col-lg-offset-2">
@@ -202,30 +204,30 @@
           <h3>Add new dish</h3>
           <div class="form-group">
             <label for="dishName">Dish Name</label>
-            <input type="text" class="form-control" id="dishName" placeholder="">
+            <input type="text" class="form-control" id="newDish-name" placeholder="">
           </div>
           <div class="radios">
             <label class="radio-inline">
-              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> None
+              <input type="radio" name="newDish-type" id="inlineRadio1" value="None"> None
             </label>
             <label class="radio-inline">
-              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Vegetarian
+              <input type="radio" name="newDish-type" id="inlineRadio2" value="Vegetarian"> Vegetarian
             </label>
             <label class="radio-inline">
-              <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Vegan
+              <input type="radio" name="newDish-type" id="inlineRadio3" value="Vegan"> Vegan
             </label>
             <label class="radio-inline">
-              <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option3"> Halal
+              <input type="radio" name="newDish-type" id="inlineRadio4" value="Halal"> Halal
             </label>
           </div>
-          <div class="checkboxes">
+          <!-- <div class="checkboxes">
             <label class="checkbox-inline">
               <input type="checkbox" id="inlineCheckbox1" value="seafood"> Seafood
             </label>
             <label class="checkbox-inline">
               <input type="checkbox" id="inlineCheckbox2" value="option2"> Spicy
             </label>
-          </div>
+          </div> -->
           <div class="images form-group">
             <label for="dishImg">Dish Image</label>
              <input style="display:none;" type="file" name="file" id="dishImg" >
@@ -239,9 +241,9 @@
 
           <div class="recipe form-group">
             <label for="dishImg">Recipe</label>
-            <textarea class="form-control" rows="5"></textarea>
+            <textarea id="newDish-recipe" class="form-control" rows="5"></textarea>
           </div>
-          <button  type="button" class="btn btn-default col-lg-offset-9 add-dish" name="button">Add</button>
+          <button  type="button" class="btn btn-default col-lg-offset-9 add-dish" id="newDish-btn" name="button">Add</button>
         </div>
       </div>
     </div>

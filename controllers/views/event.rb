@@ -8,7 +8,24 @@ class FoodyCallApp < Sinatra::Base
 
   post '/events/new' do
     #Add validation later
-    flash[:info] = params.to_json
+    dishes = params['dishes']
+    urls = []
+    menus = []
+    dishes.each do |dish|
+      dish = JSON.parse(dish)
+      string = dish["img"]["base64"]
+      type = dish["img"]["fileType"]
+      url=(AWS.save_image(data: string,fileType: type))
+      urls.push(url)
+      menus.push({
+                name: dish["name"],
+                type: dish["type"],
+                tags: [],
+                recipe: dish["recipe"],
+                img_path: url
+              })
+    end
+
     # Add host role to count
     case params['host-role']
       when 'Chef'
@@ -22,6 +39,7 @@ class FoodyCallApp < Sinatra::Base
       when 'Guest'
         params['guest-count'] = params['guest-count'].to_i + 1
     end
+
     event = CreateEvent.call(
       host_id: @current_user['id'],
       event: {
@@ -35,7 +53,8 @@ class FoodyCallApp < Sinatra::Base
         shopper: params['shopper-count'].to_i,
         cleaner: params['cleaner-count'].to_i,
         guest: params['guest-count'].to_i,
-        img_path: ""
+        img_path: urls[0],
+        menus: menus
       }
     )
     join = JoinEvent.call(
