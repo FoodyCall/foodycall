@@ -39,6 +39,7 @@ Sequel.migration do
       FalseClass :cleaner
       FalseClass :guest
       FalseClass :approved
+      FalseClass :rejected
       DateTime :created_at
       DateTime :updated_at
     end

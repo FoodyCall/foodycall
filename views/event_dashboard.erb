@@ -71,7 +71,7 @@
           </div>
         </div>
         <div class="col-lg-8">
-          <span class="event-id hidden"><%= @event.id%></span>
+          <span class="event-id hidden"><%= @event.id %></span>
           <span class="user-name-age hidden"><%= @user_id%>(<%=@current_user['age']%>)</span>
           <h2 class="event-title"><%= @event.name %></h2>
           <div>
@@ -151,6 +151,7 @@
                 <% if @pending_request %>
                 <% @pending_request.each do |request| %>
                 <div class="request">
+                  <span class="request-user-id hidden"><%= request.user.id %></span>
                   <div class="usr-request">
                     <img class="img-circle" src="<%= request.user.img_path%>">
                     <div>

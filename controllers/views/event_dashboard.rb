@@ -4,6 +4,7 @@ require 'http'
 class FoodyCallApp < Sinatra::Base
 
   get '/dashboard/:id' do
+    @user = @current_user
     @event = RetrieveEvents.id(params[:id])
     @posts = RetrievePost.call(event_id: params[:id])
     @pending_request = RetriveParticipantRequest.call(event_id: params[:id])
@@ -33,6 +34,17 @@ class FoodyCallApp < Sinatra::Base
     )
 
     halt 201
+  end
+
+  post '/approve' do
+
+    post = ApproveRequest.call(
+      user_id: params[:user_id],
+      event_id:params[:event_id]
+    )
+
+    halt 201
+
   end
 
 end
