@@ -78,8 +78,8 @@
           <!-- Nav tabs -->
           <ul class="nav nav-tabs" role="tablist">
             <li role="presentation dashboard" ><a href="#discussion" aria-controls="discussion" role="tab" data-toggle="tab">Discussion</a></li>
-            <li role="presentation dashboard" class="active"><a href="#detail" aria-controls="detail" role="tab" data-toggle="tab">Event Detail</a></li>
-            <li role="presentation dashboard"><a href="#request" aria-controls="request" role="tab" data-toggle="tab">Request</a></li>
+            <li role="presentation dashboard" ><a href="#detail" aria-controls="detail" role="tab" data-toggle="tab">Event Detail</a></li>
+            <li role="presentation dashboard" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab">Request</a></li>
           </ul>
 
           <!-- Tab panes -->
@@ -100,12 +100,11 @@
                     <div class="usr-post-text-div">
                       <p class="usr-post-text"><%= post.post%></p>
                     </div>
-                  </div>
                 <%end%>
                 <%end%>
               </div>
             </div>
-            <div role="tabpanel" class="tab-pane active" id="detail">
+            <div role="tabpanel" class="tab-pane " id="detail">
               <div class="detail-main">
                 <p class="subtitle-tag">Event Details</p>
                 <p class="detail-sub-title">
@@ -147,9 +146,127 @@
               </div>
 
             </div>
-            <div role="tabpanel" class="tab-pane" id="request">...</div>
+            <div role="tabpanel" class="tab-pane active" id="request">
+              <div class="requests">
+                <div class="request">
+                  <div class="usr-request">
+                    <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56">
+                    <div>
+                      <p>Eduardo Salazar <span class="request-age">(22)</span></p>
+                      <p class="request-username">@garynil</p>
+                      <p class="request-location">Taipei, Taiwan</p>
+                      <p class="request-rating">
+                        <span class="star glyphicon glyphicon-star"></span>
+                        <span class="star glyphicon glyphicon-star"></span>
+                        <span class="star glyphicon glyphicon-star"></span>
+                        <span class="star glyphicon glyphicon-star-empty"></span>
+                        <span class="star glyphicon glyphicon-star-empty"></span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="usr-request-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat arcu blandit orci posuere, id rutrum lorem scelerisque. Pellentesque vel bibendum eros. Mauris imperdiet erat a purus dapibus, in malesuada felis semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat arcu blandit orci posuere, id rutrum lorem scelerisque. Pellentesque vel bibendum eros. Mauris imperdiet erat a purus dapibus, in malesuada felis semper.  </p>
+                  </div>
+                  <div class="usr-request-options">
+                    <div class="requested-roles">
+                      <a href=""><div class="requested-role">
+                        <span class="shopper-role">
+                          <img class="role-img" src="/img/role-1.png">
+                        </span>
+                        <p class="role-name">Shopper</p>
+                      </div></a>
+                      <a href=""><div class="requested-role">
+                        <span class="chef-role">
+                          <img class="role-img" src="/img/role-2.png">
+                        </span>
+                        <p class="role-name">Chef</p>
+                      </div></a>
+                      <a href=""><div class="requested-role">
+                        <span class="helper-role">
+                          <img class="role-img" src="/img/role-3.png">
+                        </span>
+                        <p class="role-name">Helper</p>
+                      </div></a>
+                      <a href=""><div class="requested-role">
+                        <span class="guest-role">
+                          <img class="role-img" src="/img/role-4.png">
+                        </span>
+                        <p class="role-name">Guest</p>
+                      </div></a>
+                      <a href=""><div class="requested-role">
+                        <span class="cleaner-role">
+                          <img class="role-img" src="/img/role-5.png">
+                        </span>
+                        <p class="role-name">Cleaner</p>
+                      </div></a>
+                    </div>
+                    <div class="request-buttons">
+                      <button class="btn btn-default btn-reject" type="button" name="button">Reject</button>
+                      <button class="btn btn-default btn-accept" type="button" name="button">Accept</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="request">
+                  <div class="usr-request">
+                    <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56">
+                    <div>
+                      <p>Eduardo Salazar <span class="request-age">(22)</span></p>
+                      <p class="request-username">@garynil</p>
+                      <p class="request-location">Taipei, Taiwan</p>
+                      <p class="request-rating">
+                        <span class="star glyphicon glyphicon-star"></span>
+                        <span class="star glyphicon glyphicon-star"></span>
+                        <span class="star glyphicon glyphicon-star"></span>
+                        <span class="star glyphicon glyphicon-star-empty"></span>
+                        <span class="star glyphicon glyphicon-star-empty"></span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="usr-request-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat arcu blandit orci posuere, id rutrum lorem scelerisque. Pellentesque vel bibendum eros. Mauris imperdiet erat a purus dapibus, in malesuada felis semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat arcu blandit orci posuere, id rutrum lorem scelerisque. Pellentesque vel bibendum eros. Mauris imperdiet erat a purus dapibus, in malesuada felis semper.  </p>
+                  </div>
+                  <div class="usr-request-options">
+                    <div class="requested-roles">
+                      <a href=""><div class="requested-role">
+                        <span class="shopper-role">
+                          <img class="role-img" src="/img/role-1.png">
+                        </span>
+                        <p class="role-name">Shopper</p>
+                      </div></a>
+                      <a href=""><div class="requested-role">
+                        <span class="chef-role">
+                          <img class="role-img" src="/img/role-2.png">
+                        </span>
+                        <p class="role-name">Chef</p>
+                      </div></a>
+                      <a href=""><div class="requested-role">
+                        <span class="helper-role">
+                          <img class="role-img" src="/img/role-3.png">
+                        </span>
+                        <p class="role-name">Helper</p>
+                      </div></a>
+                      <a href=""><div class="requested-role">
+                        <span class="guest-role">
+                          <img class="role-img" src="/img/role-4.png">
+                        </span>
+                        <p class="role-name">Guest</p>
+                      </div></a>
+                      <a href=""><div class="requested-role">
+                        <span class="cleaner-role">
+                          <img class="role-img" src="/img/role-5.png">
+                        </span>
+                        <p class="role-name">Cleaner</p>
+                      </div></a>
+                    </div>
+                    <div class="request-buttons">
+                      <button class="btn btn-default btn-reject" type="button" name="button">Reject</button>
+                      <button class="btn btn-default btn-accept" type="button" name="button">Accept</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-
         </div>
         </div>
 

@@ -62,7 +62,7 @@ h3 {
   padding: 6px 6px 7px 6px;
 }
 .chef-role img {
-  height: 21px;
+  height: 21px !important;
 }
 
 .helper-role {
@@ -78,10 +78,10 @@ h3 {
 .cleaner-role {
   border: 3px solid #9fb9cf;
   border-radius: 60%;
-  padding: 7px 9px 11px 6px;
+  padding: 5px 9px 10px 6px;
 }
 .cleaner-role img {
-  height: 33px;
+  height: 32px !important;
 }
 
 
@@ -240,4 +240,101 @@ h3 {
   font-size: 18px;
 }
 
+.tab-pane#detail > div {
+  background-color: #fff;
+}
+
 /*********** END EVENT DETAIL **********/
+/*********** REQUESTS ******************/
+.request {
+  border: 1px solid #e7e7e7;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-top: 35px;
+}
+.request > div {
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.usr-request {
+  width: 18%;
+  margin:11px;
+  display: inline-block;
+}
+
+.usr-request-text {
+  width: 37%;
+  vertical-align: top;
+  background-color
+}
+.usr-request-text p {
+  color: #655f5f;
+  font-size: 15px;
+}
+
+.usr-request-options {
+  width: 38%;
+}
+.usr-request-options button {
+
+  width: 40%;
+  margin-right: 20px;
+}
+.usr-request p {
+  font-size: 13px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  color: #655f5f;
+}
+
+.usr-request img {
+  height: 70px;
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+
+.request-username {
+  color: darkgray !important;
+  font-size: 10px;
+}
+
+.request-rating span {
+  color: #ff6e40;
+}
+.usr-request > div {
+  display: inline-block;
+  vertical-align: bottom;
+  padding-left: 10px;
+}
+
+.request-buttons .btn-reject{
+  border-color: #ff6e40;
+  color: #ff6e40;
+  background-color: #fff;
+}
+
+.request-buttons .btn-accept {
+  border-color: #ff6e40;
+  background-color: #ff6e40;
+  color: #fff;
+}
+.requested-role {
+  display: inline-block;
+  /*vertical-align: bottom;
+  padding-left: 10px; */
+}
+.requested-role img {
+  height: 27px;
+}
+.requested-role p {
+  text-align: center;
+  padding-top: 8px;
+  font-size: 13px;
+  color: #655f5f;
+}
+.requested-role span {
+  background-color: #fff;
+}
+/*********** END REQUESTS ******************/
