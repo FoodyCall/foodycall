@@ -83,3 +83,73 @@ h3 {
 .cleaner-role img {
   height: 33px;
 }
+
+
+/****************************************** DISCUSSION *************************/
+.event-title {
+  padding-bottom: 10px;
+}
+.nav-tabs li{
+  width: 33%;
+  text-align: center;
+}
+
+.nav-tabs a{
+  color: #655f5f;
+  font-size: 20px;
+}
+
+.nav-tabs .active a {
+  color: #ff6e40 !important;
+}
+
+.input-post {
+  margin-top: 35px;
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
+  height: 110px;
+  border-radius: 10px;
+}
+
+.input-post img {
+  height: 70px;
+  margin: 19px 25px 19px 35px;
+}
+
+
+.input-post input {
+  border: 0px;
+  color: #655f5f;
+  width: 81%;
+  height: 95%;
+}
+.input-post input:focus {
+  outline-width: 0px;
+}
+
+.discussion-board {
+  border: 1px solid #e7e7e7;
+  background-color :#fff;
+  margin-top: 20px;
+  border-radius:10px;
+
+}
+
+.discussion-board img {
+  height: 70px;
+  margin: 19px 25px 19px 35px;
+}
+
+.discussion-board p {
+  color: #655f5f;
+  width: 81%;
+}
+
+.discussion-board .usr-post-name {
+  color: #655f5f;
+  font-size: 13px;
+}
+
+.post {
+  border-bottom: 1px solid #e7e7e7;
+}
