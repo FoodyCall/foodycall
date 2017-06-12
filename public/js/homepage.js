@@ -3,16 +3,18 @@ $(function() {
     event.preventDefault();
     $('#eventModal').modal('show');
     $(".modal-title").text($(this).find("div.caption .event-title").text());
-    $("#event-modal-id").text($(this).find("div.caption .event-id").text());
+
     $(".modal-time").text($(this).find("div.caption .time").text());
     $(".modal-date").text($(this).find("div.caption .date").text());
     $(".modal-location").text($(this).find("div.caption .location").text());
     $(".modal-approved").text($(this).find("div.caption .event-approved").text());
     $(".modal-total").text($(this).find("div.caption .event-total").text());
+    $("#event-modal-id").text($(this).find("div.caption .event-id").text());
+      $("#event-modal-id").val($(this).find("div.caption .event-id").text());
 
-    var age = $(".modal-host-name").children();
+    var age = $("#eventModal .modal-host-name").children();
     $(".modal-host-name").text($(this).find("div.caption .host-name-full").text());
-    $(".modal-host-name").append(age);
+    $("#eventModal .modal-host-name").append(age);
     $(".modal-host-age").text(' (' +$(this).find("div.caption .host-age").text()+')');
     $(".modal-host-img").attr("src",$(this).find(".host-img img").attr("src"));
     console.log(this);
@@ -36,6 +38,15 @@ $(function() {
 
     //Return arrow to first place
     $(".popover .arrow").css("left", "5.5%");
+
+    //Check if user already joined event and disable button
+    check = $(this).find("div.caption .user-joined").text();
+    if (check=='yes'){
+        $("#join-event").prop('disabled', true);
+    }else{
+        $("#join-event").prop('disabled', false);
+    }
+
 
   });
 
@@ -69,5 +80,33 @@ $(function() {
     role = role + '-' + $('#event-modal-id').text();
     $(".popover-content").html($(role).html());
   })
+
+  $( "#join-event" ).on( "click", function(event) {
+    event.preventDefault();
+    $('#eventModal').modal('hide');
+    $('#joinEventModal').modal('show');
+
+    //Reset form
+    $('#joinEventModal form').find("input[type=text], textarea").val("");
+    $('#joinEventModal form').find("input[type='checkbox']").removeAttr('checked');
+    //Disable checkbox of roles full
+    $('#joinEventModal .role-quantity').each(function(){
+      value = $(this).text();
+      values = value.replace('(','').replace(')','').split('/');
+      if (values[1] == 0 || values[0]>= values[1]){
+        //disable checkbox
+        $(this).siblings("input[type='checkbox']").attr('disabled',true);
+      }else{
+        $(this).siblings("input[type='checkbox']").attr('disabled',false);
+      }
+    });
+
+  })
+
+  $('#joinEventModal input:checkbox').on('click', function(e) {
+    e.stopImmediatePropagation();
+    var checked = (e.currentTarget.checked) ? false : true;
+    e.currentTarget.checked=(checked) ? false : checked.toString();
+})
 
 });

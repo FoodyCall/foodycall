@@ -8,36 +8,36 @@
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/new_event.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://www.google.com/jsapi"></script>
-  <script type="text/javascript" src="/js/new_event.js">
+  <script type="text/javascript" src="/js/new_event.js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyClm167i9c0k94OCKYemclsBJxuYqhV2gQ&language=en" type="text/javascript"></script>
   </script>
 </head>
 <body>
 
-
-
-
-
-
-
   <%= erb :nav %>
   <div class="container">
     <h3>Let's create a new event!</h3>
-    <form class="create-event-form">
+    <form class="create-event-form"  method="post" action="/events/new">
+      <%= erb :flash_bar %>
       <div class="form-group">
         <label for="eventName">Event Name</label>
-        <input type="text" class="form-control" id="eventName" placeholder="">
+        <input type="text" class="form-control" id="eventName" name="eventName" placeholder="">
       </div>
       <div class="form-group datetime">
         <label for="eventDate">Event Date</label>
-        <input type="text" class="form-control" id="eventDate" placeholder="">
+        <input type="text" class="form-control" id="eventDate" name="date" placeholder="">
       </div>
       <div class="form-group datetime">
         <label for="eventTime">Event Time</label>
-        <input type="text" class="form-control" id="eventTime" placeholder="">
+        <input type='text' class="form-control" id="eventTime" name="time" placeholder=""/>
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-time"></span>
+        </span>
       </div>
       <div class="form-group">
         <label for="eventAddress">Address</label>
@@ -72,7 +72,7 @@
           <div class="role">
 
             <span class="shopper-role">
-              <img class="role-img" src="img/role-1.png">
+              <img class="role-img" src="/img/role-1.png">
             </span>
             <p class="role-name">Shopper</p>
             <div class="input-group spinner">
@@ -87,7 +87,7 @@
           <div class="role">
 
             <span class="chef-role">
-              <img class="role-img" src="img/role-2.png">
+              <img class="role-img" src="/img/role-2.png">
             </span>
             <p class="role-name">Chef</p>
             <div class="input-group spinner">
@@ -102,7 +102,7 @@
           <div class="role">
 
             <span class="helper-role">
-              <img class="role-img" src="img/role-3.png">
+              <img class="role-img" src="/img/role-3.png">
             </span>
             <p class="role-name">Helper</p>
             <div class="input-group spinner">
@@ -117,7 +117,7 @@
           <div class="role">
 
             <span class="guest-role">
-              <img class="role-img" src="img/role-4.png">
+              <img class="role-img" src="/img/role-4.png">
             </span>
             <p class="role-name">Guest</p>
             <div class="input-group spinner">
@@ -132,7 +132,7 @@
           <div class="role">
 
             <span class="cleaner-role">
-              <img class="role-img" src="img/role-5.png">
+              <img class="role-img" src="/img/role-5.png">
             </span>
             <p class="role-name">Cleaner</p>
             <div class="input-group spinner">
@@ -224,7 +224,7 @@
           </div>
           <div class="images form-group">
             <label for="dishImg">Dish Image</label>
-             <input style="display:none;" type="file" id="dishImg" >
+             <input style="display:none;" type="file" name="file" id="dishImg" >
           </div>
           <button type="button" class="btn btn-default upload-btn" name="button">
             <span class="glyphicon glyphicon-picture"></span>
@@ -235,11 +235,27 @@
             <label for="dishImg">Recipe</label>
             <textarea class="form-control" rows="5"></textarea>
           </div>
-          <button type="button" class="btn btn-default col-lg-offset-9 add-dish" name="button">Add</button>
+          <button  type="button" class="btn btn-default col-lg-offset-9 add-dish" name="button">Add</button>
         </div>
       </div>
     </div>
   </div>
 <!-- END OF MODAL-->
+<script type="text/javascript">
+  //Init autocomplete location
+  var input = document.getElementById('eventAddress');
+  var autocomplete = new google.maps.places.Autocomplete(input);
+
+  google.maps.event.addListener(autocomplete, 'place_changed', function() {
+    var place = autocomplete.getPlace();
+    console.log(place)
+    if(place.address_components !== undefined && place.address_components.length > 0 ) {
+        // selected option
+    }
+    else {
+        // just typed and hit enter (no option selected)
+    }
+});
+</script>
 </body>
 </html>
