@@ -1,4 +1,4 @@
 .DS_Store
 db/*.sqlite3
-config/conf_env.rb
+config/config_env.rb
 db/*.db

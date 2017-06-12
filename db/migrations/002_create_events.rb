@@ -21,6 +21,7 @@ Sequel.migration do
     end
 
     create_table(:event_menus) do
+      primary_key :id
       Integer :event_id
       String :name
       String :type
@@ -29,6 +30,7 @@ Sequel.migration do
     end
 
     create_table(:event_participants) do
+      primary_key :id
       Integer :event_id
       Integer :user_id
       FalseClass :chef
@@ -37,6 +39,7 @@ Sequel.migration do
       FalseClass :cleaner
       FalseClass :guest
       FalseClass :approved
+      FalseClass :rejected
       DateTime :created_at
       DateTime :updated_at
     end

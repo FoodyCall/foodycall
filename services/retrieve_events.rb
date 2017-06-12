@@ -7,6 +7,33 @@ class RetrieveEvents
     end
   end
 
+  def self.id(id)
+    return Event.where(:id=>id).first
+  end
+
+  def self.events_host(user_id:)
+    hosted = User.where(:id => user_id).first.events
+    return hosted
+  end
+
+  def self.events_joined(user_id:)
+    event_not_mine = Event.exclude(:host_id => user_id).all
+
+    events_ids = EventParticipant.where(:user_id => 1 , :event_id => Event.exclude(:host_id => 1).select(:id), :approved => true).get(:event_id)
+
+    joined = Event.where(:id =>events_ids).all
+    return joined
+  end
+
+  def self.events_pending(user_id:)
+    event_not_mine = Event.exclude(:host_id => user_id).all
+
+    events_ids = EventParticipant.where(:user_id => 1 , :event_id => Event.exclude(:host_id => 1).select(:id), :approved => false).get(:event_id)
+
+    pending = Event.where(:id =>events_ids).all
+    return pending
+  end
+
   private_class_method
 
   def self.retrieve_all_events

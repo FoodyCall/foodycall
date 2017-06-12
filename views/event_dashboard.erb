@@ -22,115 +22,58 @@
         <div class="col-lg-4">
           <h3>Participants</h3>
           <div class="participants">
-            <div class="participant">
-              <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56">
-              <div>
-                <p>Eduardo Salazar <span class="participant-age">(22)</span></p>
-                <p class="participant-username">@garynil</p>
-                <p class="participant-location">Taipei, Taiwan</p>
-                <p class="participant-rating">
-                  <span class="star glyphicon glyphicon-star"></span>
-                  <span class="star glyphicon glyphicon-star"></span>
-                  <span class="star glyphicon glyphicon-star"></span>
-                  <span class="star glyphicon glyphicon-star-empty"></span>
-                  <span class="star glyphicon glyphicon-star-empty"></span>
-                </p>
+            <% @event.approved.each do |participant| %>
+              <div class="participant">
+                <img class="img-circle" src="<%= participant.user.img_path%>">
+                <div>
+                  <p><%= participant.user.fullName%> <span class="participant-age">(<%= participant.user.age%>)</span></p>
+                  <!-- <p class="participant-username">@garynil</p> -->
+                  <p class="participant-location"><%= participant.user.city%>,<%= participant.user.country%></p>
+                  <p class="participant-rating">
+                    <% participant.user.rate.times do |i| %>
+                      <span class="star glyphicon glyphicon-star"></span>
+                    <% end %>
+                    <% (5 - participant.user.rate).times do |i| %>
+                      <span class="star glyphicon glyphicon-star-empty"></span>
+                    <% end %>
+                  </p>
+                </div>
+                <div class="participant-role">
+                  <%if participant.isShopper? %>
+                  <span class="shopper-role">
+                    <img class="role-img" src="/img/role-1.png">
+                  </span>
+                  <p class="role-name">Shopper</p>
+                  <%elsif participant.isChef? %>
+                  <span class="chef-role">
+                    <img class="role-img" src="/img/role-2.png">
+                  </span>
+                  <p class="role-name">Chef</p>
+                  <%elsif participant.isHelper? %>
+                  <span class="helper-role">
+                    <img class="role-img" src="/img/role-3.png">
+                  </span>
+                  <p class="role-name">Helper</p>
+                  <%elsif participant.isGuest? %>
+                  <span class="guest-role">
+                    <img class="role-img" src="/img/role-4.png">
+                  </span>
+                  <p class="role-name">Guest</p>
+                  <%else participant.isCleaner? %>
+                  <span class="cleaner-role">
+                    <img class="role-img" src="/img/role-5.png">
+                  </span>
+                  <p class="role-name">Cleaner</p>
+                  <% end %>
+                </div>
               </div>
-              <div class="participant-role">
-                <span class="shopper-role">
-                  <img class="role-img" src="/img/role-1.png">
-                </span>
-                <p class="role-name">Shopper</p>
-              </div>
-            </div>
-            <div class="participant">
-              <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56">
-              <div>
-                <p>Eduardo Salazar <span class="participant-age">(22)</span></p>
-                <p class="participant-username">@garynil</p>
-                <p class="participant-location">Taipei, Taiwan</p>
-                <p class="participant-rating">
-                  <span class="star glyphicon glyphicon-star"></span>
-                  <span class="star glyphicon glyphicon-star"></span>
-                  <span class="star glyphicon glyphicon-star"></span>
-                  <span class="star glyphicon glyphicon-star-empty"></span>
-                  <span class="star glyphicon glyphicon-star-empty"></span>
-                </p>
-              </div>
-              <div class="participant-role">
-                <span class="chef-role">
-                  <img class="role-img" src="/img/role-2.png">
-                </span>
-                <p class="role-name">Chef</p>
-              </div>
-            </div>
-            <div class="participant">
-              <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56">
-              <div>
-                <p>Eduardo Salazar <span class="participant-age">(22)</span></p>
-                <p class="participant-username">@garynil</p>
-                <p class="participant-location">Taipei, Taiwan</p>
-                <p class="participant-rating">
-                  <span class="star glyphicon glyphicon-star"></span>
-                  <span class="star glyphicon glyphicon-star"></span>
-                  <span class="star glyphicon glyphicon-star"></span>
-                  <span class="star glyphicon glyphicon-star-empty"></span>
-                  <span class="star glyphicon glyphicon-star-empty"></span>
-                </p>
-              </div>
-              <div class="participant-role">
-                <span class="helper-role">
-                  <img class="role-img" src="/img/role-3.png">
-                </span>
-                <p class="role-name">Helper</p>
-              </div>
-            </div>
-            <div class="participant">
-              <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56">
-              <div>
-                <p>Eduardo Salazar <span class="participant-age">(22)</span></p>
-                <p class="participant-username">@garynil</p>
-                <p class="participant-location">Taipei, Taiwan</p>
-                <p class="participant-rating">
-                  <span class="star glyphicon glyphicon-star"></span>
-                  <span class="star glyphicon glyphicon-star"></span>
-                  <span class="star glyphicon glyphicon-star"></span>
-                  <span class="star glyphicon glyphicon-star-empty"></span>
-                  <span class="star glyphicon glyphicon-star-empty"></span>
-                </p>
-              </div>
-              <div class="participant-role">
-                <span class="guest-role">
-                  <img class="role-img" src="/img/role-4.png">
-                </span>
-                <p class="role-name">Guest</p>
-              </div>
-            </div>
-            <div class="participant">
-              <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56">
-              <div>
-                <p>Eduardo Salazar <span class="participant-age">(22)</span></p>
-                <p class="participant-username">@garynil</p>
-                <p class="participant-location">Taipei, Taiwan</p>
-                <p class="participant-rating">
-                  <span class="star glyphicon glyphicon-star"></span>
-                  <span class="star glyphicon glyphicon-star"></span>
-                  <span class="star glyphicon glyphicon-star"></span>
-                  <span class="star glyphicon glyphicon-star-empty"></span>
-                  <span class="star glyphicon glyphicon-star-empty"></span>
-                </p>
-              </div>
-              <div class="participant-role">
-                <span class="cleaner-role">
-                  <img class="role-img" src="/img/role-5.png">
-                </span>
-                <p class="role-name">Cleaner</p>
-              </div>
-            </div>
+            <% end %>
           </div>
         </div>
         <div class="col-lg-8">
-          <h2 class="event-title">Friday night! Eat pizzaaaaa!</h2>
+          <span class="event-id hidden"><%= @event.id %></span>
+          <span class="user-name-age hidden"><%= @user_id%>(<%=@current_user['age']%>)</span>
+          <h2 class="event-title"><%= @event.name %></h2>
           <div>
           <!-- Nav tabs -->
           <ul class="nav nav-tabs" role="tablist">
@@ -143,58 +86,58 @@
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane" id="discussion">
               <div class="input-post">
-                <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56" alt="">
-                <input type="text" placeholder="Write your post here..." >
+                <img class="img-circle" src="<%= @current_user['img']%>" alt="">
+                <input type="text" id="txt_post" placeholder="Write your post here..." >
               </div>
               <div class="discussion-board">
-                <div class="post">
-                  <div class="usr-post">
-                    <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56" class="usr-post-img" alt="">
-                    <p class="usr-post-name">Eduardo Salazar<span class="usr-post-age">(22)</span></p>
-                  </div>
-                  <div class="usr-post-text-div">
-                    <p class="usr-post-text">When will we shop for ingredients? I'm Hungryyyyy!!!! :D :D :D :D :D</p>
-                  </div>
-
-                </div>
-                <div class="post ">
-                  <div class="usr-post">
-                    <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56" class="usr-post-img" alt="">
-                    <p class="usr-post-name">Luis Robles<span class="usr-post-age">(22)</span></p>
-                  </div>
-                  <div class="usr-post-text-div">
-                    <p class="usr-post-text">Lets go to Costco on Sunday!! Lorem
-                      ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                      elementum tortor urna, ac interdum augue rutrum ac.</p>
-                  </div>
-                </div>
+                <% if @posts %>
+                <% @posts.each do |post|%>
+                  <div class="post ">
+                    <div class="usr-post">
+                      <img class="img-circle" src="<%= post.user.img_path%>" class="usr-post-img" alt="">
+                      <p class="usr-post-name"><%= post.user.fullName%><span class="usr-post-age">(<%= post.user.age%>)</span></p>
+                    </div>
+                    <div class="usr-post-text-div">
+                      <p class="usr-post-text"><%= post.post%></p>
+                    </div>
+                <%end%>
+                <%end%>
               </div>
             </div>
             <div role="tabpanel" class="tab-pane " id="detail">
               <div class="detail-main">
                 <p class="subtitle-tag">Event Details</p>
                 <p class="detail-sub-title">
-                  <span class="detail-date">2017.05.28</span>
-                  <span class="detail-time">18:00</span>
+                  <span class="detail-date"><%=@event.date.strftime("%Y-%m-%d")%></span>
+                  <span class="detail-time"><%=@event.date.strftime("%l:%M %p")%></span>
                   <span class="glyphicon glyphicon-map-marker detail-location-icon location-icon"></span>
-                  <a target="_blank" href="https://www.google.com.tw/maps/search/Taipei%20city?hl=en&source=opensearch" class="detail-location">No.1, Sec 4, Roosevelt Road, Taipei, Taiwan</a>
+                  <a target="_blank" href="https://www.google.com.tw/maps/search/Taipei%20city?hl=en&source=opensearch" class="detail-location"><%= @event.location %></a>
                 </p>
                 <div class="detail-event-availability">
-                  <img src="img/par-1-4.png" alt="">
-                  <p><span class="detail-approved">2</span>/<span class="detail-total">3</span></p>
+                  <% value = @event.totalParticipants.size / 4 %>
+                  <% if @event.approved_count >= value * 4 %>
+                    <img src="/img/par-4-4.png" alt="">
+                  <% elsif @event.approved_count >= value * 3%>
+                    <img src="/img/par-3-4.png" alt="">
+                  <% elsif @event.approved_count >= value * 2%>
+                    <img src="/img/par-2-4.png" alt="">
+                  <% elsif @event.approved_count >= value * 1%>
+                    <img src="/img/par-1-4.png" alt="">
+                  <% else %>
+                    <img src="/img/par-0-4.png" alt="">
+                  <% end %>
+                  <p><span class="detail-approved"><%= @event.approved.size %></span>/<span class="detail-total"><%= @event.totalParticipants %></span></p>
                 </div>
               </div>
               <div class="detail-menu">
                 <p class="subtitle-tag">Menu</p>
                 <div class="dishes">
-                  <div class="dish">
-                    <img class="center-cropped" src="https://www.rhodesbread.com/images/recipes/MediterraneanPizzaLarge.jpg" class="dish-img center-cropped" alt="">
-                    <p class="dish-name">Meat Pizza</p>
-                  </div>
-                  <div class="dish">
-                    <img class="center-cropped" src="https://www.rhodesbread.com/images/recipes/MediterraneanPizzaLarge.jpg" class="dish-img center-cropped" alt="">
-                    <p class="dish-name">Margarita Pizza</p>
-                  </div>
+                  <% @event.menus.each_with_index do |menu,index| %>
+                    <div class="dish">
+                      <img class="center-cropped" src="<%= menu.img_path %>" class="dish-img center-cropped" alt="">
+                      <p class="dish-name"><%= menu.name %></p>
+                    </div>
+                  <% end %>
                 </div>
               </div>
               <div class="detail-location-text">
@@ -205,57 +148,79 @@
             </div>
             <div role="tabpanel" class="tab-pane active" id="request">
               <div class="requests">
+                <% if @pending_request %>
+                <% @pending_request.each do |request| %>
                 <div class="request">
+                  <span class="request-user-id hidden"><%= request.user.id %></span>
                   <div class="usr-request">
-                    <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56">
+                    <img class="img-circle" src="<%= request.user.img_path%>">
                     <div>
-                      <p>Eduardo Salazar <span class="request-age">(22)</span></p>
-                      <p class="request-username">@garynil</p>
-                      <p class="request-location">Taipei, Taiwan</p>
+                      <p><%= request.user.fullName %> <span class="request-age">(<%= request.user.age %>)</span></p>
+                      <!-- <p class="request-username">@garynil</p> -->
+                      <p class="request-location"><%= request.user.city %>, <%= request.user.country %></p>
                       <p class="request-rating">
-                        <span class="star glyphicon glyphicon-star"></span>
-                        <span class="star glyphicon glyphicon-star"></span>
-                        <span class="star glyphicon glyphicon-star"></span>
-                        <span class="star glyphicon glyphicon-star-empty"></span>
-                        <span class="star glyphicon glyphicon-star-empty"></span>
+                        <% request.user.rate.times do |i| %>
+                          <span class="star glyphicon glyphicon-star"></span>
+                        <% end %>
+                        <% (5 - request.user.rate).times do |i| %>
+                          <span class="star glyphicon glyphicon-star-empty"></span>
+                        <% end %>
                       </p>
                     </div>
                   </div>
                   <div class="usr-request-text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat arcu blandit orci posuere, id rutrum lorem scelerisque. Pellentesque vel bibendum eros. Mauris imperdiet erat a purus dapibus, in malesuada felis semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat arcu blandit orci posuere, id rutrum lorem scelerisque. Pellentesque vel bibendum eros. Mauris imperdiet erat a purus dapibus, in malesuada felis semper.  </p>
+                    <p><%= request.message %></p>
                   </div>
                   <div class="usr-request-options">
                     <div class="requested-roles">
-                      <a href=""><div class="requested-role">
-                        <span class="shopper-role">
-                          <img class="role-img" src="/img/role-1.png">
-                        </span>
-                        <p class="role-name">Shopper</p>
-                      </div></a>
-                      <a href=""><div class="requested-role">
-                        <span class="chef-role">
-                          <img class="role-img" src="/img/role-2.png">
-                        </span>
-                        <p class="role-name">Chef</p>
-                      </div></a>
+                      <%if request.isShopper? %>
+
+                        <a href=""><div class="requested-role">
+                          <span class="shopper-role">
+                            <img class="role-img" src="/img/role-1.png">
+                          </span>
+                          <p class="role-name">Shopper</p>
+                        </div></a>
+
+                      <%elsif request.isChef? %>
+
+                        <a href=""><div class="requested-role">
+                          <span class="chef-role">
+                            <img class="role-img" src="/img/role-2.png">
+                          </span>
+                          <p class="role-name">Chef</p>
+                        </div></a>
+
+                      <%elsif request.isHelper? %>
+
                       <a href=""><div class="requested-role">
                         <span class="helper-role">
                           <img class="role-img" src="/img/role-3.png">
                         </span>
                         <p class="role-name">Helper</p>
                       </div></a>
+
+                      <%elsif request.isGuest? %>
+
                       <a href=""><div class="requested-role">
                         <span class="guest-role">
                           <img class="role-img" src="/img/role-4.png">
                         </span>
                         <p class="role-name">Guest</p>
                       </div></a>
+
+                      <%else request.isCleaner? %>
+
                       <a href=""><div class="requested-role">
                         <span class="cleaner-role">
                           <img class="role-img" src="/img/role-5.png">
                         </span>
                         <p class="role-name">Cleaner</p>
                       </div></a>
+
+                      <% end %>
+
+
                     </div>
                     <div class="request-buttons">
                       <button class="btn btn-default btn-reject" type="button" name="button">Reject</button>
@@ -263,64 +228,10 @@
                     </div>
                   </div>
                 </div>
-                <div class="request">
-                  <div class="usr-request">
-                    <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56">
-                    <div>
-                      <p>Eduardo Salazar <span class="request-age">(22)</span></p>
-                      <p class="request-username">@garynil</p>
-                      <p class="request-location">Taipei, Taiwan</p>
-                      <p class="request-rating">
-                        <span class="star glyphicon glyphicon-star"></span>
-                        <span class="star glyphicon glyphicon-star"></span>
-                        <span class="star glyphicon glyphicon-star"></span>
-                        <span class="star glyphicon glyphicon-star-empty"></span>
-                        <span class="star glyphicon glyphicon-star-empty"></span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="usr-request-text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat arcu blandit orci posuere, id rutrum lorem scelerisque. Pellentesque vel bibendum eros. Mauris imperdiet erat a purus dapibus, in malesuada felis semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat arcu blandit orci posuere, id rutrum lorem scelerisque. Pellentesque vel bibendum eros. Mauris imperdiet erat a purus dapibus, in malesuada felis semper.  </p>
-                  </div>
-                  <div class="usr-request-options">
-                    <div class="requested-roles">
-                      <a href=""><div class="requested-role">
-                        <span class="shopper-role">
-                          <img class="role-img" src="/img/role-1.png">
-                        </span>
-                        <p class="role-name">Shopper</p>
-                      </div></a>
-                      <a href=""><div class="requested-role">
-                        <span class="chef-role">
-                          <img class="role-img" src="/img/role-2.png">
-                        </span>
-                        <p class="role-name">Chef</p>
-                      </div></a>
-                      <a href=""><div class="requested-role">
-                        <span class="helper-role">
-                          <img class="role-img" src="/img/role-3.png">
-                        </span>
-                        <p class="role-name">Helper</p>
-                      </div></a>
-                      <a href=""><div class="requested-role">
-                        <span class="guest-role">
-                          <img class="role-img" src="/img/role-4.png">
-                        </span>
-                        <p class="role-name">Guest</p>
-                      </div></a>
-                      <a href=""><div class="requested-role">
-                        <span class="cleaner-role">
-                          <img class="role-img" src="/img/role-5.png">
-                        </span>
-                        <p class="role-name">Cleaner</p>
-                      </div></a>
-                    </div>
-                    <div class="request-buttons">
-                      <button class="btn btn-default btn-reject" type="button" name="button">Reject</button>
-                      <button class="btn btn-default btn-accept" type="button" name="button">Accept</button>
-                    </div>
-                  </div>
-                </div>
+                <% end %>
+                <% end %>
+
+
               </div>
             </div>
           </div>
