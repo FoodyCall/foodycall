@@ -4,6 +4,8 @@ require 'http'
 class FoodyCallApp < Sinatra::Base
 
   get '/dashboard/:id' do
+    @event = RetrieveEvents.id(params[:id])
+    @posts = RetrievePost.call(event_id: params[:id])
     erb :event_dashboard
   end
 
@@ -15,6 +17,21 @@ class FoodyCallApp < Sinatra::Base
     @events_pending = RetrieveEvents.events_pending(user_id:@user_id)
 
     erb :dashboard
+  end
+
+  post '/post' do
+
+    user_id = @current_user['id']
+    event_id = params[:event_id]
+    post = params[:post]
+
+    post = CreateEventPost.call(
+      user_id: user_id,
+      event_id:event_id,
+      post: post
+    )
+
+    halt 201
   end
 
 end

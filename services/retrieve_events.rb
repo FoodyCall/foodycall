@@ -7,6 +7,10 @@ class RetrieveEvents
     end
   end
 
+  def self.id(id)
+    return Event.where(:id=>id).first
+  end
+
   def self.events_host(user_id:)
     hosted = User.where(:id => user_id).first.events
     return hosted
