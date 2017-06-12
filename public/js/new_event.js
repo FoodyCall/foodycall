@@ -19,6 +19,7 @@ $(function() {
     event.preventDefault();
     var role = $(this).text();
     $("#myRoleMenu").html(role + " <span class=\"caret\"></span>");
+    $("#host-role").attr('value',role);
   });
 
   $(".new-dish-btn a").on("click", function(event) {

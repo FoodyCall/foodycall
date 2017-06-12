@@ -26,28 +26,28 @@
       <%= erb :flash_bar %>
       <div class="form-group">
         <label for="eventName">Event Name</label>
-        <input type="text" class="form-control" id="eventName" name="eventName" placeholder="">
+        <input type="text" class="form-control" id="eventName" required name="name" placeholder="">
       </div>
       <div class="form-group datetime">
         <label for="eventDate">Event Date</label>
-        <input type="text" class="form-control" id="eventDate" name="date" placeholder="">
+        <input type="text" class="form-control" id="eventDate" required name="date" placeholder="YYYY/MM/DD">
       </div>
       <div class="form-group datetime">
         <label for="eventTime">Event Time</label>
-        <input type='text' class="form-control" id="eventTime" name="time" placeholder=""/>
+        <input type='text' class="form-control" id="eventTime" required  name="time" placeholder="6:00 PM"/>
       </div>
       <div class="form-group datetime">
         <label for="eventDate">Country</label>
-        <input type="text" class="form-control" id="eventDate" name="date" placeholder="">
+        <input type="text" class="form-control" id="eventCountry" required name="country" placeholder="">
       </div>
       <div class="form-group datetime">
         <label for="eventTime">City</label>
-        <input type='text' class="form-control" id="eventTime" name="time" placeholder=""/>
+        <input type='text' class="form-control" id="eventCity" required name="city" placeholder=""/>
       </div>
       <div class="form-group">
         <label for="eventAddress">Address</label>
         <div class="input-group">
-          <input type="text" class="form-control" id="eventAddress" placeholder="">
+          <input type="text" class="form-control" id="eventAddress" name="address" placeholder="">
           <span class="input-group-btn">
             <button type="button" class="btn btn-default" name="button">
               <span class="glyphicon glyphicon-map-marker"></span>
@@ -59,13 +59,13 @@
         <label class="event-privacy-label" for="eventPrivacy">Share the event with</label>
         <div class="radio-inline">
           <label>
-            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            <input type="radio" name="privacy" id="optionsRadios1" value="everyone" checked>
             Everyone
           </label>
         </div>
         <div class="radio-inline">
           <label>
-            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            <input type="radio" name="privacy" id="optionsRadios2" value="private">
             Private link
           </label>
         </div>
@@ -80,7 +80,7 @@
             </span>
             <p class="role-name">Shopper</p>
             <div class="input-group spinner">
-              <input type="text" class="form-control" value="1">
+              <input type="text" name="shopper-count" class="form-control" value="1">
               <div class="input-group-btn-vertical">
                 <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-up"></i></button>
                 <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-down"></i></button>
@@ -95,7 +95,7 @@
             </span>
             <p class="role-name">Chef</p>
             <div class="input-group spinner">
-              <input type="text" class="form-control" value="1">
+              <input type="text" class="form-control" name="chef-count" value="1">
               <div class="input-group-btn-vertical">
                 <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-up"></i></button>
                 <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-down"></i></button>
@@ -110,7 +110,7 @@
             </span>
             <p class="role-name">Helper</p>
             <div class="input-group spinner">
-              <input type="text" class="form-control" value="1">
+              <input type="text" class="form-control" name="helper-count" value="1">
               <div class="input-group-btn-vertical">
                 <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-up"></i></button>
                 <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-down"></i></button>
@@ -125,7 +125,7 @@
             </span>
             <p class="role-name">Guest</p>
             <div class="input-group spinner">
-              <input type="text" class="form-control" value="1">
+              <input type="text" class="form-control" name="guest-count" value="1">
               <div class="input-group-btn-vertical">
                 <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-up"></i></button>
                 <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-down"></i></button>
@@ -136,11 +136,11 @@
           <div class="role no-margin-right">
 
             <span class="cleaner-role">
-              <img class="role-img" src="/img/role-5.png">
+              <img class="role-img" name="cleaner-count" src="/img/role-5.png">
             </span>
             <p class="role-name">Cleaner</p>
             <div class="input-group spinner">
-              <input type="text" class="form-control" value="1">
+              <input type="text" class="form-control" name="cleaner-count"  value="1">
               <div class="input-group-btn-vertical">
                 <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-up"></i></button>
                 <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-down"></i></button>
@@ -152,6 +152,7 @@
         <div class="my-role col-lg-10 col-lg-offset-2">
           <label class="my-role-tag">Choose your role</label>
           <div class="dropdown my-role-tag">
+            <input type="text" class="form-control hidden " id="host-role" name="host-role" value="Chef"></input>
             <button class="btn btn-default dropdown-toggle" type="button" id="myRoleMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
               Chef <span class="caret"></span>
             </button>
@@ -187,7 +188,7 @@
           </a>
         </div>
       </div>
-      <div class="buttons col-lg-8 col-lg-offset-2">
+      <div class="buttons col-lg-10 col-lg-offset-2">
         <button type="button" class="cancel-event-btn btn btn-default" name="button">Cancel</button><button type="submit" class="btn create-event-btn btn-default">Create</button>
       </div>
       </form>
