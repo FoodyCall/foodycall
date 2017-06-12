@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FoodyCall - Cook Together, Happy Together</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/homepage.css">
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/js/homepage.js">
+  </script>
+</head>
+<body>
+<%= erb :nav %>
+<div class="container eventss">
+  <%= erb :flash_bar %>
+    <div class="page-header">
+      <h1><small>Host Events</small></h1>
+    </div>
+    <div class="row"> <!--class="row" -->
+      <!--class="col-lg-6 col-md-6 col-sm-12 "-->
+      <% if @events_host %>
+      <% @events_host.each_with_index do |event,index| %>
+        <a data-event-id="<%=index%>" class="event-card" href="/dashboard/<%=event.id%>"><div class="thumbnail right-caption">
+          <img class="center-cropped " src="<%= event.img_path%>">
+          <div class="caption">
+            <h3 class="event-title hidden"><%= event.name %></h3>
+            <h3><%= event.name.gsub(/^(.{60,}?).*$/m,'\1...') %></h3>
+
+            <span class="date"><%=event.date.strftime("%Y-%m-%d")%></span> <span class="time"><%=event.date.strftime("%l:%M %p")%></span>
+            <span class="glyphicon glyphicon-map-marker location-icon"></span><span class=""><%= event.city + ',' + event.country%></span>
+            <span class="location hidden"><%= event.location %></span>
+            <br>
+            <span class="host_by">Hosted by</span>
+            <span class="host-img">
+              <img class="" src="<%= event.host.img %>" alt="">
+            </span>
+            <span class="host-name"><%= event.host.fullName.gsub(/^(.{20,}?).*$/m,'\1...')%></span>
+            <span class="host-name-full hidden"><%= event.host.fullName%></span>
+            <span class="host-age hidden"><%= event.host.age%></span>
+            <span class="stars">
+                <% event.host.rate.times do |i| %>
+                  <span class="star glyphicon glyphicon-star"></span>
+                <% end %>
+                <% (5 - event.host.rate).times do |i| %>
+                  <span class="star glyphicon glyphicon-star-empty"></span>
+                <% end %>
+
+            </span>
+            <br>
+            <span class="roles">
+              <% if event.shopper > 0 %>
+                <img class="role" src="img/role-1.png">
+              <% end %>
+              <% if event.chef > 0 %>
+                <img class="role" src="img/role-2.png">
+              <% end %>
+              <% if event.helper > 0 %>
+                <img class="role" src="img/role-3.png">
+              <% end %>
+              <% if event.guest > 0 %>
+                <img class="role" src="img/role-4.png">
+              <% end %>
+              <% if event.cleaner > 0 %>
+                <img class="role" src="img/role-5.png">
+              <% end %>
+            </span>
+            <span class="event-availability pull-right">
+              <% value = event.totalParticipants.size / 4 %>
+              <% if event.approved_count >= value * 4 %>
+                <img src="img/par-4-4.png" alt="">
+              <% elsif event.approved_count >= value * 3%>
+                <img src="img/par-3-4.png" alt="">
+              <% elsif event.approved_count >= value * 2%>
+                <img src="img/par-2-4.png" alt="">
+              <% elsif event.approved_count >= value * 1%>
+                <img src="img/par-1-4.png" alt="">
+              <% else %>
+                <img src="img/par-0-4.png" alt="">
+              <% end %>
+
+              <p><span><%= event.approved.size %></span>/<span><%= event.totalParticipants %></span></p>
+            </span>
+          </div>
+        </div>
+      </a>
+      <% end %>
+      <% end %>
+
+    </div>
+
+    <!-- Joined -->
+
+    <div class="page-header">
+      <h1><small>Joined Events</small></h1>
+    </div>
+    <div class="row col-lg-12"> <!--class="row" -->
+      <!--class="col-lg-6 col-md-6 col-sm-12 "-->
+      <% if @events_join %>
+      <% @events_join.each_with_index do |event,index| %>
+        <a data-event-id="<%=index%>" class="event-card" href="/dashboard/<%=event.id%>"><div class="thumbnail right-caption">
+          <img class="center-cropped " src="<%= event.img_path%>">
+          <div class="caption">
+            <h3 class="event-title hidden"><%= event.name %></h3>
+            <h3><%= event.name.gsub(/^(.{60,}?).*$/m,'\1...') %></h3>
+
+            <span class="date"><%=event.date.strftime("%Y-%m-%d")%></span> <span class="time"><%=event.date.strftime("%l:%M %p")%></span>
+            <span class="glyphicon glyphicon-map-marker location-icon"></span><span class=""><%= event.city + ',' + event.country%></span>
+            <span class="location hidden"><%= event.location %></span>
+            <br>
+            <span class="host_by">Hosted by</span>
+            <span class="host-img">
+              <img class="" src="<%= event.host.img %>" alt="">
+            </span>
+            <span class="host-name"><%= event.host.fullName.gsub(/^(.{20,}?).*$/m,'\1...')%></span>
+            <span class="host-name-full hidden"><%= event.host.fullName%></span>
+            <span class="host-age hidden"><%= event.host.age%></span>
+            <span class="stars">
+                <% event.host.rate.times do |i| %>
+                  <span class="star glyphicon glyphicon-star"></span>
+                <% end %>
+                <% (5 - event.host.rate).times do |i| %>
+                  <span class="star glyphicon glyphicon-star-empty"></span>
+                <% end %>
+
+            </span>
+            <br>
+            <span class="roles">
+              <% if event.shopper > 0 %>
+                <img class="role" src="img/role-1.png">
+              <% end %>
+              <% if event.chef > 0 %>
+                <img class="role" src="img/role-2.png">
+              <% end %>
+              <% if event.helper > 0 %>
+                <img class="role" src="img/role-3.png">
+              <% end %>
+              <% if event.guest > 0 %>
+                <img class="role" src="img/role-4.png">
+              <% end %>
+              <% if event.cleaner > 0 %>
+                <img class="role" src="img/role-5.png">
+              <% end %>
+            </span>
+            <span class="event-availability pull-right">
+              <% value = event.totalParticipants.size / 4 %>
+              <% if event.approved_count >= value * 4 %>
+                <img src="img/par-4-4.png" alt="">
+              <% elsif event.approved_count >= value * 3%>
+                <img src="img/par-3-4.png" alt="">
+              <% elsif event.approved_count >= value * 2%>
+                <img src="img/par-2-4.png" alt="">
+              <% elsif event.approved_count >= value * 1%>
+                <img src="img/par-1-4.png" alt="">
+              <% else %>
+                <img src="img/par-0-4.png" alt="">
+              <% end %>
+
+              <p><span><%= event.approved.size %></span>/<span><%= event.totalParticipants %></span></p>
+            </span>
+          </div>
+        </div>
+      </a>
+      <% end %>
+      <% end %>
+
+    </div>
+
+    <!-- Pending -->
+
+    <div class="page-header">
+      <h1><small>Pending Approval</small></h1>
+    </div>
+    <div class="row col-lg-12"> <!--class="row" -->
+      <!--class="col-lg-6 col-md-6 col-sm-12 "-->
+      <% if @events_pending %>
+      <% @events_pending.each_with_index do |event,index| %>
+        <a data-event-id="<%=index%>" class="event-card" href="/dashboard/<%=event.id%>"><div class="thumbnail right-caption">
+          <img class="center-cropped " src="<%= event.img_path%>">
+          <div class="caption">
+            <h3 class="event-title hidden"><%= event.name %></h3>
+            <h3><%= event.name.gsub(/^(.{60,}?).*$/m,'\1...') %></h3>
+
+            <span class="date"><%=event.date.strftime("%Y-%m-%d")%></span> <span class="time"><%=event.date.strftime("%l:%M %p")%></span>
+            <span class="glyphicon glyphicon-map-marker location-icon"></span><span class=""><%= event.city + ',' + event.country%></span>
+            <span class="location hidden"><%= event.location %></span>
+            <br>
+            <span class="host_by">Hosted by</span>
+            <span class="host-img">
+              <img class="" src="<%= event.host.img %>" alt="">
+            </span>
+            <span class="host-name"><%= event.host.fullName.gsub(/^(.{15,}?).*$/m,'\1...')%></span>
+            <span class="host-name-full hidden"><%= event.host.fullName%></span>
+            <span class="host-age hidden"><%= event.host.age%></span>
+            <span class="stars">
+                <% event.host.rate.times do |i| %>
+                  <span class="star glyphicon glyphicon-star"></span>
+                <% end %>
+                <% (5 - event.host.rate).times do |i| %>
+                  <span class="star glyphicon glyphicon-star-empty"></span>
+                <% end %>
+
+            </span>
+            <br>
+            <span class="roles">
+              <% if event.shopper > 0 %>
+                <img class="role" src="img/role-1.png">
+              <% end %>
+              <% if event.chef > 0 %>
+                <img class="role" src="img/role-2.png">
+              <% end %>
+              <% if event.helper > 0 %>
+                <img class="role" src="img/role-3.png">
+              <% end %>
+              <% if event.guest > 0 %>
+                <img class="role" src="img/role-4.png">
+              <% end %>
+              <% if event.cleaner > 0 %>
+                <img class="role" src="img/role-5.png">
+              <% end %>
+            </span>
+            <span class="event-availability pull-right">
+              <% value = event.totalParticipants.size / 4 %>
+              <% if event.approved_count >= value * 4 %>
+                <img src="img/par-4-4.png" alt="">
+              <% elsif event.approved_count >= value * 3%>
+                <img src="img/par-3-4.png" alt="">
+              <% elsif event.approved_count >= value * 2%>
+                <img src="img/par-2-4.png" alt="">
+              <% elsif event.approved_count >= value * 1%>
+                <img src="img/par-1-4.png" alt="">
+              <% else %>
+                <img src="img/par-0-4.png" alt="">
+              <% end %>
+
+              <p><span><%= event.approved.size %></span>/<span><%= event.totalParticipants %></span></p>
+            </span>
+          </div>
+        </div>
+      </a>
+      <% end %>
+      <% end %>
+
+    </div>
+
+</div>
+
+</body>
+</html>
