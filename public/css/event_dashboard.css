@@ -1,0 +1,85 @@
+body > .container {
+  margin-top: 75px;
+}
+
+h3 {
+  color: #655f5f;
+}
+
+.participants p {
+  font-size: 13px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  color: #655f5f;
+}
+
+.participants img {
+  height: 70px;
+}
+
+.participant-username {
+  color: darkgray !important;
+  font-size: 10px;
+}
+
+.participant-rating span {
+  color: #ff6e40;
+}
+.participant {
+  margin:11px;
+  display: inline-block;
+}
+.participant > div {
+  display: inline-block;
+  vertical-align: bottom;
+  padding-left: 10px;
+}
+
+.participant-role {
+  vertical-align: middle;
+}
+
+.participant-role img {
+  height: 27px;
+}
+
+.participant-role p {
+  text-align: center;
+  padding-top: 8px;
+}
+.participant-role span {
+  background-color: #fff;
+}
+
+.shopper-role {
+  border: 3px solid #f7c389;
+  border-radius: 60%;
+  padding: 7px 8px 7px 7px;
+}
+.chef-role {
+  border: 3px solid #e39c8d;
+  border-radius: 60%;
+  padding: 6px 6px 7px 6px;
+}
+.chef-role img {
+  height: 21px;
+}
+
+.helper-role {
+  border: 3px solid #dfa284;
+  border-radius: 60%;
+  padding: 7px 7px 10px 5px;
+}
+.guest-role {
+  border: 3px solid #d0d59d;
+  border-radius: 60%;
+  padding: 9px 11px 9px 11px;
+}
+.cleaner-role {
+  border: 3px solid #9fb9cf;
+  border-radius: 60%;
+  padding: 7px 9px 11px 6px;
+}
+.cleaner-role img {
+  height: 33px;
+}
