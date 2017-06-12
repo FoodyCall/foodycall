@@ -137,7 +137,7 @@ h3 {
 
 .discussion-board img {
   height: 70px;
-  margin: 19px 25px 19px 35px;
+  margin: 19px 25px 5px 35px;
 }
 
 .discussion-board p {
@@ -148,9 +148,21 @@ h3 {
 .discussion-board .usr-post-name {
   color: #655f5f;
   font-size: 13px;
+  margin: 4px 0px 4px 14px;
 }
 .discussion-board .usr-post-text {
+  font-size: 18px;
+  margin: 20px;
+}
+.discussion-board .usr-post {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+}
 
+.discussion-board .usr-post-text-div {
+  width : 75%;
+  display: inline-block;
 }
 
 .post {
