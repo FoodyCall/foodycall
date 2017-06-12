@@ -172,3 +172,72 @@ h3 {
 
 
 /********** END DISCUSSION ********/
+/********** EVENT DETAIL ***********/
+.detail-sub-title {
+  display: inline-block;
+  padding-left: 20px;
+}
+.detail-sub-title span {
+  font-size: 15px;
+  color: #000;
+}
+.detail-location-icon {
+  margin-left: 25px;
+  padding-right: 8px;
+}
+
+.detail-location {
+  color: #ff6e40;
+  text-decoration: underline;
+  font-size: 15px;
+}
+
+.subtitle-tag {
+  padding-left: 20px;
+  padding-top: 20px;
+  color: #655f5f
+}
+
+.dish {
+  display: inline-block;
+  margin: 0 20px 20px 20px;
+}
+.dish p {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.dish .center-cropped {
+  object-fit: cover; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  height: 170px !important;
+  width: 170px;
+}
+
+.event-availability img {
+  height: 45px;
+}
+.event-availability p {
+  display:inline-block;
+  font-size:15px;
+}
+.detail-event-availability img {
+  height: 35px;
+}
+
+.detail-event-availability p {
+  display: inline-block;
+  font-size: 15px;
+}
+
+.detail-event-availability {
+  display: inline-block;
+  padding-left: 15px;
+}
+
+.dish-name {
+  color: #655f5f;
+  font-size: 18px;
+}
+
+/*********** END EVENT DETAIL **********/

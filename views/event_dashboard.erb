@@ -134,14 +134,14 @@
           <div>
           <!-- Nav tabs -->
           <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation dashboard" class="active"><a href="#discussion" aria-controls="discussion" role="tab" data-toggle="tab">Discussion</a></li>
-            <li role="presentation dashboard"><a href="#detail" aria-controls="detail" role="tab" data-toggle="tab">Event Detail</a></li>
+            <li role="presentation dashboard" ><a href="#discussion" aria-controls="discussion" role="tab" data-toggle="tab">Discussion</a></li>
+            <li role="presentation dashboard" class="active"><a href="#detail" aria-controls="detail" role="tab" data-toggle="tab">Event Detail</a></li>
             <li role="presentation dashboard"><a href="#request" aria-controls="request" role="tab" data-toggle="tab">Request</a></li>
           </ul>
 
           <!-- Tab panes -->
           <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="discussion">
+            <div role="tabpanel" class="tab-pane" id="discussion">
               <div class="input-post">
                 <img class="img-circle" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-1/p320x320/14100426_10210148558808498_1279246961028949519_n.jpg?oh=238142139449c55aa9fbecf928158f36&oe=59A07F56" alt="">
                 <input type="text" placeholder="Write your post here..." >
@@ -170,7 +170,39 @@
                 </div>
               </div>
             </div>
-            <div role="tabpanel" class="tab-pane" id="detail">...</div>
+            <div role="tabpanel" class="tab-pane active" id="detail">
+              <div class="detail-main">
+                <p class="subtitle-tag">Event Details</p>
+                <p class="detail-sub-title">
+                  <span class="detail-date">2017.05.28</span>
+                  <span class="detail-time">18:00</span>
+                  <span class="glyphicon glyphicon-map-marker detail-location-icon location-icon"></span>
+                  <a target="_blank" href="https://www.google.com.tw/maps/search/Taipei%20city?hl=en&source=opensearch" class="detail-location">No.1, Sec 4, Roosevelt Road, Taipei, Taiwan</a>
+                </p>
+                <div class="detail-event-availability">
+                  <img src="img/par-1-4.png" alt="">
+                  <p><span class="detail-approved">2</span>/<span class="detail-total">3</span></p>
+                </div>
+              </div>
+              <div class="detail-menu">
+                <p class="subtitle-tag">Menu</p>
+                <div class="dishes">
+                  <div class="dish">
+                    <img class="center-cropped" src="https://www.rhodesbread.com/images/recipes/MediterraneanPizzaLarge.jpg" class="dish-img center-cropped" alt="">
+                    <p class="dish-name">Meat Pizza</p>
+                  </div>
+                  <div class="dish">
+                    <img class="center-cropped" src="https://www.rhodesbread.com/images/recipes/MediterraneanPizzaLarge.jpg" class="dish-img center-cropped" alt="">
+                    <p class="dish-name">Margarita Pizza</p>
+                  </div>
+                </div>
+              </div>
+              <div class="detail-location-text">
+                <p class="subtitle-tag">Location</p>
+                <!-- Google Maps Plugin -->
+              </div>
+
+            </div>
             <div role="tabpanel" class="tab-pane" id="request">...</div>
           </div>
 
