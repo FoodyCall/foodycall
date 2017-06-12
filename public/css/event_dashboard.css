@@ -137,7 +137,7 @@ h3 {
 
 .discussion-board img {
   height: 70px;
-  margin: 19px 25px 19px 35px;
+  margin: 19px 25px 5px 35px;
 }
 
 .discussion-board p {
@@ -148,9 +148,21 @@ h3 {
 .discussion-board .usr-post-name {
   color: #655f5f;
   font-size: 13px;
+  margin: 4px 0px 4px 14px;
 }
 .discussion-board .usr-post-text {
+  font-size: 18px;
+  margin: 20px;
+}
+.discussion-board .usr-post {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+}
 
+.discussion-board .usr-post-text-div {
+  width : 75%;
+  display: inline-block;
 }
 
 .post {
@@ -160,3 +172,72 @@ h3 {
 
 
 /********** END DISCUSSION ********/
+/********** EVENT DETAIL ***********/
+.detail-sub-title {
+  display: inline-block;
+  padding-left: 20px;
+}
+.detail-sub-title span {
+  font-size: 15px;
+  color: #000;
+}
+.detail-location-icon {
+  margin-left: 25px;
+  padding-right: 8px;
+}
+
+.detail-location {
+  color: #ff6e40;
+  text-decoration: underline;
+  font-size: 15px;
+}
+
+.subtitle-tag {
+  padding-left: 20px;
+  padding-top: 20px;
+  color: #655f5f
+}
+
+.dish {
+  display: inline-block;
+  margin: 0 20px 20px 20px;
+}
+.dish p {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.dish .center-cropped {
+  object-fit: cover; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  height: 170px !important;
+  width: 170px;
+}
+
+.event-availability img {
+  height: 45px;
+}
+.event-availability p {
+  display:inline-block;
+  font-size:15px;
+}
+.detail-event-availability img {
+  height: 35px;
+}
+
+.detail-event-availability p {
+  display: inline-block;
+  font-size: 15px;
+}
+
+.detail-event-availability {
+  display: inline-block;
+  padding-left: 15px;
+}
+
+.dish-name {
+  color: #655f5f;
+  font-size: 18px;
+}
+
+/*********** END EVENT DETAIL **********/
