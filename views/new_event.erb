@@ -20,55 +20,59 @@
 <body>
 
   <%= erb :nav %>
-  <div class="container">
-    <h3>Let's create a new event!</h3>
+  <div class="container col-lg-8 col-lg-push-2">
+    <h1>Let's create a new event!</h1>
     <form class="create-event-form"  method="post" action="/events/new">
       <%= erb :flash_bar %>
       <div class="form-group">
         <label for="eventName">Event Name</label>
-        <input type="text" class="form-control" id="eventName" name="eventName" placeholder="">
+        <input type="text" class="form-control" id="eventName" required name="name" placeholder="">
       </div>
       <div class="form-group datetime">
         <label for="eventDate">Event Date</label>
-        <input type="text" class="form-control" id="eventDate" name="date" placeholder="">
+        <input type="text" class="form-control" id="eventDate" required name="date" placeholder="YYYY/MM/DD">
       </div>
       <div class="form-group datetime">
         <label for="eventTime">Event Time</label>
-        <input type='text' class="form-control" id="eventTime" name="time" placeholder=""/>
-        <span class="input-group-addon">
-            <span class="glyphicon glyphicon-time"></span>
-        </span>
+        <input type='text' class="form-control" id="eventTime" required  name="time" placeholder="6:00 PM"/>
+      </div>
+      <div class="form-group datetime">
+        <label for="eventDate">Country</label>
+        <input type="text" class="form-control" id="eventCountry" required name="country" placeholder="">
+      </div>
+      <div class="form-group datetime">
+        <label for="eventTime">City</label>
+        <input type='text' class="form-control" id="eventCity" required name="city" placeholder=""/>
       </div>
       <div class="form-group">
         <label for="eventAddress">Address</label>
         <div class="input-group">
-          <input type="text" class="form-control" id="eventAddress" placeholder="">
+          <input type="text" class="form-control" id="eventAddress" name="address" placeholder="">
           <span class="input-group-btn">
             <button type="button" class="btn btn-default" name="button">
               <span class="glyphicon glyphicon-map-marker"></span>
             </button>
           </span>
         </div>
-
       </div>
       <div class="form-group">
         <label class="event-privacy-label" for="eventPrivacy">Share the event with</label>
         <div class="radio-inline">
           <label>
-            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            <input type="radio" name="privacy" id="optionsRadios1" value="everyone" checked>
             Everyone
           </label>
         </div>
         <div class="radio-inline">
           <label>
-            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            <input type="radio" name="privacy" id="optionsRadios2" value="private">
             Private link
           </label>
         </div>
       </div>
       <label for="">Participants and Roles</label>
-      <div class="row">
-        <div class="roles col-lg-10 col-lg-offset-2">
+      <div class="row text-center">
+        <div class="roles">
           <div class="role">
 
             <span class="shopper-role">
@@ -76,7 +80,7 @@
             </span>
             <p class="role-name">Shopper</p>
             <div class="input-group spinner">
-              <input type="text" class="form-control" value="1">
+              <input type="text" name="shopper-count" class="form-control" value="1">
               <div class="input-group-btn-vertical">
                 <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-up"></i></button>
                 <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-down"></i></button>
@@ -91,7 +95,7 @@
             </span>
             <p class="role-name">Chef</p>
             <div class="input-group spinner">
-              <input type="text" class="form-control" value="1">
+              <input type="text" class="form-control" name="chef-count" value="1">
               <div class="input-group-btn-vertical">
                 <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-up"></i></button>
                 <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-down"></i></button>
@@ -106,7 +110,7 @@
             </span>
             <p class="role-name">Helper</p>
             <div class="input-group spinner">
-              <input type="text" class="form-control" value="1">
+              <input type="text" class="form-control" name="helper-count" value="1">
               <div class="input-group-btn-vertical">
                 <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-up"></i></button>
                 <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-down"></i></button>
@@ -121,7 +125,7 @@
             </span>
             <p class="role-name">Guest</p>
             <div class="input-group spinner">
-              <input type="text" class="form-control" value="1">
+              <input type="text" class="form-control" name="guest-count" value="1">
               <div class="input-group-btn-vertical">
                 <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-up"></i></button>
                 <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-down"></i></button>
@@ -129,14 +133,14 @@
             </div>
 
           </div>
-          <div class="role">
+          <div class="role no-margin-right">
 
             <span class="cleaner-role">
-              <img class="role-img" src="/img/role-5.png">
+              <img class="role-img" name="cleaner-count" src="/img/role-5.png">
             </span>
             <p class="role-name">Cleaner</p>
             <div class="input-group spinner">
-              <input type="text" class="form-control" value="1">
+              <input type="text" class="form-control" name="cleaner-count"  value="1">
               <div class="input-group-btn-vertical">
                 <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-up"></i></button>
                 <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-chevron-down"></i></button>
@@ -148,6 +152,7 @@
         <div class="my-role col-lg-10 col-lg-offset-2">
           <label class="my-role-tag">Choose your role</label>
           <div class="dropdown my-role-tag">
+            <input type="text" class="form-control hidden " id="host-role" name="host-role" value="Chef"></input>
             <button class="btn btn-default dropdown-toggle" type="button" id="myRoleMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
               Chef <span class="caret"></span>
             </button>
@@ -163,29 +168,30 @@
           <label class="total my-role-tag" for="total">5</label>
         </div>
       </div>
-      <label for="">Menu and Recipe</label>
-      <div class="recipes row">
-        <div class="col-lg-2">
-          <div class="thumbnail">
-            <img class="center-cropped" src="https://eatpizzafresca.com/images/pepperoni_pizza.jpg?crc=4023861219" alt="...">
-            <div class="caption">
-              <p class"dish-name">Pepperoni Pizza</p>
-              <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-edit edit-dish"></span></a> <a href="#" class="btn btn-default delete-dish" role="button"><span class="glyphicon glyphicon-trash"></span></a></p>
+      <div class="">
+        <label for="">Menu and Recipe</label>
+        <div class="recipes row">
+          <!-- <div class="col-lg-2 card-padding">
+            <div class="thumbnail">
+              <img class="center-cropped" src="https://eatpizzafresca.com/images/pepperoni_pizza.jpg?crc=4023861219" alt="...">
+              <div class="caption">
+                <p class"dish-name">Pepperoni Pizza</p>
+                <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-edit edit-dish"></span></a> <a href="#" class="btn btn-default delete-dish" role="button"><span class="glyphicon glyphicon-trash"></span></a></p>
+              </div>
             </div>
+          </div> -->
+          <div id="btnOpenNewDishModal" class="col-lg-2 new-dish-btn card-padding">
+            <a href="">
+            <div class="thumbnail">
+              <p><span class="glyphicon glyphicon-plus "></span></p>
+              <p>Add new dish</p>
+            </div>
+            </a>
           </div>
-        </div>
-        <div class="col-lg-2 new-dish-btn">
-          <a href="">
-          <div class="thumbnail">
-            <p><span class="glyphicon glyphicon-plus "></span></p>
-            <p>Add new dish</p>
-          </div>
-          </a>
         </div>
       </div>
-      <div class="buttons col-lg-8 col-lg-offset-2">
+      <div class="buttons col-lg-10 col-lg-offset-2">
         <button type="button" class="cancel-event-btn btn btn-default" name="button">Cancel</button><button type="submit" class="btn create-event-btn btn-default">Create</button>
-
       </div>
       </form>
   </div>
@@ -198,50 +204,52 @@
           <h3>Add new dish</h3>
           <div class="form-group">
             <label for="dishName">Dish Name</label>
-            <input type="text" class="form-control" id="dishName" placeholder="">
+            <input type="text" class="form-control" id="newDish-name" placeholder="">
           </div>
           <div class="radios">
             <label class="radio-inline">
-              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> None
+              <input type="radio" name="newDish-type" id="inlineRadio1" value="None"> None
             </label>
             <label class="radio-inline">
-              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Vegetarian
+              <input type="radio" name="newDish-type" id="inlineRadio2" value="Vegetarian"> Vegetarian
             </label>
             <label class="radio-inline">
-              <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Vegan
+              <input type="radio" name="newDish-type" id="inlineRadio3" value="Vegan"> Vegan
             </label>
             <label class="radio-inline">
-              <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option3"> Halal
+              <input type="radio" name="newDish-type" id="inlineRadio4" value="Halal"> Halal
             </label>
           </div>
-          <div class="checkboxes">
+          <!-- <div class="checkboxes">
             <label class="checkbox-inline">
               <input type="checkbox" id="inlineCheckbox1" value="seafood"> Seafood
             </label>
             <label class="checkbox-inline">
               <input type="checkbox" id="inlineCheckbox2" value="option2"> Spicy
             </label>
-          </div>
+          </div> -->
           <div class="images form-group">
             <label for="dishImg">Dish Image</label>
              <input style="display:none;" type="file" name="file" id="dishImg" >
           </div>
+          <img id="preview" src="#" alt="your image" class="img-thumbnail" />
           <button type="button" class="btn btn-default upload-btn" name="button">
-            <span class="glyphicon glyphicon-picture"></span>
+            <span class="glyphicon glyphicon-picture">
+            </span>
             <span class="upload-tag">Upload my photo</span>
           </button>
 
           <div class="recipe form-group">
             <label for="dishImg">Recipe</label>
-            <textarea class="form-control" rows="5"></textarea>
+            <textarea id="newDish-recipe" class="form-control" rows="5"></textarea>
           </div>
-          <button  type="button" class="btn btn-default col-lg-offset-9 add-dish" name="button">Add</button>
+          <button  type="button" class="btn btn-default col-lg-offset-9 add-dish" id="newDish-btn" name="button">Add</button>
         </div>
       </div>
     </div>
   </div>
 <!-- END OF MODAL-->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   //Init autocomplete location
   var input = document.getElementById('eventAddress');
   var autocomplete = new google.maps.places.Autocomplete(input);
@@ -255,7 +263,7 @@
     else {
         // just typed and hit enter (no option selected)
     }
-});
+}); -->
 </script>
 </body>
 </html>

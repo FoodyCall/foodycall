@@ -14,6 +14,7 @@ gem 'activesupport'
 gem 'rack-flash3'
 gem 'rbnacl-libsodium'
 gem 'tux'
+gem 'aws-sdk', '~> 2'
 
 group :test do
   gem 'rack'
