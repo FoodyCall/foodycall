@@ -6,6 +6,7 @@ class FoodyCallApp < Sinatra::Base
   get '/dashboard/:id' do
     @event = RetrieveEvents.id(params[:id])
     @posts = RetrievePost.call(event_id: params[:id])
+    @pending_request = RetriveParticipantRequest.call(event_id: params[:id])
     erb :event_dashboard
   end
 
