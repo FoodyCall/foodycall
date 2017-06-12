@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>FoodyCall - Cook Together, Happy Together</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,6 +16,119 @@
   </script>
 </head>
 <body>
+
+  <!-- EVENT MODAL -->
+  <div class="modal fade" id="joinEventModal" tabindex="-1" role="dialog" aria-labelledby="event-modal">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <form method="post" action="/events/join">
+          <div class="col-lg-12">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="col-lg-10 col-lg-push-1">
+              <div class="modal-header">
+                <h1>I want to join this event</h1>
+                <br/>
+                <input class="hidden" id="event-modal-id" name="event_id">
+                <div class="col-lg-11 no-padding">
+                  <span class="modal-title black" id="event-modal">Title</span>
+
+                    <p class="modal-sub-title">
+                      <span class="modal-date"></span>
+                      <span class="modal-time"></span>
+                      <span class="glyphicon glyphicon-map-marker modal-location-icon location-icon"></span>
+                      <a target="_blank" href="https://www.google.com.tw/maps/search/Taipei%20city?hl=en&source=opensearch" class="modal-location"></a>
+                      <span class="">Host by</span>
+                      <img class="modal-host-img" src="" alt="">
+                      <span class="modal-host-name"></span>
+                    </p>
+                </div>
+                <div class="modal-event-availability col-lg-1 pull">
+                  <img src="img/par-1-4.png" alt="">
+                  <div class="col-lg-12">
+                  <p><span class="modal-approved">2</span>/<span class="modal-total">3</span></p>
+                </div>
+                </div>
+
+
+              </div>
+              <p class="subtitle-tag">1. Choose your roles</p>
+
+              <div class="col-lg-12 roles-container form-group">
+                <span class="modal-roles">
+                  <div class="modal-role">
+                    <a href="">
+                    <span class="shopper-role">
+                      <img class="role" src="img/role-1.png">
+                    </span>
+                    <p class="role-name">Shopper</p>
+                    <p class="role-quantity shopper" >(0/3)</p>
+                    <input type="checkbox" name="roles[]" value="shopper"/>
+                    </a>
+                  </div>
+                  <div class="modal-role">
+                    <a class="" href="">
+                    <span class="chef-role">
+                      <img class="role" src="img/role-2.png">
+                    </span>
+                    <p class="role-name ">Chef</p>
+                    <p class="role-quantity chef" >(0/2)</p>
+                    <input type="checkbox" name="roles[]" value="chef"/>
+                    </a>
+                  </div>
+                  <div class="modal-role">
+                    <a class="" href="">
+                    <span class="helper-role">
+                      <img class="role" src="img/role-3.png">
+                    </span>
+                    <p class="role-name">Helper</p>
+                    <p class="role-quantity helper" >(0/1)</p>
+                    <input type="checkbox" name="roles[]" value="helper"/>
+                    </a>
+                  </div>
+                  <div class="modal-role">
+                    <a class="" href="">
+                    <span class="guest-role">
+                      <img class="role" src="img/role-4.png">
+                    </span>
+                    <p class="role-name">Guest</p>
+                    <p class="role-quantity guest" >(0/1)</p>
+                    <input type="checkbox" name="roles[]" value="guest"/>
+                    </a>
+                  </div>
+                  <div class="modal-role">
+                    <a class="" href="">
+                    <span class="cleaner-role ">
+                      <img class="role" src="img/role-5.png">
+                    </span>
+                    <p class="role-name">Cleaner</p>
+                    <p class="role-quantity cleaner" >(0/1)</p>
+                    <input type="checkbox" name="roles[]" value="cleaner">
+                    </a>
+                  </div>
+                </span>
+              </div>
+              <br/>
+              <br/>
+              <p class="subtitle-tag">2. Send a message to he host</p>
+              <div class=" form-group col-lg-10 col-lg-push-1">
+                <textarea class="form-control join-message" name="message" placeholder="Introduce yourself to the host!" rows="5"></textarea>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" id="join">Join the event</button>
+          </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<!-- END OF MODAL-->
 
   <!-- EVENT MODAL -->
   <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="event-modal">
@@ -34,13 +148,12 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <h3 class="modal-title" id="event-modal">Title</h3>
-              <span class="hidden" id="event-modal-id">Title</h3>
+              <span class="hidden" id="event-modal-id">Title</span>
               <p class="modal-sub-title">
                 <span class="modal-date"></span>
                 <span class="modal-time"></span>
                 <span class="glyphicon glyphicon-map-marker modal-location-icon location-icon"></span>
                 <a target="_blank" href="https://www.google.com.tw/maps/search/Taipei%20city?hl=en&source=opensearch" class="modal-location"></a>
-
               </p>
               <div class="modal-event-availability">
                 <img src="img/par-1-4.png" alt="">
@@ -112,7 +225,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Join the event</button>
+            <button type="button" class="btn btn-primary" id="join-event">Join the event</button>
           </div>
         </div>
 
@@ -159,6 +272,7 @@
     </div>
 </div>
 <div class="container events">
+  <%= erb :flash_bar %>
   <div class="row"> <!--class="row" -->
     <!--class="col-lg-6 col-md-6 col-sm-12 "-->
     <% if @events %>
@@ -167,8 +281,11 @@
 
         <img class="center-cropped " src="<%= event.img_path%>">
         <div class="caption">
+          <h3 class="event-title hidden"><%= event.name %></h3>
           <div id="hidden-info" class="hidden">
             <span class="event-id"><%= event.id%></span>
+            <span class="user-id"><%=@user_id %></span>
+            <span class="user-joined"><%= event.user_joined?(@user_id)? 'yes' : 'no'%></span>
             <span class="event-total"><%= event.totalParticipants%></span>
             <span class="event-shopper"><%= event.shopper%></span>
             <span class="event-chef"><%= event.chef%></span>
@@ -218,9 +335,10 @@
             </div>
           </div>
           <h3><%= event.name.gsub(/^(.{60,}?).*$/m,'\1...') %></h3>
-          <h3 class="event-title hidden"><%= event.name %></h3>
+
           <span class="date"><%=event.date.strftime("%Y-%m-%d")%></span> <span class="time"><%=event.date.strftime("%l:%M %p")%></span>
-          <span class="glyphicon glyphicon-map-marker location-icon"></span><span class="location"><%= event.location.split(',').last %></span>
+          <span class="glyphicon glyphicon-map-marker location-icon"></span><span class=""><%= event.location.split(',').last %></span>
+          <span class="location hidden"><%= event.location %></span>
           <br>
           <span class="host_by">Hosted by</span>
           <span class="host-img">

@@ -91,43 +91,50 @@ class CreateSeedData
     JoinEvent.call(
       user_id:user_beautiful_allie.id,
       event_id: event_allie.id,
-      roles: ["Chef"]
+      roles: ["Chef"],
+      message: ''
     )
 
     JoinEvent.call(
       user_id:user_eduardo.id,
       event_id: event_allie.id,
-      roles: ["Chef"]
+      roles: ["Chef"],
+      message: 'Hi Allie\nI want to join your event.'
     )
 
     JoinEvent.call(
       user_id:user_beautiful_allie.id,
       event_id: event_allie2.id,
-      roles: ["Helper"]
+      roles: ["Helper"],
+      message: ''
     )
 
     JoinEvent.call(
       user_id:user_pola.id,
       event_id: event_pola.id,
-      roles: ["Chef"]
+      roles: ["Chef"],
+      message: ''
     )
 
     JoinEvent.call(
       user_id:user_pola.id,
       event_id: event_pola2.id,
-      roles: ["Shopper"]
+      roles: ["Shopper"],
+      message: ''
     )
 
     JoinEvent.call(
       user_id:user_eduardo.id,
       event_id: event_eduardo.id,
-      roles: ["Guest"]
+      roles: ["Guest"],
+      message: ''
     )
 
     JoinEvent.call(
       user_id:user_eduardo.id,
       event_id: event_eduardo2.id,
-      roles: ["Cleaner"]
+      roles: ["Cleaner"],
+      message: ''
     )
     # user_edu = CreateUser.call(
     #   {firstName: "Ed",

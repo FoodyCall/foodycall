@@ -9,6 +9,11 @@ class Event < Sequel::Model
     user
   end
 
+  def user_joined?(user_id)
+    isJoined = !EventParticipant.where(:event_id => id, :user_id => user_id).empty?
+    isJoined
+  end
+
   def totalParticipants
     chef + helper + shopper + cleaner + guest
   end
