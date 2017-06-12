@@ -149,7 +149,14 @@ h3 {
   color: #655f5f;
   font-size: 13px;
 }
+.discussion-board .usr-post-text {
+
+}
 
 .post {
   border-bottom: 1px solid #e7e7e7;
 }
+
+
+
+/********** END DISCUSSION ********/
