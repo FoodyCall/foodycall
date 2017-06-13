@@ -9,6 +9,7 @@ class CreateUser
   private_class_method
 
   def self.create_new_user(user)
+    img = (user[:img_path] != nil) ? user[:img_path] : "https://api.adorable.io/avatars/285/abott@adorable.png"
     new_user = User.new(
       first_name: user[:firstName],
       last_name: user[:lastName],
@@ -17,7 +18,7 @@ class CreateUser
       city: user[:city],
       country: user[:country],
       rating: user[:rating],
-      img_path: user[:img_path]
+      img_path: img
     )
     new_user.password = user[:password]
     new_user.save
