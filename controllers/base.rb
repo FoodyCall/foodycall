@@ -21,7 +21,7 @@ class FoodyCallApp < Sinatra::Base
   before do
     # Validation of authenticated user
     puts request.path_info
-    if session[:current_user] || request.path_info == '/login'
+    if session[:current_user] || ['/login','/signup','/'].include?(request.path_info) 
     #  @current_user = SecureMessage.decrypt(session[:current_user])
     #   @auth_token = session[:auth_token]
     #   puts @current_user

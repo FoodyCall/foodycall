@@ -97,10 +97,12 @@ $(function() {
         //disable checkbox
         $(this).siblings("input[type='checkbox']").attr('disabled',true);
         //chenge roles icon to gray
-        // var src = $(this).siblings("img").src;
-        // $(this).siblings("img").attr('src',src+'-g')
+        // var src = $(this).siblings("img").attr('src').replace('.png','-gray.png');
+        // $(this).siblings("img").attr('src',src)
       }else{
         $(this).siblings("input[type='checkbox']").attr('disabled',false);
+        // var src = $(this).siblings("img.role").attr('src').replace('-gray.png','.png');
+        // $(this).siblings("img").attr('src',src)
       }
     });
 
