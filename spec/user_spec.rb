@@ -51,8 +51,7 @@ describe 'Test User services' do
       country: "Honduras",
       city: "Tegucigalpa",
       password: "12345",
-      rating: 3,
-      img_path: ""
+      rating: 3
     }
     user = CreateUser.call(new_user)
     user.id.wont_be_nil

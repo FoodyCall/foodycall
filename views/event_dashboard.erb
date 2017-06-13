@@ -95,7 +95,7 @@
                   <div class="post ">
                     <div class="usr-post">
                       <img class="img-circle" src="<%= post.user.img_path%>" class="usr-post-img" alt="">
-                      <p class="usr-post-name"><%= post.user.fullName%><span class="usr-post-age">(<%= post.user.age%>)</span></p>
+                      <p class="usr-post-name text-center"><%= post.user.fullName%><span class="usr-post-age">(<%= post.user.age%>)</span></p>
                     </div>
                     <div class="usr-post-text-div">
                       <p class="usr-post-text"><%= post.post%></p>
@@ -155,7 +155,7 @@
                   <span class="request-user-id hidden"><%= request.user.id %></span>
                   <div class="usr-request">
                     <img class="img-circle" src="<%= request.user.img_path%>">
-                    <div>
+                    <div class="text-center">
                       <p><%= request.user.fullName %> <span class="request-age">(<%= request.user.age %>)</span></p>
                       <!-- <p class="request-username">@garynil</p> -->
                       <p class="request-location"><%= request.user.city %>, <%= request.user.country %></p>
