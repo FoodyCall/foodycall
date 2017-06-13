@@ -280,7 +280,7 @@ class CreateSeedData
 
     JoinEvent.call(
       user_id:user_beautiful_allie.id,
-      event_id: event_eduardo1.id,
+      event_id: event_eduardo.id,
       roles: ["Chef"],
       message: "Hi Edward. I would like to eat pizza. How about we go together to buy the ingredients"
     )
