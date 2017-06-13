@@ -250,9 +250,6 @@ class CreateSeedData
       post: "Thank you so much. You are very nice person. I'll be so happy to share a foodycall with you. See you soon!!!!"
     )
 
-
-
-
     JoinEvent.call(
       user_id:user_pola.id,
       event_id: event_pola2.id,
@@ -273,6 +270,33 @@ class CreateSeedData
       roles: ["Cleaner"],
       message: ''
     )
+
+    JoinEvent.call(
+      user_id:user_beautiful_allie.id,
+      event_id: event_eduardo2.id,
+      roles: ["Shopper"],
+      message: 'Hi Edward. I saw your you the other day and i think you are so cute. Can i join your event. guik guik XD. I can teach how to cook dumplings. '
+    )
+
+    CreateEventPost.call(
+      user_id:user_beautiful_allie.id,
+      event_id: event_eduardo2.id,
+      post: "Here we can talk about where we can but the ingredients. Do you know where?"
+    )
+
+    CreateEventPost.call(
+      user_id:user_eduardo.id,
+      event_id: event_eduardo2.id,
+      post: "It would be a very nice experience to learn how to cook with you. I will buy the ingredients"
+    )
+
+
+    CreateEventPost.call(
+      user_id:user_beautiful_allie.id,
+      event_id: event_eduardo2.id,
+      post: "I am so excited. I can't wait. Also i was wondering if you like tofu ?XD"
+    )
+
     # user_edu = CreateUser.call(
     #   {firstName: "Ed",
     #   lastName: "Sal",
