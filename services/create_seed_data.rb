@@ -250,15 +250,6 @@ class CreateSeedData
       post: "Thank you so much. You are very nice person. I'll be so happy to share a foodycall with you. See you soon!!!!"
     )
 
-
-
-    JoinEvent.call(
-      user_id:user_pola.id,
-      event_id: event_allie.id,
-      roles: ["Chef"],
-      message: "Hey. Edward told me you want to eat thai food and we can use some ingredients i bought last week in Thailand. I am sure is going to great experience. "
-    )
-
     JoinEvent.call(
       user_id:user_pola.id,
       event_id: event_pola2.id,
@@ -279,6 +270,39 @@ class CreateSeedData
       roles: ["Cleaner"],
       message: ''
     )
+
+    JoinEvent.call(
+      user_id:user_beautiful_allie.id,
+      event_id: event_eduardo2.id,
+      roles: ["Shopper"],
+      message: "Hi Edward. I don't know how to cook that but i enjoy intalian food. Maybe I can be the Shopper because i know lots of places to buy the ingredients and also i have a scooter."
+    )
+
+    JoinEvent.call(
+      user_id:user_beautiful_allie.id,
+      event_id: event_eduardo1.id,
+      roles: ["Chef"],
+      message: "Hi Edward. I would like to eat pizza. How about we go together to buy the ingredients"
+    )
+
+    # CreateEventPost.call(
+    #   user_id:user_beautiful_allie.id,
+    #   event_id: event_eduardo2.id,
+    #   post: "Here we can talk about where we can but the ingredients. Do you know where?"
+    # )
+    #
+    # CreateEventPost.call(
+    #   user_id:user_eduardo.id,
+    #   event_id: event_eduardo2.id,
+    #   post: "It would be a very nice experience to learn how to cook with you. I will buy the ingredients"
+    # )
+    #
+    # CreateEventPost.call(
+    #   user_id:user_beautiful_allie.id,
+    #   event_id: event_eduardo2.id,
+    #   post: "I am so excited. I can't wait. Also i was wondering if you like tofu ?XD"
+    # )
+
     # user_edu = CreateUser.call(
     #   {firstName: "Ed",
     #   lastName: "Sal",

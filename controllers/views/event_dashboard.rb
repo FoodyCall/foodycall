@@ -47,4 +47,15 @@ class FoodyCallApp < Sinatra::Base
 
   end
 
+  post '/reject' do
+
+    post = RejectRequest.call(
+      user_id: params[:user_id],
+      event_id:params[:event_id]
+    )
+
+    halt 201
+
+  end
+
 end

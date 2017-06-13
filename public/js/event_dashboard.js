@@ -35,5 +35,17 @@ $(function() {
       });
   });
 
+  $(".btn-reject").on('click',function(e) {
+    $.post("/reject",
+      {
+          event_id: $(".event-id").first().text(),
+          user_id: $(".request-user-id").first().text()
+      },
+      function(data, status){
+          alert("Request Rejected.");
+          location.reload();
+      });
+  });
+
 
 });
