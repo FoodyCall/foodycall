@@ -96,6 +96,9 @@ $(function() {
       if (values[1] == 0 || values[0]>= values[1]){
         //disable checkbox
         $(this).siblings("input[type='checkbox']").attr('disabled',true);
+        //chenge roles icon to gray
+        // var src = $(this).siblings("img").src;
+        // $(this).siblings("img").attr('src',src+'-g')
       }else{
         $(this).siblings("input[type='checkbox']").attr('disabled',false);
       }
