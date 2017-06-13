@@ -23,9 +23,9 @@
           <h3>Participants</h3>
           <div class="participants">
             <% @event.approved.each do |participant| %>
-              <div class="participant">
-                <img class="img-circle" src="<%= participant.user.img_path%>">
-                <div>
+              <div class="participant col-lg-12">
+                <img class="img-circle pull-left" src="<%= participant.user.img_path%>">
+                <div class="col-lg-7">
                   <p><%= participant.user.fullName%> <span class="participant-age">(<%= participant.user.age%>)</span></p>
                   <!-- <p class="participant-username">@garynil</p> -->
                   <p class="participant-location"><%= participant.user.city%>,<%= participant.user.country%></p>
@@ -38,7 +38,7 @@
                     <% end %>
                   </p>
                 </div>
-                <div class="participant-role">
+                <div class="participant-role pull-right">
                   <%if participant.isShopper? %>
                   <span class="shopper-role">
                     <img class="role-img" src="/img/role-1.png">
@@ -173,7 +173,7 @@
                     <p><%= request.message %></p>
                   </div>
                   <div class="usr-request-options">
-                    <div class="requested-roles">
+                    <div class="requested-roles text-center">
                       <%if request.isShopper? %>
 
                         <a href=""><div class="requested-role">
