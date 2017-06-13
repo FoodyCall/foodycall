@@ -252,12 +252,6 @@ class CreateSeedData
 
 
 
-    JoinEvent.call(
-      user_id:user_pola.id,
-      event_id: event_allie.id,
-      roles: ["Chef"],
-      message: "Hey. Edward told me you want to eat thai food and we can use some ingredients i bought last week in Thailand. I am sure is going to great experience. "
-    )
 
     JoinEvent.call(
       user_id:user_pola.id,
