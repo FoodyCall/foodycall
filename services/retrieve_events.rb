@@ -19,7 +19,7 @@ class RetrieveEvents
   def self.events_joined(user_id:)
     event_not_mine = Event.exclude(:host_id => user_id).all
 
-    events_ids = EventParticipant.where(:user_id => user_id , :event_id => Event.exclude(:host_id => user_id).select(:id), :approved => true).get(:event_id)
+    events_ids = EventParticipant.where(:user_id => user_id , :event_id => Event.exclude(:host_id => user_id).select(:id), :approved => true).select(:event_id)
 
     joined = Event.where(:id =>events_ids).all
     return joined
@@ -28,7 +28,7 @@ class RetrieveEvents
   def self.events_pending(user_id:)
     event_not_mine = Event.exclude(:host_id => user_id).all
 
-    events_ids = EventParticipant.where(:user_id => user_id , :event_id => Event.exclude(:host_id => user_id).select(:id), :approved => false).get(:event_id)
+    events_ids = EventParticipant.where(:user_id => user_id , :event_id => Event.exclude(:host_id => user_id).select(:id), :approved => false).select(:event_id)
 
     pending = Event.where(:id =>events_ids).all
     return pending

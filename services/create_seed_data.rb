@@ -27,6 +27,7 @@ class CreateSeedData
         country: "Taiwan",
         city: "Hsinchu",
         password: "12345",
+        rating: 3,
         img_path: "https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/14100426_10210148558808498_1279246961028949519_n.jpg?oh=6d71ee31c495c9b425597a195b222c21&oe=59D6F13D"
       }
     )
@@ -39,6 +40,7 @@ class CreateSeedData
       country: "Taiwan",
       city: "Hsinchu",
       password: "12345",
+      rating: 5,
       img_path: "https://scontent-hkg3-1.xx.fbcdn.net/v/t31.0-8/18738886_1380613998699044_7654257757760782746_o.jpg?oh=81e1f71b34d5368e9dad5f0ba1879cd3&oe=59E0A574"
     )
 
@@ -50,6 +52,7 @@ class CreateSeedData
       country: "Thailand",
       city: "Bangkok",
       password: "12345",
+      rating: 4,
       img_path: "https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/17952900_1416262921727193_3530661623660573207_n.jpg?oh=e64f92c8969a39e31e3330ba0829748a&oe=59A6984C"
     )
 
