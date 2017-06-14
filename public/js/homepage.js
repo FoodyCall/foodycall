@@ -95,14 +95,24 @@ $(function() {
       values = value.replace('(','').replace(')','').split('/');
       if (values[1] == 0 || values[0]>= values[1]){
         //disable checkbox
+        var el = $(this);
         $(this).siblings("input[type='checkbox']").attr('disabled',true);
-        //chenge roles icon to gray
-        var src = $(this).siblings("img").attr('src').replace('.png','-gray.png');
-        $(this).siblings("img").attr('src',src)
+        //change roles icon to gray
+        var icon = $(this).siblings("span")[0];
+        var src = $(icon).find('img').attr('src');
+        if (src.indexOf("gray") == -1){
+          $(icon).find('img').attr('src',src.replace('.png','-gray.png'));
+          $(icon).addClass("role-gray");
+        }
       }else{
         $(this).siblings("input[type='checkbox']").attr('disabled',false);
-        // var src = $(this).siblings("img.role").attr('src').replace('-gray.png','.png');
-        // $(this).siblings("img").attr('src',src)
+        //change roles icon to not gray
+        var icon = $(this).siblings("span")[0];
+        var src = $(icon).find('img').attr('src');
+        if (src.indexOf("gray") != -1){
+          $(icon).find('img').attr('src',src.replace('-gray.png','.png'));
+          $(icon).removeClass("role-gray");
+        }
       }
     });
 
