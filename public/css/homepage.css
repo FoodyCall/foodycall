@@ -139,28 +139,28 @@ div.dropdown {
 #joinEventModal .shopper-role {
   border: 3px solid #f7c389;
   border-radius: 60%;
-  padding: 27px 16px 27px 16px;
+  padding: 40px 24px 40px 24px;
 }
 #joinEventModal .chef-role {
   border: 3px solid #e39c8d;
   border-radius: 60%;
-  padding: 27px 6px 27px 6px;}
-
+  padding: 40px 15px 40px 15px;
+}
 
 #joinEventModal .helper-role {
   border: 3px solid #dfa284;
   border-radius: 60%;
-  padding: 27px 16px 27px 16px;
+  padding: 40px 24px 40px 24px;
 }
 #joinEventModal .guest-role {
   border: 3px solid #d0d59d;
   border-radius: 60%;
-    padding: 27px 22px 27px 22px;
+  padding: 40px 32px 40px 32px;
 }
 #joinEventModal .cleaner-role {
   border: 3px solid #9fb9cf;
   border-radius: 60%;
-  padding: 27px 16px 27px 16px;
+  padding: 40px 32px 40px 32px;
 }
 #joinEventModal .roles-container{
   text-align: center;
@@ -198,7 +198,9 @@ div.dropdown {
 .cleaner-role img {
   height: 40px;
 }
-
+.role-gray{
+  border-color:#CACBCA !important;
+}
 .modal-body {
   padding: 0px 15px 15px 15px;
 }
