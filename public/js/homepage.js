@@ -28,13 +28,13 @@ $(function() {
     $(".modal-role .role-quantity.cleaner").text('('+$(this).find("div.caption .event-cleaner-approved").text()+'/'+$(this).find("div.caption .event-cleaner").text()+')');
 
     //Disable Icon and turn gray
-    var roles = $(".modal-role.modal-event")
+    var roles = $("#eventModal .modal-role");
 
     roles.each(function(index){
       var quantity = $(roles[index]).find(".role-quantity").text();
       var values = quantity.replace('(','').replace(')','').split('/');
 
-      if (values[1] == 0 || values[0]>= values[1]){
+      if (values[1] == 0){
         //change roles icon to gray
         var test = $($(roles[index])[0]);
         var icon = $($(roles[index])[0]).find("span")[0];
