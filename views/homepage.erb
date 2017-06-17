@@ -309,23 +309,29 @@
 
             <% ["shopper","chef","helper","guest","cleaner"].each do |role| %>
               <div data-event-id="<%=index%>" class="event-participants-<%=role%>-<%=event.id%>">
-                <% event.send("approved_#{role}").each_with_index do |participant,index| %>
-                  <div class="participant">
-                    <img src="<%= participant.user.img_path%>">
-                    <div class="">
-                      <p><%= participant.user.fullName%> <span class="participant-age">(<%= participant.user.age%>)</span></p>
-                      <!-- <p class="participant-username">@garynil</p> -->
-                      <p class="participant-location"><%= participant.user.city%>,<%= participant.user.country%></p>
-                      <p class="participant-rating">
-                        <% event.host.rate.times do |i| %>
-                          <span class="star glyphicon glyphicon-star"></span>
-                        <% end %>
-                        <% (5 - event.host.rate).times do |i| %>
-                          <span class="star glyphicon glyphicon-star-empty"></span>
-                        <% end %>
-                      </p>
+                <% approved =  event.send("approved_#{role}") %>
+                <% if !approved.empty? %>
+                  <% event.send("approved_#{role}").each_with_index do |participant,index| %>
+                    <div class="participant">
+                      <img src="<%= participant.user.img_path%>">
+                      <div class="">
+                        <p><%= participant.user.fullName%> <span class="participant-age">(<%= participant.user.age%>)</span></p>
+                        <!-- <p class="participant-username">@garynil</p> -->
+                        <p class="participant-location"><%= participant.user.city%>,<%= participant.user.country%></p>
+                        <p class="participant-rating">
+                          <% event.host.rate.times do |i| %>
+                            <span class="star glyphicon glyphicon-star"></span>
+                          <% end %>
+                          <% (5 - event.host.rate).times do |i| %>
+                            <span class="star glyphicon glyphicon-star-empty"></span>
+                          <% end %>
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  <% end %>
+                <% else %>
+                  <!-- Show label that there are not participants approved yet  -->
+                  <span class="no-participant-label">Be the first one to join as a <%= role %>. Click "Join the event" button </span>
                 <% end %>
               </div>
             <% end %>
