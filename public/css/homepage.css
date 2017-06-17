@@ -361,3 +361,9 @@ div.dropdown {
 .black{
   color:#000;
 }
+.no-participant-label{
+  font-size: 23px;
+  opacity: 0.7;
+  color: gray;
+  font-style: italic;
+}
